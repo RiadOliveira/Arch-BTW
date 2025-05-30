@@ -1,0 +1,10 @@
+[Unit]
+Description=Automount USB devices
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/udiskie -C -N -T -F -q --no-event-hook --no-appindicator
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
