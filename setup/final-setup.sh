@@ -93,7 +93,7 @@ sudo alsactl store
 # ───────────────────────────────────────────────
 
 cp -r /usr/share/doc/mpv/ "/home/$NEW_USER/.config/"
-chown -R "$NEW_USER":"$NEW_USER" "/home/$NEW_USER/.config/mpv"
+chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/.config/mpv"
 
 # ───────────────────────────────────────────────
 # ▶ USER CONFIGURATION
@@ -119,8 +119,8 @@ locale-gen
 
 mkdir -p "/home/$NEW_USER/Screenshots"
 mkdir -p "/home/$NEW_USER/Downloads/Bluetooth"
-chown -R "$NEW_USER":"$NEW_USER" "/home/$NEW_USER/Screenshots"
-chown -R "$NEW_USER":"$NEW_USER" "/home/$NEW_USER/Downloads"
+chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/Screenshots"
+chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/Downloads"
 
 # ───────────────────────────────────────────────
 # ▶ GIT CONFIGURATION

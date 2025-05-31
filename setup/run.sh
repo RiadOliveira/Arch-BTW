@@ -13,7 +13,7 @@ passwd
 read -p "Enter the new username: " NEW_USER
 export NEW_USER
 
-useradd -m -g users -G wheel,video "$NEW_USER"
+useradd -m -G wheel,video "$NEW_USER"
 echo "Set password for user $NEW_USER:"
 passwd "$NEW_USER"
 

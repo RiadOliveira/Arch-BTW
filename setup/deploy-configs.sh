@@ -25,7 +25,7 @@ deploy_configs() {
     cp "$file" "$system_path/$filename"
     
     if [[ "$system_path" == /home/$NEW_USER* ]]; then
-      chown "$NEW_USER:users" "$system_path/$filename"
+      chown "$NEW_USER:$NEW_USER" "$system_path/$filename"
       chmod 644 "$system_path/$filename"
     else
       chown root:root "$system_path/$filename"
