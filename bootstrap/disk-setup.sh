@@ -87,11 +87,16 @@ ls /dev/mapper/lvm
 pvcreate /dev/mapper/lvm
 vgcreate volgroup /dev/mapper/lvm
 
-read -p "Root logical volume size (in GB, e.g., 30G): " ROOT_SIZE
+read -p "Root logical volume size (in GB, e.g., 40G): " ROOT_SIZE
 read -p "Home logical volume size (e.g., 100%FREE or 20G): " HOME_SIZE
 
 lvcreate -L "$ROOT_SIZE" volgroup -n root
-lvcreate -L "$HOME_SIZE" volgroup -n home
+
+if [[ "$HOME_SIZE" == *%* ]]; then
+  lvcreate -l "$HOME_SIZE" volgroup -n home
+else
+  lvcreate -L "$HOME_SIZE" volgroup -n home
+fi
 
 vgscan
 vgchange -ay
