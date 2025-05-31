@@ -68,12 +68,6 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
 # ───────────────────────────────────────────────
-# ▶ DNS CONFIGURATION
-# ───────────────────────────────────────────────
-
-sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-
-# ───────────────────────────────────────────────
 # ▶ POWER MANAGEMENT
 # ───────────────────────────────────────────────
 
