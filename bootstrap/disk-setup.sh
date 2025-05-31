@@ -15,7 +15,7 @@ if [[ "$CREATE_EFI" == "y" ]]; then
   EFI_SIZE=${EFI_SIZE:-1G}
 fi
 
-read -p "Do you want to create a Boot partition (ef02)? (y/N): " CREATE_BOOT
+read -p "Do you want to create a Boot partition (ea00)? (y/N): " CREATE_BOOT
 if [[ "$CREATE_BOOT" == "y" ]]; then
   read -p "Boot partition size (default 2G): " BOOT_SIZE
   BOOT_SIZE=${BOOT_SIZE:-2G}
@@ -42,7 +42,7 @@ if [[ "$CREATE_EFI" == "y" ]]; then
 fi
 
 if [[ "$CREATE_BOOT" == "y" ]]; then
-  echo -e "n\n$PART_NUM\n\n+$BOOT_SIZE\nEF02\nw\ny" | gdisk "$DEVICE_PATH"
+  echo -e "n\n$PART_NUM\n\n+$BOOT_SIZE\nEA00\nw\ny" | gdisk "$DEVICE_PATH"
   PARTITIONS[boot]="${DEVICE_PATH}${PART_NUM}"
   ((PART_NUM++))
 fi

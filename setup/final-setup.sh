@@ -5,7 +5,7 @@ set -e
 # ▶ BOOTLOADER CONFIGURATION
 # ───────────────────────────────────────────────
 
-bootctl install
+bootctl --esp-path=/efi --boot-path=/boot install
 
 # Replace UUID placeholder in arch.conf with actual UUID of data partition
 ARCH_CONF="/boot/loader/entries/arch.conf"
