@@ -3,6 +3,7 @@ linux-headers
 base-devel
 dosfstools
 efibootmgr
+efitools
 lvm2
 e2fsprogs
 intel-ucode
