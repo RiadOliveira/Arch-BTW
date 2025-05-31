@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 CONFIG_DIR="$(dirname "$(realpath "$0")")/../config"
 

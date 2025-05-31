@@ -1,11 +1,14 @@
 #!/bin/bash
+set -e
 
 PACKAGE_FILE="$(dirname "$(realpath "$0")")/../packages.txt"
 
-if ! command -v yay &>/dev/null; then
-  echo "yay not installed. Install it first!"
-  exit 1
-fi
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -sirc
+
+cd ..
+rm -rf yay
 
 packages=$(grep -vE '^\s*#|^\s*$' "$PACKAGE_FILE")
 
@@ -13,4 +16,5 @@ echo "Installing the following packages:"
 echo "$packages"
 echo
 
-yay -S --needed $packages
+yay -S --noconfirm --needed $packages
+yay -Syu --noconfirm
