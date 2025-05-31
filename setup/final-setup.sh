@@ -2,34 +2,6 @@
 set -e
 
 # ───────────────────────────────────────────────
-# ▶ USER CONFIGURATION
-# ───────────────────────────────────────────────
-
-# Set root password
-echo "Set root password:"
-passwd
-
-# Create a new user and set password
-read -p "Enter the new username: " NEW_USER
-useradd -m -g users -G wheel,video "$NEW_USER"
-echo "Set password for user $NEW_USER:"
-passwd "$NEW_USER"
-
-# Set hostname
-read -p "Enter the hostname for this machine: " HOSTNAME
-echo "$HOSTNAME" > /etc/hostname
-
-# Add user to sudoers
-sed -i "s/^user-name ALL=(ALL) ALL/$NEW_USER ALL=(ALL) ALL/" /etc/sudoers
-
-# Set timezone and hardware clock
-ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime
-hwclock --systohc
-
-# Generate locales
-locale-gen
-
-# ───────────────────────────────────────────────
 # ▶ BOOTLOADER CONFIGURATION
 # ───────────────────────────────────────────────
 
