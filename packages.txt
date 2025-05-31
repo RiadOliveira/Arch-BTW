@@ -63,6 +63,7 @@ firejail
 udiskie
 
 # Development and Tools
+git
 neovim
 htop
 
@@ -71,5 +72,5 @@ noto-fonts
 
 # Applications
 obsidian
-zen-browser-bin
+discord
 mpv
