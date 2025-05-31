@@ -53,7 +53,7 @@ find "$CONFIG_DIR" -mindepth 1 | while read -r full_source_path; do
   if [[ "$decoded_path" == home/"$NEW_USER"/* ]]; then
     target="/$decoded_path"
     copy_to_target "$full_source_path" "$target"
-    chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER"
+    chown -R "$NEW_USER:users" "/home/$NEW_USER"
   elif [[ "$decoded_path" != home/* ]]; then
     # System-wide configs
     target="/$decoded_path"
