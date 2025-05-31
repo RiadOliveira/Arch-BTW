@@ -13,7 +13,7 @@ DATA_UUID_PLACEHOLDER="DATA_UUID"
 
 # Attempt to get the UUID from known path, else prompt
 if grep -q "$DATA_UUID_PLACEHOLDER" "$ARCH_CONF"; then
-  read -p "Enter the name of the data partition (e.g., sda3, nvme0n1p3): " DATA_PART_NAME
+  read -p "Enter the name of the data partition (e.g., sda2, nvme0n1p3): " DATA_PART_NAME
   DATA_UUID=$(blkid -s UUID -o value "/dev/$DATA_PART_NAME")
   if [ -z "$DATA_UUID" ]; then
     echo "Failed to get UUID from /dev/$DATA_PART_NAME"
