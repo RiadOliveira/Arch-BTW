@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG_DIR="./config"
+CONFIG_DIR="$(dirname "$(realpath "$0")")/../config"
 
 copy_to_target() {
   local source_path="$1"
