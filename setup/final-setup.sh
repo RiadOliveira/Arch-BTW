@@ -66,7 +66,6 @@ sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
-sudo ufw enable
 
 # ───────────────────────────────────────────────
 # ▶ DNS CONFIGURATION
