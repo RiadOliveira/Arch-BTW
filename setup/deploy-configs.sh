@@ -3,14 +3,6 @@ set -e
 
 CONFIG_DIR="$(dirname "$(realpath "$0")")/../config"
 
-copy_to_target() {
-  local source_path="$1"
-  local target_path="$2"
-
-  mkdir -p "$(dirname "$target_path")"
-  cp -r "$source_path" "$target_path"
-}
-
 # ───────────────────────────────────────────────
 # ▶ USER CONFIGURATION
 # ───────────────────────────────────────────────
@@ -43,20 +35,35 @@ locale-gen
 # ▶ DEPLOY CONFIGS
 # ───────────────────────────────────────────────
 
-# Walk through all files and directories in CONFIG_DIR
-find "$CONFIG_DIR" -mindepth 1 | while read -r full_source_path; do
-  relative_path="${full_source_path#$CONFIG_DIR/}"
-  corrected_path=$(echo "$relative_path" | sed "s#home;user;#home;$NEW_USER;#")
-  decoded_path=$(echo "$corrected_path" | sed 's/;/\//g')
+convert_path() {
+  local folder_path="$1"
+  local system_path=""
+  
+  system_path="/${folder_path//;/\/}"
+  system_path="${system_path//\/home\/user\//\/home\/$NEW_USER\/}"
+  
+  echo "$system_path"
+}
 
-  # Handle home path for NEW_USER only
-  if [[ "$decoded_path" == home/"$NEW_USER"/* ]]; then
-    target="/$decoded_path"
-    copy_to_target "$full_source_path" "$target"
-    chown -R "$NEW_USER:users" "/home/$NEW_USER"
-  elif [[ "$decoded_path" != home/* ]]; then
-    # System-wide configs
-    target="/$decoded_path"
-    copy_to_target "$full_source_path" "$target"
-  fi
-done
+deploy_configs() {
+  find "$CONFIG_DIR" -type f | while read -r file; do
+    local relative_path="${file#$CONFIG_DIR/}"
+    
+    local directory_path=$(dirname "$relative_path")
+    local filename=$(basename "$file")
+    local system_path=$(convert_path "$directory_path")
+
+    mkdir -p "$system_path"
+    cp "$file" "$system_path/$filename"
+    
+    if [[ "$system_path" == /home/$NEW_USER* ]]; then
+      chown "$NEW_USER:users" "$system_path/$filename"
+      chmod 644 "$system_path/$filename"
+    else
+      chown root:root "$system_path/$filename"
+      chmod 644 "$system_path/$filename"
+    fi
+  done
+}
+
+deploy_configs

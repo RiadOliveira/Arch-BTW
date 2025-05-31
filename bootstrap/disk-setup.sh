@@ -106,8 +106,8 @@ mkfs.ext4 /dev/volgroup/home
 
 mount /dev/volgroup/root /mnt
 mount --mkdir /dev/volgroup/home /mnt/home
+mount --mkdir "${PARTITIONS[efi]}" /mnt/efi
 mount --mkdir "${PARTITIONS[boot]}" /mnt/boot
-mount --mkdir "${PARTITIONS[efi]}" /mnt/boot/EFI
 
 pacstrap -K /mnt base linux linux-firmware
 genfstab -U -p /mnt >> /mnt/etc/fstab
