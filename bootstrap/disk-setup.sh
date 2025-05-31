@@ -5,49 +5,49 @@ timedatectl
 sudo timedatectl set-timezone America/Recife
 sudo timedatectl set-ntp true
 
-read -p "Digite o nome do dispositivo para a instalação (ex: sda, nvme0n1): " DEVICE
+read -p "Enter the device name for installation (e.g., sda, nvme0n1): " DEVICE
 DEVICE_PATH="/dev/$DEVICE"
 
-read -p "Deseja excluir todas as partições e limpar a tabela de partições? (s/N): " WIPE
-read -p "Deseja criar uma partição EFI (ef00)? (s/N): " CREATE_EFI
-if [[ "$CREATE_EFI" == "s" ]]; then
-  read -p "Tamanho da partição EFI (padrão 1G): " EFI_SIZE
+read -p "Do you want to delete all partitions and wipe the partition table? (y/N): " WIPE
+read -p "Do you want to create an EFI partition (ef00)? (y/N): " CREATE_EFI
+if [[ "$CREATE_EFI" == "y" ]]; then
+  read -p "EFI partition size (default 1G): " EFI_SIZE
   EFI_SIZE=${EFI_SIZE:-1G}
 fi
 
-read -p "Deseja criar uma partição Boot (ef02)? (s/N): " CREATE_BOOT
-if [[ "$CREATE_BOOT" == "s" ]]; then
-  read -p "Tamanho da partição Boot (padrão 2G): " BOOT_SIZE
+read -p "Do you want to create a Boot partition (ef02)? (y/N): " CREATE_BOOT
+if [[ "$CREATE_BOOT" == "y" ]]; then
+  read -p "Boot partition size (default 2G): " BOOT_SIZE
   BOOT_SIZE=${BOOT_SIZE:-2G}
 fi
 
-read -p "Deseja criar uma partição de dados (8309)? (s/N): " CREATE_DATA
-if [[ "$CREATE_DATA" == "s" ]]; then
+read -p "Do you want to create a data partition (8309)? (y/N): " CREATE_DATA
+if [[ "$CREATE_DATA" == "y" ]]; then
   while [[ -z "$DATA_SIZE" ]]; do
-    read -p "Tamanho da partição de dados (obrigatório): " DATA_SIZE
+    read -p "Data partition size (required): " DATA_SIZE
   done
 fi
 
-if [[ "$WIPE" == "s" ]]; then
+if [[ "$WIPE" == "y" ]]; then
   echo -e "o\ny\nw\ny" | gdisk "$DEVICE_PATH"
 fi
 
 PART_NUM=1
 declare -A PARTITIONS
 
-if [[ "$CREATE_EFI" == "s" ]]; then
+if [[ "$CREATE_EFI" == "y" ]]; then
   echo -e "n\n$PART_NUM\n\n+$EFI_SIZE\nEF00\nw\ny" | gdisk "$DEVICE_PATH"
   PARTITIONS[efi]="${DEVICE_PATH}${PART_NUM}"
   ((PART_NUM++))
 fi
 
-if [[ "$CREATE_BOOT" == "s" ]]; then
+if [[ "$CREATE_BOOT" == "y" ]]; then
   echo -e "n\n$PART_NUM\n\n+$BOOT_SIZE\nEF02\nw\ny" | gdisk "$DEVICE_PATH"
   PARTITIONS[boot]="${DEVICE_PATH}${PART_NUM}"
   ((PART_NUM++))
 fi
 
-if [[ "$CREATE_DATA" == "s" ]]; then
+if [[ "$CREATE_DATA" == "y" ]]; then
   echo -e "n\n$PART_NUM\n\n+$DATA_SIZE\n8309\nw\ny" | gdisk "$DEVICE_PATH"
   PARTITIONS[data]="${DEVICE_PATH}${PART_NUM}"
   ((PART_NUM++))
@@ -57,28 +57,28 @@ modprobe dm-crypt
 modprobe dm-mod
 
 if [[ -z "${PARTITIONS[efi]}" ]]; then
-  read -p "Digite o nome da partição EFI (ex: sda1): " EFI_PART
+  read -p "Enter the EFI partition name (e.g., sda1): " EFI_PART
   PARTITIONS[efi]="/dev/$EFI_PART"
 fi
 
 if [[ -z "${PARTITIONS[boot]}" ]]; then
-  read -p "Digite o nome da partição Boot (ex: sda2): " BOOT_PART
+  read -p "Enter the Boot partition name (e.g., sda2): " BOOT_PART
   PARTITIONS[boot]="/dev/$BOOT_PART"
 fi
 
 if [[ -z "${PARTITIONS[data]}" ]]; then
-  read -p "Digite o nome da partição de dados (ex: sda3): " DATA_PART
+  read -p "Enter the data partition name (e.g., sda3): " DATA_PART
   PARTITIONS[data]="/dev/$DATA_PART"
 fi
 
-[[ "$CREATE_EFI" == "s" ]] && mkfs.fat -F32 "${PARTITIONS[efi]}"
-[[ "$CREATE_BOOT" == "s" ]] && mkfs.ext4 "${PARTITIONS[boot]}"
-if [[ "$CREATE_DATA" == "s" ]]; then
+[[ "$CREATE_EFI" == "y" ]] && mkfs.fat -F32 "${PARTITIONS[efi]}"
+[[ "$CREATE_BOOT" == "y" ]] && mkfs.ext4 "${PARTITIONS[boot]}"
+if [[ "$CREATE_DATA" == "y" ]]; then
   echo "You will now set a password for the encrypted data partition."
   cryptsetup luksFormat -v -s 512 -h sha512 "${PARTITIONS[data]}"
 fi
 
-if [[ "$CREATE_DATA" == "s" ]]; then
+if [[ "$CREATE_DATA" == "y" ]]; then
   echo "Please enter the password to unlock the encrypted data partition:"
   cryptsetup open --type luks "${PARTITIONS[data]}" lvm
 fi
@@ -87,8 +87,8 @@ ls /dev/mapper/lvm
 pvcreate /dev/mapper/lvm
 vgcreate volgroup /dev/mapper/lvm
 
-read -p "Tamanho do volume lógico root (em GB, ex: 30G): " ROOT_SIZE
-read -p "Tamanho do volume lógico home (ex: 100%FREE ou 20G): " HOME_SIZE
+read -p "Root logical volume size (in GB, e.g., 30G): " ROOT_SIZE
+read -p "Home logical volume size (e.g., 100%FREE or 20G): " HOME_SIZE
 
 lvcreate -L "$ROOT_SIZE" volgroup -n root
 lvcreate -L "$HOME_SIZE" volgroup -n home
