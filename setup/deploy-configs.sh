@@ -46,7 +46,8 @@ locale-gen
 # Walk through all files and directories in CONFIG_DIR
 find "$CONFIG_DIR" -mindepth 1 | while read -r full_source_path; do
   relative_path="${full_source_path#$CONFIG_DIR/}"
-  decoded_path=$(echo "$relative_path" | sed 's/;/\//g')
+  corrected_path=$(echo "$relative_path" | sed "s#home;user;#home;$NEW_USER;#")
+  decoded_path=$(echo "$corrected_path" | sed 's/;/\//g')
 
   # Handle home path for NEW_USER only
   if [[ "$decoded_path" == home/"$NEW_USER"/* ]]; then

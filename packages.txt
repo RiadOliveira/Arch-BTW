@@ -4,6 +4,7 @@ base-devel
 dosfstools
 efibootmgr
 efitools
+sbsigntools
 lvm2
 e2fsprogs
 intel-ucode
