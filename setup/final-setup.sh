@@ -13,12 +13,13 @@ DATA_UUID_PLACEHOLDER="DATA_UUID"
 
 # Attempt to get the UUID from known path, else prompt
 if grep -q "$DATA_UUID_PLACEHOLDER" "$ARCH_CONF"; then
-  read -p "Enter the name of the data partition (e.g., sda2, nvme0n1p3): " DATA_PART_NAME
   DATA_UUID=$(blkid -s UUID -o value "/dev/$DATA_PART_NAME")
+
   if [ -z "$DATA_UUID" ]; then
     echo "Failed to get UUID from /dev/$DATA_PART_NAME"
     exit 1
   fi
+
   sed -i "s/$DATA_UUID_PLACEHOLDER/$DATA_UUID/" "$ARCH_CONF"
 fi
 
@@ -75,9 +76,7 @@ sudo x86_energy_perf_policy performance
 
 sudo chmod +x /usr/local/bin/set-power-profile.sh
 
-read -p "Do you want to apply hdparm performance tuning? (y/N): " APPLY_HDPARM
-if [[ "$APPLY_HDPARM" == "y" || "$APPLY_HDPARM" == "Y" ]]; then
-  read -p "Enter the device name (e.g., sda, nvme0n1): " HDPARM_DEVICE
+if [[ -v HDPARM_DEVICE ]]; then
   sudo hdparm -B 255 "/dev/$HDPARM_DEVICE"
 fi
 
@@ -100,7 +99,6 @@ chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/.config/mpv"
 # ───────────────────────────────────────────────
 
 # Set hostname
-read -p "Enter the hostname for this machine: " HOSTNAME
 echo "$HOSTNAME" > /etc/hostname
 
 # Add user to sudoers
@@ -125,9 +123,6 @@ chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/Downloads"
 # ───────────────────────────────────────────────
 # ▶ GIT CONFIGURATION
 # ───────────────────────────────────────────────
-
-read -p "Enter Git user name: " GIT_USER_NAME
-read -p "Enter Git email: " GIT_USER_EMAIL
 
 git config --global user.name "$GIT_USER_NAME"
 git config --global user.email "$GIT_USER_EMAIL"
