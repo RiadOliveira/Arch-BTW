@@ -5,7 +5,7 @@ set -e
 # ▶ BOOTLOADER CONFIGURATION
 # ───────────────────────────────────────────────
 
-bootctl --esp-path=/efi --boot-path=/boot install
+bootctl install
 
 # Replace UUID placeholder in arch.conf with actual UUID of data partition
 ARCH_CONF="/boot/loader/entries/arch.conf"
@@ -46,13 +46,13 @@ sign-efi-sig-list   -g "$(< GUID.txt)" -k PK.key  -c PK.crt  KEK KEK.esl KEK.aut
 cert-to-efi-sig-list -g "$(< GUID.txt)" db.crt db.esl
 sign-efi-sig-list   -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db  db.esl  db.auth
 
-sudo sbsign --key db.key --cert db.crt --output /efi/EFI/systemd/systemd-bootx64.efi /efi/EFI/systemd/systemd-bootx64.efi
+sudo sbsign --key db.key --cert db.crt --output /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/systemd-bootx64.efi
 sudo sbsign --key db.key --cert db.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
 
-sudo cp /usr/share/efitools/efi/KeyTool.efi /efi/EFI/
-sudo mkdir -p /efi/EFI/keys
-sudo cp /etc/secureboot/keys/*.auth /efi/EFI/keys/
-sudo cp /etc/secureboot/keys/*.esl /efi/EFI/keys/
+sudo cp /usr/share/efitools/efi/KeyTool.efi /boot/EFI/
+sudo mkdir -p /boot/EFI/keys
+sudo cp /etc/secureboot/keys/*.auth /boot/EFI/keys/
+sudo cp /etc/secureboot/keys/*.esl /boot/EFI/keys/
 
 # ───────────────────────────────────────────────
 # ▶ REFLECTOR BACKUP

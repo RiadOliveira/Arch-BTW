@@ -2,7 +2,7 @@
 Operation = Install
 Operation = Upgrade
 Type = Path
-Target = usr/lib/systemd/efi/EFI/systemd-boot*.efi
+Target = usr/lib/systemd/boot/efi/systemd-boot*.efi
 
 [Action]
 Description = Signing systemd-boot EFI binary for Secure Boot
