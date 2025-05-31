@@ -63,7 +63,6 @@ firejail
 udiskie
 
 # Development and Tools
-git
 neovim
 htop
 

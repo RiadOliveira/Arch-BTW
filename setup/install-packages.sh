@@ -3,7 +3,9 @@ set -e
 
 PACKAGE_FILE="$(dirname "$(realpath "$0")")/../packages.txt"
 
+pacman -S --noconfirm --needed git
 git clone https://aur.archlinux.org/yay.git
+
 cd yay
 makepkg -sirc
 
