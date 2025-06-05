@@ -1,14 +1,13 @@
 #!/bin/bash
 set -e
 
-pacman -S --noconfirm --needed git
+pacman -S --noconfirm --needed git base-devel
 
-su - "$NEW_USER" <<'EOF'
-cd ~
-
-set -e
 PACKAGE_FILE="$(dirname "$(realpath "$0")")/../packages.txt"
 packages=$(grep -vE '^\s*#|^\s*$' "$PACKAGE_FILE")
+
+su - "$NEW_USER" <<'EOF'
+set -e
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -24,5 +23,3 @@ echo
 yay -S --noconfirm --needed $packages
 yay -Syu --noconfirm
 EOF
-
-cd /

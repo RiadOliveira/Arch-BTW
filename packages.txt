@@ -1,6 +1,5 @@
 # Base System
 linux-headers
-base-devel
 dosfstools
 efibootmgr
 efitools
