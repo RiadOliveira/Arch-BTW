@@ -25,7 +25,9 @@ if [[ "$WIPE" == "y" ]]; then
   echo -e "o\ny\nw\ny" | gdisk "$DEVICE_PATH"
 fi
 
-PART_NUM=1
+read -p "Enter the initial partition number (default 1): " PART_NUM
+PART_NUM=${PART_NUM:-1}
+
 declare -A PARTITIONS
 GPT_CMDS=""
 
