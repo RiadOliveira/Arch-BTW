@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+get_partition_name() {
+  local base=$1
+  local number=$2
+  [[ "$base" =~ nvme.* ]] && echo "/dev/${base}p${number}" || echo "/dev/${base}${number}"
+}
+
 timedatectl
 sudo timedatectl set-timezone America/Recife
 sudo timedatectl set-ntp true
@@ -33,7 +39,7 @@ GPT_CMDS=""
 
 if [[ "$CREATE_BOOT" == "y" ]]; then
   GPT_CMDS+="n\n$PART_NUM\n\n+$BOOT_SIZE\nEF00\n"
-  PARTITIONS[boot]="${DEVICE_PATH}${PART_NUM}"
+  PARTITIONS[boot]=$(get_partition_name "$DEVICE" "$PART_NUM")
   ((PART_NUM++))
 fi
 
@@ -45,7 +51,7 @@ if [[ "$CREATE_DATA" == "y" ]]; then
     GPT_CMDS+="\n"
   fi
   GPT_CMDS+="8309\n"
-  PARTITIONS[data]="${DEVICE_PATH}${PART_NUM}"
+  PARTITIONS[data]=$(get_partition_name "$DEVICE" "$PART_NUM")
   ((PART_NUM++))
 fi
 
@@ -108,5 +114,4 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 BOOT_DISK=$(lsblk -no pkname "${PARTITIONS[boot]}")
 
 efibootmgr --create --disk "/dev/$BOOT_DISK" --part 1 --label "KeyTool" --loader '\EFI\KeyTool.efi'
-
 efibootmgr --create --disk "/dev/$BOOT_DISK" --part 1 --label "Arch Linux" --loader '\EFI\systemd\systemd-bootx64.efi'
