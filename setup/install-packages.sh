@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-pacman -S --noconfirm --needed git base-devel
-
 PACKAGE_FILE="$(dirname "$(realpath "$0")")/../packages.txt"
 packages=$(grep -vE '^\s*#|^\s*$' "$PACKAGE_FILE")
 
