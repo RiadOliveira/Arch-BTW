@@ -18,9 +18,7 @@ fi
 
 read -p "Do you want to create a data partition (8309)? (y/N): " CREATE_DATA
 if [[ "$CREATE_DATA" == "y" ]]; then
-  while [[ -z "$DATA_SIZE" ]]; do
-    read -p "Data partition size (required): " DATA_SIZE
-  done
+  read -p "Data partition size (leave blank to use all remaining space): " DATA_SIZE
 fi
 
 if [[ "$WIPE" == "y" ]]; then
@@ -29,28 +27,39 @@ fi
 
 PART_NUM=1
 declare -A PARTITIONS
+GPT_CMDS=""
 
 if [[ "$CREATE_BOOT" == "y" ]]; then
-  echo -e "n\n$PART_NUM\n\n+$BOOT_SIZE\nEF00\nw\ny" | gdisk "$DEVICE_PATH"
+  GPT_CMDS+="n\n$PART_NUM\n\n+$BOOT_SIZE\nEF00\n"
   PARTITIONS[boot]="${DEVICE_PATH}${PART_NUM}"
   ((PART_NUM++))
 fi
 
 if [[ "$CREATE_DATA" == "y" ]]; then
-  echo -e "n\n$PART_NUM\n\n+$DATA_SIZE\n8309\nw\ny" | gdisk "$DEVICE_PATH"
+  GPT_CMDS+="n\n$PART_NUM\n\n"
+  if [[ -n "$DATA_SIZE" ]]; then
+    GPT_CMDS+="+$DATA_SIZE\n"
+  else
+    GPT_CMDS+="\n"
+  fi
+  GPT_CMDS+="8309\n"
   PARTITIONS[data]="${DEVICE_PATH}${PART_NUM}"
   ((PART_NUM++))
+fi
+
+if [[ -n "$GPT_CMDS" ]]; then
+  echo -e "${GPT_CMDS}w\ny" | gdisk "$DEVICE_PATH"
 fi
 
 modprobe dm-crypt
 modprobe dm-mod
 
-if [[ -z "${PARTITIONS[boot]}" ]]; then
+if [[ -z "${PARTITIONS[boot]}" && "$CREATE_BOOT" != "y" ]]; then
   read -p "Enter the Boot partition name (e.g., sda1): " BOOT_PART
   PARTITIONS[boot]="/dev/$BOOT_PART"
 fi
 
-if [[ -z "${PARTITIONS[data]}" ]]; then
+if [[ -z "${PARTITIONS[data]}" && "$CREATE_DATA" != "y" ]]; then
   read -p "Enter the data partition name (e.g., sda2): " DATA_PART
   PARTITIONS[data]="/dev/$DATA_PART"
 fi

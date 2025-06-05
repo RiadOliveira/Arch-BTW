@@ -11,10 +11,10 @@ intel-ucode
 sudo
 
 # Networking
-networkmanager
+iwd
+systemd-networkd
+systemd-resolved
 openssh
-wpa_supplicant
-modemmanager
 
 # Boot and Power Management
 reflector
