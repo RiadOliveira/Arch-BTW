@@ -1,12 +1,28 @@
 #!/bin/bash
 set -e
 
+pacman -S --noconfirm --needed git
+
+su - "$NEW_USER" <<'EOF'
+cd ~
+
+set -e
 PACKAGE_FILE="$(dirname "$(realpath "$0")")/../packages.txt"
 packages=$(grep -vE '^\s*#|^\s*$' "$PACKAGE_FILE")
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -sirc --noconfirm
+
+cd ..
+rm -rf yay
 
 echo "Installing the following packages:"
 echo "$packages"
 echo
 
-pacman -S --noconfirm --needed $packages
-pacman -Syu --noconfirm
+yay -S --noconfirm --needed $packages
+yay -Syu --noconfirm
+EOF
+
+cd /
