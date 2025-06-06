@@ -7,7 +7,6 @@ sbsigntools
 lvm2
 e2fsprogs
 intel-ucode
-sudo
 
 # Networking
 iwd

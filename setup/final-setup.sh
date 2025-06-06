@@ -101,9 +101,6 @@ chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/.config/mpv"
 # Set hostname
 echo "$HOSTNAME" > /etc/hostname
 
-# Add user to sudoers
-sed -i "s/^user-name ALL=(ALL) ALL/$NEW_USER ALL=(ALL) ALL/" /etc/sudoers
-
 # Set timezone and hardware clock
 ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime
 hwclock --systohc
