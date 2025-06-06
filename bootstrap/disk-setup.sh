@@ -8,8 +8,8 @@ get_partition_name() {
 }
 
 timedatectl
-sudo timedatectl set-timezone America/Recife
-sudo timedatectl set-ntp true
+timedatectl set-timezone America/Recife
+timedatectl set-ntp true
 
 read -p "Enter the device name for installation (e.g., sda, nvme0n1): " DEVICE
 DEVICE_PATH="/dev/$DEVICE"
@@ -52,7 +52,6 @@ if [[ "$CREATE_DATA" == "y" ]]; then
   fi
   GPT_CMDS+="8309\n"
   PARTITIONS[data]=$(get_partition_name "$DEVICE" "$PART_NUM")
-  ((PART_NUM++))
 fi
 
 if [[ -n "$GPT_CMDS" ]]; then
@@ -113,5 +112,5 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 
 BOOT_DISK=$(lsblk -no pkname "${PARTITIONS[boot]}")
 
-efibootmgr --create --disk "/dev/$BOOT_DISK" --part 1 --label "KeyTool" --loader '\EFI\KeyTool.efi'
-efibootmgr --create --disk "/dev/$BOOT_DISK" --part 1 --label "Arch Linux" --loader '\EFI\systemd\systemd-bootx64.efi'
+efibootmgr --create --disk "/dev/$BOOT_DISK" --part $((PART_NUM - 1)) --label "KeyTool" --loader '\EFI\KeyTool.efi'
+efibootmgr --create --disk "/dev/$BOOT_DISK" --part $((PART_NUM - 1)) --label "Arch Linux" --loader '\EFI\systemd\systemd-bootx64.efi'

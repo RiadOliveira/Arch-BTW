@@ -1,5 +1,5 @@
 [Match]
-Name=usb*
+Type=wlan
 
 [Network]
 DHCP=yes
