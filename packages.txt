@@ -11,8 +11,6 @@ intel-ucode
 
 # Networking
 iwd
-systemd-networkd
-systemd-resolved
 openssh
 
 # Boot and Power Management

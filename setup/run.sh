@@ -37,11 +37,11 @@ export NEW_USER HOSTNAME GIT_USER_NAME GIT_USER_EMAIL DATA_PART_NAME APPLY_HDPAR
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
-echo "▶️ Running: deploy-configs.sh"
-bash "$SCRIPT_DIR/deploy-configs.sh"
-
 echo "▶️ Running: install-packages.sh"
 bash "$SCRIPT_DIR/install-packages.sh"
+
+echo "▶️ Running: deploy-configs.sh"
+bash "$SCRIPT_DIR/deploy-configs.sh"
 
 echo "▶️ Running: enable-services.sh"
 bash "$SCRIPT_DIR/enable-services.sh"
