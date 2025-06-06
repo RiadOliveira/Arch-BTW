@@ -35,15 +35,10 @@ export NEW_USER HOSTNAME GIT_USER_NAME GIT_USER_EMAIL DATA_PART_NAME APPLY_HDPAR
 # ▶ INSTALLATION SCRIPTS
 # ───────────────────────────────────────────────
 
-pacman -S --noconfirm --needed base-devel git
-
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
 echo "▶️ Running: deploy-configs.sh"
 bash "$SCRIPT_DIR/deploy-configs.sh"
-
-# Add user to sudoers
-sed -i "s/^user-name ALL=(ALL) ALL/$NEW_USER ALL=(ALL) ALL/" /etc/sudoers
 
 echo "▶️ Running: install-packages.sh"
 bash "$SCRIPT_DIR/install-packages.sh"

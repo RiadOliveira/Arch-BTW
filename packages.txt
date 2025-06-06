@@ -1,5 +1,6 @@
 # Base System
 linux-headers
+base-devel
 dosfstools
 efibootmgr
 efitools
@@ -64,6 +65,7 @@ firejail
 udiskie
 
 # Development and Tools
+git
 neovim
 htop
 
@@ -71,8 +73,6 @@ htop
 noto-fonts
 
 # Applications
-visual-studio-code-bin
-zen-browser-bin
 obsidian
 discord
 mpv
