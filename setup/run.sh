@@ -35,7 +35,7 @@ export NEW_USER HOSTNAME GIT_USER_NAME GIT_USER_EMAIL DATA_PART_NAME APPLY_HDPAR
 # ▶ INSTALLATION SCRIPTS
 # ───────────────────────────────────────────────
 
-pacman -S --noconfirm --needed base-devel
+pacman -S --noconfirm --needed base-devel git
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
