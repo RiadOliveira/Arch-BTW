@@ -37,12 +37,6 @@ deploy_configs() {
 deploy_configs
 
 # ───────────────────────────────────────────────
-# ▶ DNS CONFIGURATION
-# ───────────────────────────────────────────────
-
-ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-
-# ───────────────────────────────────────────────
 # ▶ USER CONFIGURATION
 # ───────────────────────────────────────────────
 
