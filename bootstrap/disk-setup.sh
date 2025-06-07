@@ -112,5 +112,4 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 
 BOOT_DISK=$(lsblk -no pkname "${PARTITIONS[boot]}")
 
-efibootmgr --create --disk "/dev/$BOOT_DISK" --part $((PART_NUM - 1)) --label "KeyTool" --loader '\EFI\KeyTool.efi'
 efibootmgr --create --disk "/dev/$BOOT_DISK" --part $((PART_NUM - 1)) --label "Arch Linux" --loader '\EFI\systemd\systemd-bootx64.efi'

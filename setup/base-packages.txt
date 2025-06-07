@@ -1,0 +1,26 @@
+# Kernel & Microcode
+linux-headers
+intel-ucode
+
+# Development Tools
+base-devel
+git
+neovim
+
+# Filesystem & Boot
+dosfstools
+e2fsprogs
+lvm2
+
+# EFI / Secure Boot Tools
+efibootmgr
+
+# Networking
+iwd
+openssh
+
+# NVIDIA Graphics
+nvidia-dkms
+nvidia-utils
+libva-nvidia-driver
+

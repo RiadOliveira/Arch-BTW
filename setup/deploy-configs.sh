@@ -35,3 +35,41 @@ deploy_configs() {
 }
 
 deploy_configs
+
+# ───────────────────────────────────────────────
+# ▶ DNS CONFIGURATION
+# ───────────────────────────────────────────────
+
+ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+
+# ───────────────────────────────────────────────
+# ▶ USER CONFIGURATION
+# ───────────────────────────────────────────────
+
+echo "$HOSTNAME" > /etc/hostname
+
+# Add user to sudoers
+sed -i "s/^user-name ALL=(ALL) ALL/$NEW_USER ALL=(ALL) ALL/" /etc/sudoers
+
+# Set timezone and hardware clock
+ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime
+hwclock --systohc
+
+locale-gen
+
+# ───────────────────────────────────────────────
+# ▶ AUXILIARY FOLDERS
+# ───────────────────────────────────────────────
+
+mkdir -p "/home/$NEW_USER/Screenshots"
+mkdir -p "/home/$NEW_USER/Downloads/Bluetooth"
+chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/Screenshots"
+chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/Downloads"
+
+# ───────────────────────────────────────────────
+# ▶ GIT CONFIGURATION
+# ───────────────────────────────────────────────
+
+git config --global user.name "$GIT_USER_NAME"
+git config --global user.email "$GIT_USER_EMAIL"
+git config --global init.defaultBranch main
