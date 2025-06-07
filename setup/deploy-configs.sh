@@ -36,6 +36,18 @@ deploy_configs() {
 deploy_configs
 
 # ───────────────────────────────────────────────
+# ▶ BOOT CONFIGURATION
+# ───────────────────────────────────────────────
+
+ARCH_CONF="/boot/loader/entries/arch.conf"
+DATA_UUID_PLACEHOLDER="DATA_UUID"
+
+if grep -q "$DATA_UUID_PLACEHOLDER" "$ARCH_CONF"; then
+  DATA_UUID=$(blkid -s UUID -o value "/dev/$DATA_PART_NAME")
+  sed -i "s/$DATA_UUID_PLACEHOLDER/$DATA_UUID/" "$ARCH_CONF"
+fi
+
+# ───────────────────────────────────────────────
 # ▶ USER CONFIGURATION
 # ───────────────────────────────────────────────
 

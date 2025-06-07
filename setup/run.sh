@@ -28,8 +28,7 @@ export NEW_USER HOSTNAME GIT_USER_NAME GIT_USER_EMAIL DATA_PART_NAME
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
-echo "▶️ Running: setup-bootloader.sh"
-bash "$SCRIPT_DIR/setup-bootloader.sh"
+bootctl install
 
 echo "▶️ Running: deploy-configs.sh"
 bash "$SCRIPT_DIR/deploy-configs.sh"
