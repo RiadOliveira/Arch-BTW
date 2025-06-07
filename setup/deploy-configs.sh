@@ -66,9 +66,3 @@ chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/Downloads"
 git config --global user.name "$GIT_USER_NAME"
 git config --global user.email "$GIT_USER_EMAIL"
 git config --global init.defaultBranch main
-
-# ───────────────────────────────────────────────
-# ▶ DNS CONFIGURATION
-# ───────────────────────────────────────────────
-
-ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf

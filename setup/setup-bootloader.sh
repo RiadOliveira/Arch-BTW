@@ -17,5 +17,3 @@ if grep -q "$DATA_UUID_PLACEHOLDER" "$ARCH_CONF"; then
 
   sed -i "s/$DATA_UUID_PLACEHOLDER/$DATA_UUID/" "$ARCH_CONF"
 fi
-
-mkinitcpio -p linux

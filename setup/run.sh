@@ -28,13 +28,16 @@ export NEW_USER HOSTNAME GIT_USER_NAME GIT_USER_EMAIL DATA_PART_NAME
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
-echo "▶️ Running: install-base-packages.sh"
-bash "$SCRIPT_DIR/install-base-packages.sh"
+echo "▶️ Running: setup-bootloader.sh"
+bash "$SCRIPT_DIR/setup-bootloader.sh"
 
 echo "▶️ Running: deploy-configs.sh"
 bash "$SCRIPT_DIR/deploy-configs.sh"
 
-echo "▶️ Running: setup-bootloader.sh"
-bash "$SCRIPT_DIR/setup-bootloader.sh"
+echo "▶️ Running: install-base-packages.sh"
+bash "$SCRIPT_DIR/install-base-packages.sh"
+
+echo "▶️ Running: enable-base-services.sh"
+bash "$SCRIPT_DIR/enable-base-services.sh"
 
 echo "✅ Installation completed successfully."

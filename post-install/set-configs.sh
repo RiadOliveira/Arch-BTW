@@ -39,5 +39,5 @@ sudo chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/.config/mpv"
 # ▶ SOUND CONFIGURATION
 # ───────────────────────────────────────────────
 
-sudo amixer -c 0 sset "Auto-Mute Mode" Disabled
+amixer sset Master unmute
 sudo alsactl store
