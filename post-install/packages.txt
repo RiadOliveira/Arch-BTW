@@ -38,6 +38,7 @@ libnewt
 gnome-keyring
 libsecret
 gcr-4
+dunst
 
 # GUI Frameworks & Desktop Support
 gtk4
