@@ -39,6 +39,7 @@ gnome-keyring
 libsecret
 gcr-4
 dunst
+hyprpolkitagent
 
 # GUI Frameworks & Desktop Support
 gtk4
