@@ -22,18 +22,13 @@ deploy_configs() {
 
     mkdir -p "$system_path"
     cp "$file" "$system_path/$filename"
-    
-    if [[ "$system_path" == /home/$NEW_USER* ]]; then
-      chown "$NEW_USER:$NEW_USER" "$system_path/$filename"
-      chmod 644 "$system_path/$filename"
-    else
-      chown root:root "$system_path/$filename"
-      chmod 644 "$system_path/$filename"
-    fi
   done
 }
 
 deploy_configs
+
+chown -R $NEW_USER:$NEW_USER /home/$NEW_USER
+chmod -R u=rwX,go=rX /home/$NEW_USER
 
 # ───────────────────────────────────────────────
 # ▶ BOOT CONFIGURATION
@@ -78,9 +73,3 @@ chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/Downloads"
 git config --global user.name "$GIT_USER_NAME"
 git config --global user.email "$GIT_USER_EMAIL"
 git config --global init.defaultBranch main
-
-# ───────────────────────────────────────────────
-# ▶ DNS CONFIGURATION
-# ───────────────────────────────────────────────
-
-ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf

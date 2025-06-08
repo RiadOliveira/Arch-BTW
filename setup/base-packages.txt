@@ -1,6 +1,7 @@
 # Kernel & Microcode
 linux-headers
 intel-ucode
+sof-firmware
 
 # Development Tools
 base-devel
@@ -23,4 +24,3 @@ openssh
 nvidia-dkms
 nvidia-utils
 libva-nvidia-driver
-
