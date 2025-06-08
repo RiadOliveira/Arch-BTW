@@ -65,11 +65,3 @@ mkdir -p "/home/$NEW_USER/Screenshots"
 mkdir -p "/home/$NEW_USER/Downloads/Bluetooth"
 chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/Screenshots"
 chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/Downloads"
-
-# ───────────────────────────────────────────────
-# ▶ GIT CONFIGURATION
-# ───────────────────────────────────────────────
-
-git config --global user.name "$GIT_USER_NAME"
-git config --global user.email "$GIT_USER_EMAIL"
-git config --global init.defaultBranch main

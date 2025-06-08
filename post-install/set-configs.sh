@@ -41,3 +41,11 @@ sudo chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/.config/mpv"
 
 amixer sset Master unmute
 sudo alsactl store
+
+# ───────────────────────────────────────────────
+# ▶ GIT CONFIGURATION
+# ───────────────────────────────────────────────
+
+git config --global user.name "$GIT_USER_NAME"
+git config --global user.email "$GIT_USER_EMAIL"
+git config --global init.defaultBranch main

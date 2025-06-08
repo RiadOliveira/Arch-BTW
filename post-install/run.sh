@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# ───────────────────────────────────────────────
+# ▶ DATA READING
+# ───────────────────────────────────────────────
+
+read -p "Enter Git user name: " GIT_USER_NAME
+read -p "Enter Git email: " GIT_USER_EMAIL
+
+export GIT_USER_NAME GIT_USER_EMAIL
+
+# ───────────────────────────────────────────────
+# ▶ INSTALLATION SCRIPTS
+# ───────────────────────────────────────────────
+
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
 ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
