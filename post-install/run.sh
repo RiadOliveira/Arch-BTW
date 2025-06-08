@@ -2,6 +2,8 @@
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
+ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+
 echo "▶️ Running: install-packages.sh"
 bash "$SCRIPT_DIR/install-packages.sh"
 
