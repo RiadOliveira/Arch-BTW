@@ -35,6 +35,9 @@ kitty
 uwsm
 greetd-regreet
 libnewt
+gnome-keyring
+libsecret
+gcr-4
 
 # GUI Frameworks & Desktop Support
 gtk4

@@ -49,3 +49,9 @@ sudo alsactl store
 git config --global user.name "$GIT_USER_NAME"
 git config --global user.email "$GIT_USER_EMAIL"
 git config --global init.defaultBranch main
+
+# ───────────────────────────────────────────────
+# ▶ GNOME Keyring Permission
+# ───────────────────────────────────────────────
+
+sudo setcap cap_ipc_lock=ep /usr/bin/gnome-keyring-daemon
