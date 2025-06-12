@@ -51,7 +51,14 @@ fail2ban
 haveged
 firejail
 udiskie
-htop
+btop
+wcalc
+
+# Screenshotting
+grim
+slurp
+wl-clipboard
+jq
 
 # Fonts
 noto-fonts
