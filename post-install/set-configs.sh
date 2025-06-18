@@ -55,3 +55,9 @@ git config --global init.defaultBranch main
 # ───────────────────────────────────────────────
 
 sudo setcap cap_ipc_lock=ep /usr/bin/gnome-keyring-daemon
+
+# ───────────────────────────────────────────────
+# ▶ Set Fish as Default Shell
+# ───────────────────────────────────────────────
+
+chsh -s /bin/fish

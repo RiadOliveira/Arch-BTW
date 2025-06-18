@@ -36,4 +36,4 @@ bash "$SCRIPT_DIR/install-base-packages.sh"
 echo "▶️ Running: enable-base-services.sh"
 bash "$SCRIPT_DIR/enable-base-services.sh"
 
-echo "✅ Installation completed successfully."
+echo "Installation completed successfully."

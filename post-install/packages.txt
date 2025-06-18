@@ -62,10 +62,17 @@ jq
 
 # Fonts
 noto-fonts
+ttf-terminus-nerd
+ttf-firacode-nerd
 
 # Applications
 obsidian
 discord
 mpv
-visual-studio-code-bin
 firefox-developer-edition
+
+# Development
+visual-studio-code-bin
+pnpm
+fish
+starship

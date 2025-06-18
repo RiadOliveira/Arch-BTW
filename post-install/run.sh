@@ -26,4 +26,4 @@ bash "$SCRIPT_DIR/enable-services.sh"
 echo "▶️ Running: set-configs.sh"
 bash "$SCRIPT_DIR/set-configs.sh"
 
-echo "✅ Post-Installation completed successfully."
+echo "Post-Installation completed successfully."
