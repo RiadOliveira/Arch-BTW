@@ -51,13 +51,19 @@ git config --global user.email "$GIT_USER_EMAIL"
 git config --global init.defaultBranch main
 
 # ───────────────────────────────────────────────
-# ▶ GNOME Keyring Permission
+# ▶ GNOME KEYRING PERMISSION
 # ───────────────────────────────────────────────
 
 sudo setcap cap_ipc_lock=ep /usr/bin/gnome-keyring-daemon
 
 # ───────────────────────────────────────────────
-# ▶ Set Fish as Default Shell
+# ▶ SET FISH AS DEFAULT SHELL
 # ───────────────────────────────────────────────
 
 chsh -s /bin/fish
+
+# ───────────────────────────────────────────────
+# ▶ DISABLE FISH GREETING
+# ───────────────────────────────────────────────
+
+set -U fish_greeting
