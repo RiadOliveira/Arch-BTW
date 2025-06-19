@@ -30,6 +30,7 @@ bluez-obex
 
 # Wayland Desktop Environment (Hyprland-based)
 hyprland
+waybar
 xdg-desktop-portal-hyprland
 kitty
 uwsm
@@ -51,7 +52,7 @@ fail2ban
 haveged
 firejail
 udiskie
-btop
+htop
 wcalc
 wget
 
