@@ -3,17 +3,17 @@
 PACKAGE_FILE="$(dirname "$(realpath "$0")")/packages.txt"
 packages=$(grep -vE '^\s*#|^\s*$' "$PACKAGE_FILE")
 
-git clone https://aur.archlinux.org/yay.git
+git clone https://aur.archlinux.org/paru.git
 
-cd yay
-makepkg -sirc
+cd paru
+makepkg -sirc --noconfirm
 
 cd ..
-rm -rf yay
+rm -rf paru
 
 echo "Installing the following packages:"
 echo "$packages"
 echo
 
-yay -S --noconfirm --needed $packages
-yay -Syu --noconfirm
+paru -S --noconfirm --needed $packages
+paru -Syu --noconfirm
