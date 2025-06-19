@@ -53,6 +53,7 @@ firejail
 udiskie
 btop
 wcalc
+wget
 
 # Screenshotting
 grim
@@ -62,7 +63,7 @@ jq
 
 # Fonts
 noto-fonts
-ttf-terminus-nerd
+ttf-gohu-nerd
 ttf-firacode-nerd
 
 # Applications

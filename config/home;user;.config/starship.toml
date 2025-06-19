@@ -1,5 +1,8 @@
 add_newline = false
 
+[username]
+show_always = true
+
 [aws]
 symbol = "  "
 
