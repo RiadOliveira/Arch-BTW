@@ -1,6 +1,14 @@
 #!/bin/bash
 
 # ───────────────────────────────────────────────
+# ▶ AUXILIARY FOLDERS
+# ───────────────────────────────────────────────
+
+mkdir -p ~/Documents
+mkdir -p ~/Screenshots
+mkdir -p ~/Downloads/Bluetooth
+
+# ───────────────────────────────────────────────
 # ▶ REFLECTOR BACKUP
 # ───────────────────────────────────────────────
 
@@ -32,8 +40,7 @@ fi
 # ▶ MPV CONFIGURATION
 # ───────────────────────────────────────────────
 
-sudo cp -r /usr/share/doc/mpv/ "/home/$NEW_USER/.config/"
-sudo chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/.config/mpv"
+cp -r /usr/share/doc/mpv/ ~/.config/
 
 # ───────────────────────────────────────────────
 # ▶ SOUND CONFIGURATION

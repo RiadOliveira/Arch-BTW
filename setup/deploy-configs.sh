@@ -62,12 +62,3 @@ ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime
 hwclock --systohc
 
 locale-gen
-
-# ───────────────────────────────────────────────
-# ▶ AUXILIARY FOLDERS
-# ───────────────────────────────────────────────
-
-mkdir -p "/home/$NEW_USER/Screenshots"
-mkdir -p "/home/$NEW_USER/Downloads/Bluetooth"
-chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/Screenshots"
-chown -R "$NEW_USER:$NEW_USER" "/home/$NEW_USER/Downloads"
