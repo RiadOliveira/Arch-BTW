@@ -78,6 +78,10 @@ firefox-developer-edition
 
 # Development
 visual-studio-code-bin
+nodejs-lts-jod
+npm
 pnpm
+docker
+docker-compose
 fish
 starship
