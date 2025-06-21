@@ -70,13 +70,21 @@ sudo setcap cap_ipc_lock=ep /usr/bin/gnome-keyring-daemon
 chsh -s /bin/fish
 
 # ───────────────────────────────────────────────
-# ▶ DISABLE FISH GREETING
+# ▶ SET FISH VARIABLES
 # ───────────────────────────────────────────────
 
 set -U fish_greeting
+set -U fish_color_command '#ecb90f'
+set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 
 # ───────────────────────────────────────────────
 # ▶ GIVE DOCKER PERMISSION
 # ───────────────────────────────────────────────
 
 sudo usermod -aG docker $USER
+
+# ───────────────────────────────────────────────
+# ▶ ALLOW CUSTOM BINARIES
+# ───────────────────────────────────────────────
+
+chmod +x ~/.local/bin/*
