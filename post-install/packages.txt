@@ -57,6 +57,7 @@ wcalc
 wget
 less
 man
+trash-cli
 
 # Screenshotting
 grim
