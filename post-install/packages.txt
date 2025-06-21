@@ -55,6 +55,7 @@ udiskie
 htop
 wcalc
 wget
+less
 
 # Screenshotting
 grim
