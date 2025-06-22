@@ -58,6 +58,7 @@ wget
 less
 man
 trash-cli
+transmission-cli
 
 # Screenshotting
 grim
