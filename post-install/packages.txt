@@ -59,6 +59,8 @@ less
 man
 trash-cli
 transmission-cli
+zstd
+7zip
 
 # Screenshotting
 grim
