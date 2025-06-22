@@ -2,6 +2,7 @@
 reflector
 ufw
 tlp
+ethtool
 
 # Audio System
 pipewire
