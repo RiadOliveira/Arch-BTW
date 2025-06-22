@@ -23,20 +23,6 @@ sudo ufw default allow outgoing
 sudo ufw enable
 
 # ───────────────────────────────────────────────
-# ▶ POWER MANAGEMENT
-# ───────────────────────────────────────────────
-
-sudo x86_energy_perf_policy performance
-
-sudo chmod +x /usr/local/bin/set-power-profile.sh
-
-read -p "Do you want to apply hdparm performance tuning? (y/N): " APPLY_HDPARM
-if [[ "$APPLY_HDPARM" == "y" || "$APPLY_HDPARM" == "Y" ]]; then
-  read -p "Enter the device name (e.g., sda, nvme0n1): " HDPARM_DEVICE
-  sudo hdparm -B 255 "/dev/$HDPARM_DEVICE"
-fi
-
-# ───────────────────────────────────────────────
 # ▶ MPV CONFIGURATION
 # ───────────────────────────────────────────────
 

@@ -2,7 +2,6 @@
 reflector
 ufw
 tlp
-x86_energy_perf_policy
 
 # Audio System
 pipewire
