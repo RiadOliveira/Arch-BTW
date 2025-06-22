@@ -1,0 +1,8 @@
+# Open VSCode with keyring
+code --password-store="gnome-libsecret" .
+
+# Run app with uwsm
+uwsm app -- (app-name)
+
+# Run Electron app
+(electron-app-name) --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj
