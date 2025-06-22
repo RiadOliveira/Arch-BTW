@@ -51,7 +51,7 @@ brightnessctl
 fail2ban
 haveged
 firejail
-udiskie
+udisks2
 htop
 wcalc
 wget
