@@ -7,10 +7,6 @@ get_partition_name() {
   [[ "$base" =~ nvme.* ]] && echo "/dev/${base}p${number}" || echo "/dev/${base}${number}"
 }
 
-timedatectl
-timedatectl set-timezone America/Recife
-timedatectl set-ntp true
-
 read -p "Enter the device name for installation (e.g., sda, nvme0n1): " DEVICE
 DEVICE_PATH="/dev/$DEVICE"
 

@@ -58,7 +58,10 @@ echo "$HOSTNAME" > /etc/hostname
 sed -i "s/^user-name ALL=(ALL) ALL/$NEW_USER ALL=(ALL) ALL/" /etc/sudoers
 
 # Set timezone and hardware clock
+timedatectl set-timezone America/Recife
 ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime
+
+timedatectl set-ntp true
 hwclock --systohc
 
 locale-gen
