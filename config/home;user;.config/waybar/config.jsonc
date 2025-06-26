@@ -144,8 +144,8 @@
     "format": "{icon} {capacity}%",
     "format-time": "{H}h{M}min",
     "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}% (Not Charging)",
-    "format-full": " {capacity}% (Full)",
+    "format-plugged": " {capacity}%",
+    "format-full": " {capacity}%",
     "format-alt": "{icon} {time}",
     "format-icons": [
       "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
