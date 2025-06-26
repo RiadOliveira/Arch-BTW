@@ -8,10 +8,9 @@ window#waybar {
 
 	background: linear-gradient(
 		45deg,
-		alpha(#1c94fc, 0.4) 0%,
-		alpha(#fc5ef0, 0.7) 100%
+		alpha(#1c94fc, 0.2) 0%,
+		alpha(#fc5ef0, 0.55) 100%
 	);
-
 	border-radius: 8px;
 }
 
@@ -25,16 +24,84 @@ tooltip * {
 }
 
 .modules-left,
-.modules-center,
+#workspaces,
+#clock,
+#window,
 .modules-right {
-	background: alpha(#050014, 0.6);
 	font-weight: 700;
+	background: alpha(#050014, 0.6);
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 
 	margin: 4px;
 	padding: 0 12px;
 	border-radius: 6px;
+}
 
-	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+#cpu,
+#memory {
+	margin-right: 16px;
+}
+
+#battery,
+#pulseaudio,
+#backlight,
+#bluetooth {
+	margin-left: 18px;
+}
+
+#cpu {
+	color: #1c94fc;
+}
+
+#memory {
+	color: #fc5ef0;
+}
+
+#disk {
+	color: #75de6d;
+}
+
+#workspaces {
+	padding: 0 4px;
+}
+
+#workspaces button {
+	all: unset;
+
+	padding: 0px 8px;
+	color: alpha(#1c94fc, 1);
+	transition: all 0.2s ease;
+}
+
+#workspaces button:hover,
+#workspaces button.empty:hover {
+	color: #d74afe;
+	border: none;
+	text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
+	transition: all 1s ease;
+}
+
+#workspaces button.active {
+	color: #fc5ef0;
+	border: none;
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+#workspaces button.empty {
+	color: rgba(0, 0, 0, 0);
+	border: none;
+	text-shadow: 0px 0px 1.5px alpha(#bdcbde, 0.15);
+}
+
+#workspaces button.empty.active {
+	color: #fc5ef0;
+	border: none;
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+#workspaces,
+#window {
+	min-width: 254px;
 }
 
 #network {
@@ -53,12 +120,12 @@ tooltip * {
 	color: #bdcbde;
 }
 
-#pulseaudio {
-	color: #f8a83e;
-}
-
 #pulseaudio.microphone {
 	color: #f8823e;
+}
+
+#pulseaudio {
+	color: #f8a83e;
 }
 
 #battery {

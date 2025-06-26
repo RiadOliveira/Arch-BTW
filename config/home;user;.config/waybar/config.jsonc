@@ -6,13 +6,42 @@
   "margin-top": 10,
   "margin-left": 10,
   "margin-right": 10,
-  "spacing": 20,
-  "modules-left": [],
-  "modules-center": ["clock"],
+  "spacing": 0,
+  "modules-left": ["cpu", "memory", "disk"],
+  "modules-center": ["hyprland/workspaces", "clock", "hyprland/window"],
   "modules-right": ["network", "bluetooth", "backlight", "pulseaudio#microphone", "pulseaudio", "battery"],
+
+  "cpu": {
+    "interval": 10,
+    "format": " {avg_frequency:0.2f}GHz ({usage:02d}%)"
+  },
+  "memory": {
+    "interval": 10,
+    "format": " {used:0.2f}G/{total:0.2f}G ({percentage:02d}%)",
+    "tooltip-format": "{percentage}% in use"
+  },
+  "disk": {
+    "interval": 60,
+    "format": "󰋊 {specific_used:0.2f}G/{specific_total:0.2f}G",
+    "unit": "GB",
+    "path": "/home",
+    "tooltip-format": "{specific_used:0.2f}GB/{specific_total:0.2f}GB used on {path} ({percentage_used}%)" 
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "empty": ""
+    },
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+  },
   "clock": {
     "interval": 60,
-    "format": " |{:%d/%B   |%H:%M}",
+    "format": " |{:%d/%B  |%H:%M}",
     "tooltip-format": "<tt><span size='12000' font='GohuFont uni14 Nerd Font' weight='bold'>{calendar}</span></tt>",
     "calendar": {
       "mode": "month",
@@ -32,6 +61,14 @@
       "on-scroll-down": "shift_down"
     }
   },
+  "hyprland/window": {
+    "format": "{initialTitle}",
+    "tooltip-format": "{title}",
+    "icon": true,
+    "icon-size": 20,
+    "max-length": 26
+  },
+
   "network": {
     "interval": 60,
     "format": "{ifname}",
@@ -46,9 +83,9 @@
     "tooltip-format-disabled": "Disabled"
   },
   "bluetooth": {
-    "format": " {controller_alias}",
+    "format": " On",
     "format-off": "󰂲 Off",
-    "format-disabled": "󰂲 Disabled",
+    "format-disabled": "󰂲 Off",
     "format-no-controller": "󰂲 Off",
     "format-connected": " {num_connections}",
     "tooltip-format": "{status}",
@@ -73,7 +110,7 @@
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": " Muted",
+    "format-muted": " Off",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
@@ -92,7 +129,7 @@
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "format-source": " {volume}%",
-    "format-source-muted": "  Muted",
+    "format-source-muted": "  Off",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 5%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
