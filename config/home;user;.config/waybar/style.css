@@ -144,6 +144,10 @@ tooltip * {
 	color: #f00;
 }
 
+#battery.charging {
+	color: #75de6d;
+}
+
 @keyframes tooltip-fade {
 	from {
 		opacity: 0;
