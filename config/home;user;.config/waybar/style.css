@@ -20,7 +20,11 @@ tooltip {
 }
 
 tooltip * {
-	animation: tooltip-fade 0.2s;
+	animation-name: tooltip-fade;
+	animation-duration: 0.2s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-timing-function: steps(26);
 }
 
 .modules-left,
