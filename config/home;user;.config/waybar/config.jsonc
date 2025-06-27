@@ -18,7 +18,7 @@
   "memory": {
     "interval": 10,
     "format": " {used:0.2f}G/{total:0.2f}G ({percentage:02d}%)",
-    "tooltip-format": "{percentage}% in use"
+    "tooltip-format": "{used:0.2f}GB/{total:0.2f}GB ({percentage:02d}% in use)"
   },
   "disk": {
     "interval": 60,
