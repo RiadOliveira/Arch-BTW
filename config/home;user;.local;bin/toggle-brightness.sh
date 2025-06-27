@@ -4,11 +4,11 @@ current=$(brightnessctl get)
 max=$(brightnessctl max)
 percent=$(( current * 100 / max ))
 
-low=1
+low=0
 high=100
 
 if [ "$percent" -lt 50 ]; then
-  brightnessctl -e4 -n2 set ${high}%
+  brightnessctl -n1 set ${high}%
 else
-  brightnessctl -e4 -n2 set ${low}%
+  brightnessctl -n1 set ${low}%
 fi

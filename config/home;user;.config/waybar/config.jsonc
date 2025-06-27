@@ -37,7 +37,9 @@
     },
     "persistent-workspaces": {
       "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    }
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
   "clock": {
     "interval": 60,
@@ -105,8 +107,8 @@
       "󰃞", "󰃟", "󰃠"
     ],
     "on-click": "~/.local/bin/toggle-brightness.sh",
-    "on-scroll-up": "brightnessctl -e4 -n2 set 5%+",
-    "on-scroll-down": "brightnessctl -e4 -n2 set 5%-"
+    "on-scroll-up": "brightnessctl -n1 set 5%+",
+    "on-scroll-down": "brightnessctl -n1 set 5%-"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
