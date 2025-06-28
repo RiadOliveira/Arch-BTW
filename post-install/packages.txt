@@ -34,10 +34,7 @@ waybar
 xdg-desktop-portal-hyprland
 kitty
 uwsm
-sddm
-qt5-graphicaleffects
-qt5-quickcontrols2
-qt5-svg
+sddm-sugar-candy-git
 libnewt
 gnome-keyring
 libsecret
