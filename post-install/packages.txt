@@ -70,7 +70,6 @@ jq
 noto-fonts
 ttf-gohu-nerd
 ttf-firacode-nerd
-inter-font
 
 # Applications
 obsidian
