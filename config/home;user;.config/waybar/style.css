@@ -8,8 +8,9 @@ window#waybar {
 
 	background: linear-gradient(
 		45deg,
-		alpha(#1c94fc, 0.4) 0%,
-		alpha(#fc5ef0, 0.55) 100%
+		alpha(#1c94fc, 0.5) 0%,
+		alpha(#d74afe, 0.5) 50%,
+		alpha(#fc5ef0, 0.5) 100%
 	);
 	border-radius: 8px;
 }
