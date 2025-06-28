@@ -31,6 +31,7 @@ bluez-obex
 # Wayland Desktop Environment (Hyprland-based)
 hyprland
 waybar
+swaybg
 xdg-desktop-portal-hyprland
 kitty
 uwsm
