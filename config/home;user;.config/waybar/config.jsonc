@@ -91,7 +91,7 @@
     "format-no-controller": "󰂲 Off",
     "format-connected": " {num_connections}",
     "tooltip-format": "{status}",
-    "tooltip-format-on": "{controller_address}",
+    "tooltip-format-on": "{controller_alias} on {controller_address}",
     "tooltip-format-off": "Off",
     "tooltip-format-disabled": "Disabled",
     "tooltip-format-no-controller": "Off",
