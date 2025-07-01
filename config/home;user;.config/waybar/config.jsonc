@@ -97,7 +97,7 @@
     "tooltip-format-no-controller": "Off",
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
-    "on-click": "~/.local/bin/toggle-bluetooth.sh"
+    "on-click": "~/.local/bin/toggle-bluetooth"
   },
   "backlight": {
     "device": "intel_backlight",
@@ -106,7 +106,7 @@
     "format-icons": [
       "󰃞", "󰃟", "󰃠"
     ],
-    "on-click": "~/.local/bin/toggle-brightness.sh",
+    "on-click": "~/.local/bin/toggle-brightness",
     "on-scroll-up": "brightnessctl -n1 set 5%+",
     "on-scroll-down": "brightnessctl -n1 set 5%-"
   },

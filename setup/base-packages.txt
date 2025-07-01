@@ -11,7 +11,6 @@ neovim
 # Filesystem & Boot
 dosfstools
 e2fsprogs
-ntfs-3g
 lvm2
 
 # EFI / Secure Boot Tools
