@@ -87,3 +87,8 @@ docker-compose
 beekeeper-studio-bin
 fish
 starship
+
+# Gaming
+lib32-nvidia-utils
+lib32-systemd
+steam
