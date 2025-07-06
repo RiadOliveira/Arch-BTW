@@ -6,3 +6,9 @@ uwsm app -- (app-name)
 
 # Run Electron app
 (electron-app-name) --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj
+
+# Check home folder sizes
+du -sh ~/.*/ ~/*/ 2>/dev/null | sort -hr
+
+# Check current folder sizes
+du -sh * ./*/ 2>/dev/null | sort -hr
