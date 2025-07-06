@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PACKAGE_FILE="$(dirname "$(realpath "$0")")/packages.txt"
-packages=$(grep -vE '^\s*#|^\s*$' "$PACKAGE_FILE")
+PACKAGES_FILE="$(dirname "$(realpath "$0")")/packages.txt"
+packages=$(grep -vE '^\s*#|^\s*$' "$PACKAGES_FILE")
 
 git clone https://aur.archlinux.org/paru.git
 
