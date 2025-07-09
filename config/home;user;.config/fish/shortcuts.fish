@@ -1,8 +1,16 @@
 # Aliases
 alias cmd='command'
 
-alias pacinstall='paru -S'
-alias pacpurge='paru -Rns'
+alias pac-up='paru -Syu'
+alias pac-add='paru -S'
+alias pac-info='paru -Qi'
+alias pac-purge='paru -Rns'
+alias pac-check='paru -Q'
+alias pac-cache='paru -Scc --noconfirm'
+alias pac-clean='paru -Rns $(paru -Qdtq)'
+
+alias storage-check='fd -H -d 1 -X du -sh {} + 2>/dev/null | sort -hr'
+alias cache-clean='rm -rf ~/.cache && paru -Scc --noconfirm && pnpm cache delete && npm cache clean --force'
 
 alias browser='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
 alias firefox='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
