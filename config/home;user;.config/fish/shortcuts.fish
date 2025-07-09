@@ -1,4 +1,14 @@
 # Aliases
+alias browser='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
+alias firefox='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
+alias firefox-dev='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
+alias firefox-developer-edition='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
+
+alias code='eval "$APP_CMD code --password-store="gnome-libsecret" $ELECTRON_ARGS"'
+alias discord='eval "$APP_CMD nohup discord $ELECTRON_ARGS $DISOWN_CMD"'
+alias obsidian='eval "$APP_CMD nohup obsidian $ELECTRON_ARGS $DISOWN_CMD"'
+alias beekeeper-studio='eval "$APP_CMD nohup beekeeper-studio $ELECTRON_ARGS $DISOWN_CMD"'
+
 alias htop='themed-htop'
 
 alias rm='trash-put'
@@ -16,9 +26,9 @@ alias grep='batgrep'
 alias diff='batdiff'
 alias watch='batwatch'
 
-alias find='fd'
 alias cd='z'
 alias ls='eza'
+alias find='fd'
 
 alias preview='fzf --preview "if test -d {}; eza -1 --color=always {}; else; bat -n --color=always --line-range=:100 {}; end"'
 alias preview-files='fd -tf | fzf --preview "bat -n --color=always --line-range=:100 {}"'

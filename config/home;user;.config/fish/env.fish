@@ -1,3 +1,9 @@
+# APP COMMAND
+set -U APP_CMD 'uwsm app --'
+set -U ELECTRON_ARGS '--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj'
+set -U DISOWN_CMD '> /dev/null 2>&1 & disown'
+
+# FZF DEFAULTS
 set -x FZF_DEFAULT_COMMAND 'fd'
 set -x FZF_DEFAULT_OPTS '--bind "alt-k:preview-page-up,alt-j:preview-page-down" --style minimal --color "border:#1c94fc,prompt:#fc5ef0,pointer:#9c44fc,spinner:#9c44fc,info:#fc5ef0,marker:#fc5ef0"'
 
