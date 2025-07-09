@@ -47,13 +47,13 @@
     "tooltip-format": "<tt><span size='12000' font='GohuFont uni14 Nerd Font' weight='bold'>{calendar}</span></tt>",
     "calendar": {
       "mode": "month",
-      "mode-mon-col": 3,
+      "mode-mon-col": 4,
       "on-scroll": 1,
       "format": {
-        "months": "<span color='#1c94fcee' size='12500'>{}</span>",
+        "months": "<span color='#1c94fc' size='12500'>{}</span>",
         "days": "<span color='#d6dae4'>{}</span>",
-        "weekdays": "<span color='#fc5ef0ee'>{}</span>",
-        "today": "<span color='#f2bd09' size='12500'><u>{}</u></span>"
+        "weekdays": "<span color='#fc5ef0'>{}</span>",
+        "today": "<span color='#f2bd09' size='12500'>{}</span>"
       }
     },
     "actions": {
