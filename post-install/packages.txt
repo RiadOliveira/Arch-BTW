@@ -71,6 +71,14 @@ noto-fonts
 ttf-gohu-nerd
 ttf-firacode-nerd
 
+# CLI Utils
+fd
+bat
+bat-extras
+zoxide
+eza
+fzf
+
 # Applications
 obsidian
 discord
