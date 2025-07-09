@@ -26,8 +26,9 @@ alias grep='batgrep'
 alias diff='batdiff'
 alias watch='batwatch'
 
-alias cd='z'
+alias l='eza'
 alias ls='eza'
+alias cd='z'
 alias find='fd'
 
 alias preview='fzf --preview "if test -d {}; eza -1 --color=always {}; else; bat -n --color=always --line-range=:100 {}; end"'
@@ -47,3 +48,13 @@ function help
 end
 
 abbr -a --position anywhere -- --help '--help | bat -plhelp'
+
+# Torrent
+function torrent
+  set TEMP (mktemp)
+  printf '#!/bin/bash\nkillall transmission-cli 2>/dev/null\nrm -- "$0"\n' > $TEMP
+
+  chmod +x $TEMP
+  transmission-cli -D -f $TEMP -w ~/Downloads $argv
+end
+
