@@ -1,13 +1,26 @@
 # Aliases
+alias cmd='command'
+
+alias pacinstall='paru -S'
+alias pacpurge='paru -Rns'
+
 alias browser='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
 alias firefox='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
 alias firefox-dev='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
 alias firefox-developer-edition='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
 
-alias code='eval "$APP_CMD code . --password-store="gnome-libsecret" $ELECTRON_ARGS"'
+alias code='nvim .'
+alias vscode='eval "$APP_CMD code . --password-store="gnome-libsecret" $ELECTRON_ARGS"'
 alias discord='eval "$APP_CMD nohup discord $ELECTRON_ARGS $DISOWN_CMD"'
 alias obsidian='eval "$APP_CMD nohup obsidian $ELECTRON_ARGS $DISOWN_CMD"'
 alias beekeeper-studio='eval "$APP_CMD nohup beekeeper-studio $ELECTRON_ARGS $DISOWN_CMD"'
+
+alias mpv='uwsm app -- mpv'
+alias video='uwsm app -- mpv'
+
+alias swayimg='uwsm app -- swayimg'
+alias image='uwsm app -- swayimg'
+alias img='uwsm app -- swayimg'
 
 alias htop='themed-htop'
 
@@ -29,6 +42,7 @@ alias watch='batwatch'
 alias l='eza'
 alias ls='eza'
 alias cd='z'
+alias cdf='cd $(fd -H -td . ~ | fzf)'
 alias find='fd'
 
 alias preview='fzf --preview "if test -d {}; eza -1 --color=always {}; else; bat -n --color=always --line-range=:100 {}; end"'
@@ -57,4 +71,3 @@ function torrent
   chmod +x $TEMP
   transmission-cli -D -f $TEMP -w ~/Downloads $argv
 end
-
