@@ -12,23 +12,25 @@ alias pac-clean='paru -Rns $(paru -Qdtq)'
 alias storage-check='fd -H -d 1 -X du -sh {} + 2>/dev/null | sort -hr'
 alias cache-clean='rm -rf ~/.cache && paru -Scc --noconfirm && pnpm cache delete && npm cache clean --force'
 
-alias browser='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
-alias firefox='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
-alias firefox-dev='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
-alias firefox-developer-edition='eval "$APP_CMD nohup firefox-developer-edition $DISOWN_CMD"'
+alias browser="$APP_CMD $FIREFOX $DISOWN_CMD"
+alias firefox="$APP_CMD $FIREFOX $DISOWN_CMD"
+alias firefox-dev="$APP_CMD $FIREFOX $DISOWN_CMD"
+alias firefox-developer-edition="$APP_CMD $FIREFOX $DISOWN_CMD"
 
-alias code='nvim .'
-alias vscode='eval "$APP_CMD code . --password-store="gnome-libsecret" $ELECTRON_ARGS"'
-alias discord='eval "$APP_CMD nohup discord $ELECTRON_ARGS $DISOWN_CMD"'
-alias obsidian='eval "$APP_CMD nohup obsidian $ELECTRON_ARGS $DISOWN_CMD"'
-alias beekeeper-studio='eval "$APP_CMD nohup beekeeper-studio $ELECTRON_ARGS $DISOWN_CMD"'
+alias code='nvim'
+alias vscode="$APP_CMD code . --password-store='gnome-libsecret' $ELECTRON_ARGS $DISOWN_CMD"
+alias discord="$APP_CMD discord $ELECTRON_ARGS $DISOWN_CMD"
+alias obsidian="$APP_CMD obsidian $ELECTRON_ARGS $DISOWN_CMD"
+alias beekeeper-studio="$APP_CMD beekeeper-studio $ELECTRON_ARGS $DISOWN_CMD"
 
-alias mpv='uwsm app -- mpv'
-alias video='uwsm app -- mpv'
+alias kitty="$APP_CMD kitty $DISOWN_CMD"
 
-alias swayimg='uwsm app -- swayimg'
-alias image='uwsm app -- swayimg'
-alias img='uwsm app -- swayimg'
+alias mpv="$APP_CMD mpv"
+alias video="$APP_CMD mpv"
+
+alias swayimg="$APP_CMD swayimg"
+alias image="$APP_CMD swayimg"
+alias img="$APP_CMD swayimg"
 
 alias htop='themed-htop'
 

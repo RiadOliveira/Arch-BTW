@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/fish
 
 if systemctl is-active --quiet bluetooth; then
   systemctl stop bluetooth obex

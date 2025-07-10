@@ -1,7 +1,10 @@
-# APP COMMAND
-set -U APP_CMD 'uwsm app --'
+# APP COMMANDS
+set -U APP_CMD 'uwsm app -- nohup'
+set -U FIREFOX 'firefox-developer-edition'
+
 set -U ELECTRON_ARGS '--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj'
 set -U DISOWN_CMD '> /dev/null 2>&1 & disown'
+
 
 # FZF DEFAULTS
 set -x FZF_DEFAULT_COMMAND 'fd'

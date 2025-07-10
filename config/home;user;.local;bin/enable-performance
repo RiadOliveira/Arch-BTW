@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/fish
 
 sudo cp ~/.config/tlp/performance.conf /etc/tlp.conf
 sudo systemctl restart tlp

@@ -1,5 +1,5 @@
-#!/bin/bash
+#!/bin/fish
 
-kitty @ set-colors -a ~/.config/kitty/htop-theme.conf
+cmd kitty @ set-colors -a ~/.config/kitty/htop-theme.conf
 htop
-kitty @ set-colors -a ~/.config/kitty/theme.conf
+cmd kitty @ set-colors -a ~/.config/kitty/theme.conf
