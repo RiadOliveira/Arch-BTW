@@ -1,4 +1,0 @@
-#!/bin/fish
-
-sudo cp ~/.config/tlp/power-save.conf /etc/tlp.conf
-sudo systemctl restart tlp

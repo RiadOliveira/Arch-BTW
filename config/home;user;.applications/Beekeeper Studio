@@ -1,2 +1,2 @@
-#!/bin/fish
-beekeeper-studio
+#!/bin/bash
+fish -c beekeeper-studio-bg

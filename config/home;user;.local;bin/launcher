@@ -1,8 +1,10 @@
-#!/bin/fish
+#!/bin/bash 
 
-z ~/.applications
-if set SELECTED_APP (fzf --reverse)
-  fish $SELECTED_APP
-end
+cd ~/.applications
+SELECTED_APP=$(fzf --reverse)
+
+if [ -n "$SELECTED_APP" ]; then
+  setsid bash "$SELECTED_APP"
+fi
 
 hyprctl dispatch killactive

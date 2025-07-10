@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR APP_CMD:uwsm\x20app\x20\x2d\x2d\x20nohup
+SETUVAR APP_CMD:uwsm\x20app\x20\x2d\x2d
 SETUVAR DISOWN_CMD:\x3e\x20/dev/null\x202\x3e\x261\x20\x26\x20disown
 SETUVAR DISOWN_SUFFIX:\x3e\x20/dev/null\x202\x3e\x261\x20\x26\x20disown
 SETUVAR ELECTRON_APP_CMD:uwsm\x20app\x20\x2d\x2d\x20\x2d\x2denable\x2dfeatures\x3dUseOzonePlatform\x20\x2d\x2dozone\x2dplatform\x3dwayland\x20\x2d\x2denable\x2dfeatures\x3dWaylandLinuxDrmSyncobj

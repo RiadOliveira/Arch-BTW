@@ -1,2 +1,2 @@
-#!/bin/fish
-vscode
+#!/bin/bash
+fish -c vscode-bg

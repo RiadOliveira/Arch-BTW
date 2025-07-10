@@ -1,2 +1,2 @@
-#!/bin/fish
-browser
+#!/bin/bash
+fish -c browser-bg

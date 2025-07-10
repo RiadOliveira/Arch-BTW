@@ -1,5 +1,5 @@
 # APP COMMANDS
-set -U APP_CMD 'uwsm app -- nohup'
+set -U APP_CMD 'uwsm app --'
 set -U FIREFOX 'firefox-developer-edition'
 
 set -U ELECTRON_ARGS '--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj'

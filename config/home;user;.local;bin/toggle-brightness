@@ -1,4 +1,4 @@
-#!/bin/fish
+#!/bin/bash
 
 current=$(brightnessctl get)
 max=$(brightnessctl max)

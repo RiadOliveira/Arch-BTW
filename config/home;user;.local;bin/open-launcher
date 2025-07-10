@@ -1,3 +1,3 @@
-#!/usr/bin/fish
+#!/bin/bash
 
-cmd kitty --class=launcher -o font_size=17 fish -c "setsid fish ~/.local/bin/launcher"
+kitty --class=launcher -o font_size=17 bash ~/.local/bin/launcher

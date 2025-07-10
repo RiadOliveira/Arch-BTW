@@ -12,26 +12,43 @@ alias pac-clean='paru -Rns $(paru -Qdtq)'
 alias storage-check='fd -H -d 1 -X du -sh {} + 2>/dev/null | sort -hr'
 alias cache-clean='rm -rf ~/.cache && paru -Scc --noconfirm && pnpm cache delete && npm cache clean --force'
 
-alias browser="$APP_CMD $FIREFOX $DISOWN_CMD"
-alias firefox="$APP_CMD $FIREFOX $DISOWN_CMD"
-alias firefox-dev="$APP_CMD $FIREFOX $DISOWN_CMD"
-alias firefox-developer-edition="$APP_CMD $FIREFOX $DISOWN_CMD"
+alias browser="$APP_CMD $FIREFOX"
+alias browser-bg="$APP_CMD nohup $FIREFOX $DISOWN_CMD"
 
-alias code='nvim'
-alias vscode="$APP_CMD code . --password-store='gnome-libsecret' $ELECTRON_ARGS $DISOWN_CMD"
-alias discord="$APP_CMD discord $ELECTRON_ARGS $DISOWN_CMD"
-alias obsidian="$APP_CMD obsidian $ELECTRON_ARGS $DISOWN_CMD"
-alias beekeeper-studio="$APP_CMD beekeeper-studio $ELECTRON_ARGS $DISOWN_CMD"
+alias firefox-developer-edition="$APP_CMD $FIREFOX"
+alias firefox-developer-edition-bg="$APP_CMD nohup $FIREFOX $DISOWN_CMD"
 
-alias kitty="$APP_CMD kitty $DISOWN_CMD"
+alias vscode="$APP_CMD code . --password-store='gnome-libsecret' $ELECTRON_ARGS"
+alias vscode-bg="$APP_CMD nohup code . --password-store='gnome-libsecret' $ELECTRON_ARGS $DISOWN_CMD"
+
+alias discord="$APP_CMD discord $ELECTRON_ARGS"
+alias discord-bg="$APP_CMD nohup discord $ELECTRON_ARGS $DISOWN_CMD"
+
+alias obsidian="$APP_CMD obsidian $ELECTRON_ARGS"
+alias obsidian-bg="$APP_CMD nohup obsidian $ELECTRON_ARGS $DISOWN_CMD"
+
+alias beekeeper-studio="$APP_CMD beekeeper-studio $ELECTRON_ARGS"
+alias beekeeper-studio-bg="$APP_CMD nohup beekeeper-studio $ELECTRON_ARGS $DISOWN_CMD"
+
+alias kitty="$APP_CMD kitty"
+alias kitty-bg="$APP_CMD nohup kitty $DISOWN_CMD"
 
 alias mpv="$APP_CMD mpv"
+alias mpv-bg="$APP_CMD nohup mpv $DISOWN_CMD"
+
 alias video="$APP_CMD mpv"
+alias video-bg="$APP_CMD nohup mpv $DISOWN_CMD"
 
 alias swayimg="$APP_CMD swayimg"
-alias image="$APP_CMD swayimg"
-alias img="$APP_CMD swayimg"
+alias swayimg-bg="$APP_CMD nohup swayimg $DISOWN_CMD"
 
+alias image="$APP_CMD swayimg"
+alias image-bg="$APP_CMD nohup swayimg $DISOWN_CMD"
+
+alias img="$APP_CMD swayimg"
+alias img-bg="$APP_CMD nohup swayimg $DISOWN_CMD"
+
+alias code='nvim'
 alias htop='themed-htop'
 
 alias rm='trash-put'
@@ -81,3 +98,4 @@ function torrent
   chmod +x $TEMP
   transmission-cli -D -f $TEMP -w ~/Downloads $argv
 end
+

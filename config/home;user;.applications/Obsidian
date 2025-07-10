@@ -1,2 +1,2 @@
-#!/bin/fish
-obsidian
+#!/bin/bash
+fish -c obsidian-bg
