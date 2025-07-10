@@ -1,2 +1,0 @@
-#!/bin/bash
-uwsm app -- nohup kitty themed-htop > /dev/null 2>&1 & disown

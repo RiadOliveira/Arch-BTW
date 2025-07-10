@@ -1,4 +1,2 @@
 #!/bin/bash
-
 wcalc
-nohup hyprctl dispatch closewindow class:calculator > /dev/null 2>&1

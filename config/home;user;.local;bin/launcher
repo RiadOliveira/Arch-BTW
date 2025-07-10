@@ -6,5 +6,3 @@ SELECTED_APP=$(fzf --reverse)
 if [ -n "$SELECTED_APP" ]; then
   setsid bash "$SELECTED_APP"
 fi
-
-nohup hyprctl dispatch closewindow class:launcher > /dev/null 2>&1 

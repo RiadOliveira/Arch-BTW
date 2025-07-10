@@ -1,0 +1,11 @@
+#!/bin/bash
+
+NAME=$1
+LARGE_FONT=$2
+
+FONT_OPTION=""
+if [ "$LARGE_FONT" = "true" ]; then
+  FONT_OPTION="-o font_size=17"
+fi
+
+uwsm app -- nohup kitty --class=$NAME $FONT_OPTION $NAME > /dev/null 2>&1 & disown
