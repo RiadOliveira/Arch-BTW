@@ -49,6 +49,7 @@ alias img="$APP_CMD swayimg"
 alias img-bg="$APP_CMD nohup swayimg $DISOWN_CMD"
 
 alias code='nvim'
+alias calc='wcalc'
 alias htop='themed-htop'
 
 alias rm='trash-put'
