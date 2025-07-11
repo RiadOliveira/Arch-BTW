@@ -57,7 +57,7 @@ alias purge='trash-rm'
 alias restore='trash-restore'
 
 alias storage-check='fd -H -d 1 -X du -sh {} + 2>/dev/null | sort -hr'
-alias cache-clean='rm -rf ~/.cache && pac-cache && pnpm cache delete && npm cache clean --force && clean'
+alias cache-clean='rm -rf ~/.cache && pac-cache && pnpm cache delete && pnpm store prune && npm cache clean --force && clean'
 
 alias cat='bat'
 alias man='batman'
