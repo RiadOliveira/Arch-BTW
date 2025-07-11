@@ -9,9 +9,6 @@ alias pac-check='paru -Q'
 alias pac-cache='paru -Scc --noconfirm'
 alias pac-clean='paru -Rns $(paru -Qdtq)'
 
-alias storage-check='fd -H -d 1 -X du -sh {} + 2>/dev/null | sort -hr'
-alias cache-clean='rm -rf ~/.cache && paru -Scc --noconfirm && pnpm cache delete && npm cache clean --force'
-
 alias browser="$APP_CMD $FIREFOX"
 alias browser-bg="$APP_CMD nohup $FIREFOX $DISOWN_CMD"
 
@@ -54,10 +51,13 @@ alias htop='monitor'
 
 alias rm='trash-put'
 alias rmdir='trash-put'
-alias clean='trash-empty'
+alias clean='trash-empty -f'
 alias trash='trash-list'
 alias purge='trash-rm'
 alias restore='trash-restore'
+
+alias storage-check='fd -H -d 1 -X du -sh {} + 2>/dev/null | sort -hr'
+alias cache-clean='rm -rf ~/.cache && pac-cache && pnpm cache delete && npm cache clean --force && clean'
 
 alias cat='bat'
 alias man='batman'
