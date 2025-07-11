@@ -77,26 +77,5 @@ alias preview='fzf --preview "if test -d {}; eza -1 --color=always {}; else; bat
 alias preview-files='fd -tf | fzf --preview "bat -n --color=always --line-range=:100 {}"'
 alias preview-folders='fd -td | fzf --preview "eza -1 --color=always {}"'
 
-# Check
-function check
-  fd $argv | while read -l item
-    test -d $item; and eza $item; or bat $item
-  end
-end
-
-# Bathelp
-function help
-  $argv --help 2>&1 | bat -plhelp 
-end
-
+# Abbreviations
 abbr -a --position anywhere -- --help '--help | bat -plhelp'
-
-# Torrent
-function torrent
-  set TEMP (mktemp)
-  printf '#!/bin/bash\nkillall transmission-cli 2>/dev/null\nrm -- "$0"\n' > $TEMP
-
-  chmod +x $TEMP
-  transmission-cli -D -f $TEMP -w ~/Downloads $argv
-end
-

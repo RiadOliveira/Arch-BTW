@@ -1,0 +1,22 @@
+#!/bin/bash
+
+MODE="$1"
+CONFIG_DIR="$HOME/.config/tlp"
+TARGET_FILE="/etc/tlp.conf"
+
+case "$MODE" in
+  powersave)
+    sudo cp "$CONFIG_DIR/powersave.conf" "$TARGET_FILE"
+    ;;
+  performance)
+    sudo cp "$CONFIG_DIR/performance.conf" "$TARGET_FILE"
+    ;;
+  ultraperformance)
+    sudo cp "$CONFIG_DIR/ultraperformance.conf" "$TARGET_FILE"
+    ;;
+  *)
+    exit 1
+    ;;
+esac
+
+sudo systemctl restart tlp

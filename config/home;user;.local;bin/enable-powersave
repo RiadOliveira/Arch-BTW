@@ -1,4 +1,0 @@
-#!/bin/bash
-
-sudo cp ~/.config/tlp/powersave.conf /etc/tlp.conf
-sudo systemctl restart tlp
