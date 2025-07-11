@@ -2,3 +2,4 @@ lib32-nvidia-utils
 lib32-systemd
 steam
 pcsx2
+prismlauncher
