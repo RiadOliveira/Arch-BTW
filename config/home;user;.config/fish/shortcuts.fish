@@ -31,19 +31,11 @@ alias kitty="$APP_CMD kitty"
 alias kitty-bg="$APP_CMD nohup kitty $DISOWN_CMD"
 
 alias mpv="$APP_CMD mpv"
-alias mpv-bg="$APP_CMD nohup mpv $DISOWN_CMD"
-
 alias video="$APP_CMD mpv"
-alias video-bg="$APP_CMD nohup mpv $DISOWN_CMD"
 
 alias swayimg="$APP_CMD swayimg"
-alias swayimg-bg="$APP_CMD nohup swayimg $DISOWN_CMD"
-
 alias image="$APP_CMD swayimg"
-alias image-bg="$APP_CMD nohup swayimg $DISOWN_CMD"
-
 alias img="$APP_CMD swayimg"
-alias img-bg="$APP_CMD nohup swayimg $DISOWN_CMD"
 
 alias code='nvim'
 alias calc='wcalc'
