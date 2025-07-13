@@ -25,6 +25,8 @@ return {
       hi WinSeparator guibg=NONE ctermbg=NONE
 
       hi CursorLine guibg=#2a2640
+      hi CursorLineNr guifg=#ffffff guibg=#2a2640
+      hi LineNr guifg=#635c8a guibg=NONE
 
       hi TelescopeNormal guibg=NONE
       hi TelescopePromptNormal guibg=NONE
