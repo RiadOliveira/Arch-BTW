@@ -16,7 +16,7 @@ return {
       hi VertSplit guibg=NONE ctermbg=NONE
       hi SignColumn guibg=NONE ctermbg=NONE
       hi LineNr guibg=NONE ctermbg=NONE
-      hi EndOfBuffer guibg=NONE ctermbg=NONE
+      hi EndOfBuffer guifg=#635c8a guibg=NONE
 
       hi StatusLine guifg=#fc5ef0 guibg=NONE
       hi StatusLineNC guifg=#fc5ef0 guibg=NONE
