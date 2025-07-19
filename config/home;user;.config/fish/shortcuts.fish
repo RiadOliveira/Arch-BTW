@@ -59,15 +59,10 @@ alias grep='batgrep'
 alias diff='batdiff'
 alias watch='batwatch'
 
-alias l='eza'
 alias ls='eza'
 alias cd='z'
-alias cdf='cd $(fd -H -td . ~ | fzf)'
 alias find='fd'
-
-alias preview='fzf --preview "if test -d {}; eza -1 --color=always {}; else; bat -n --color=always --line-range=:100 {}; end"'
-alias preview-files='fd -tf | fzf --preview "bat -n --color=always --line-range=:100 {}"'
-alias preview-folders='fd -td | fzf --preview "eza -1 --color=always {}"'
 
 # Abbreviations
 abbr -a --position anywhere -- --help '--help | bat -plhelp'
+
