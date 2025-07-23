@@ -59,7 +59,7 @@ trash-cli
 transmission-cli
 zstd
 7zip
-android-file-transfer
+jmtpfs
 
 # Screenshotting
 grim
