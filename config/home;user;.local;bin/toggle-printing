@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if systemctl is-active --quiet cups; then
+  systemctl stop cups avahi-daemon
+else
+  systemctl start cups avahi-daemon
+fi
