@@ -5,6 +5,7 @@ return {
 
     null_ls.setup({
       sources = {
+        -- It needs to install stylua via Mason
         null_ls.builtins.formatting.stylua.with({
           extra_args = {
             "--indent-type",

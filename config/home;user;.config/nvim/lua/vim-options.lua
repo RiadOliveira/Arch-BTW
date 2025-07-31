@@ -28,7 +28,6 @@ vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
 vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
 vim.keymap.set("n", "gf", vim.lsp.buf.format, {})
 vim.keymap.set("n", "ca", vim.lsp.buf.code_action, {})
-vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", {})
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {})
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {})
