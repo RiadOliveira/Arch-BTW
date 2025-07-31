@@ -20,11 +20,11 @@ return {
       "yamlls",
       "eslint",
       "docker_compose_language_service",
-      "tailwindcss"
-    }
+      "tailwindcss",
+    },
   },
   dependencies = {
     { "mason-org/mason.nvim", opts = {} },
-    "neovim/nvim-lspconfig"
-  }
+    "neovim/nvim-lspconfig",
+  },
 }

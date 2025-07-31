@@ -3,13 +3,13 @@ return {
   version = "*",
   opts = {
     plugins = {
-      telescope = true
-    }
+      telescope = true,
+    },
   },
   config = function()
-    vim.cmd.colorscheme('horizon')
+    vim.cmd.colorscheme("horizon")
 
-    vim.cmd [[
+    vim.cmd([[
       hi Normal guibg=NONE ctermbg=NONE
       hi NormalNC guibg=NONE ctermbg=NONE
       hi NormalFloat guibg=NONE ctermbg=NONE
@@ -73,6 +73,6 @@ return {
       hi NeoTreeGitUntracked guifg=#635c8a
       hi NeoTreeGitIgnored guifg=#635c8a
       hi NeoTreeGitStaged guifg=#21c7a8
-    ]]
-  end
+    ]])
+  end,
 }
