@@ -23,8 +23,8 @@ return {
       hi MsgArea guibg=NONE ctermbg=NONE
       hi ModeMsg guibg=#2e2a45 guifg=#ffffff
       hi WinSeparator guifg=#1064ad guibg=NONE ctermbg=NONE
-      hi CursorLine guibg=#2a2640
-      hi CursorLineNr guifg=#ffffff guibg=#2a2640
+      hi CursorLine guibg=#221b40
+      hi CursorLineNr guifg=#ffffff guibg=#221b40
       hi LineNr guifg=#635c8a guibg=NONE
 
       hi TelescopeNormal guibg=NONE
@@ -42,7 +42,7 @@ return {
       hi TelescopePromptCounter guifg=#fc5ef0 guibg=NONE
       hi TelescopeSelectionCaret guifg=#9c44fc guibg=#9c44fc
       hi TelescopeMatching guifg=#9c44fc
-      hi TelescopeSelection guifg=NONE guibg=#2a2640
+      hi TelescopeSelection guifg=NONE guibg=#221b40
 
       hi NeoTreeNormal guibg=NONE ctermbg=NONE
       hi NeoTreeNormalNC guibg=NONE ctermbg=NONE
@@ -62,7 +62,7 @@ return {
       hi NeoTreeFloatBorder guifg=#1064ad guibg=NONE
       hi NeoTreeFloatTitle guifg=#fc5ef0 guibg=NONE
       hi NeoTreeTitleBar guifg=#fc5ef0 guibg=NONE
-      hi NeoTreeCursorLine guibg=#2a2640
+      hi NeoTreeCursorLine guibg=#221b40
       hi NeoTreeDotfile guifg=#635c8a
       hi NeoTreeMessage guifg=#fc5ef0
       hi NeoTreeModified guifg=#9c44fc
