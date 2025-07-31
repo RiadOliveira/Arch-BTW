@@ -17,7 +17,10 @@ return {
       "prismals",
       "pyright",
       "sqlls",
-      "yamlls"
+      "yamlls",
+      "eslint",
+      "docker_compose_language_service",
+      "tailwindcss"
     }
   },
   dependencies = {
