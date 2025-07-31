@@ -8,6 +8,7 @@ return {
   },
   config = function()
     vim.cmd.colorscheme('horizon')
+
     vim.cmd [[
       hi Normal guibg=NONE ctermbg=NONE
       hi NormalNC guibg=NONE ctermbg=NONE

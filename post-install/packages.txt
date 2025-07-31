@@ -59,6 +59,7 @@ trash-cli
 transmission-cli
 zstd
 7zip
+unzip
 jmtpfs
 
 # Screenshotting
