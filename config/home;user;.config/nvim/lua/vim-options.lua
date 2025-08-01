@@ -11,6 +11,7 @@ vim.o.smartcase = true
 vim.o.cursorline = true
 vim.o.ignorecase = true
 vim.o.relativenumber = true
+vim.opt.termguicolors = true
 
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
