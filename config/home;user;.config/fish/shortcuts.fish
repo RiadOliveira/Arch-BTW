@@ -64,5 +64,5 @@ alias cd='z'
 alias find='fd'
 
 # Abbreviations
-abbr -a --position anywhere -- --help '--help | bat -plhelp'
+abbr -a --position anywhere -- --help '--help 2>&1 | bat -plhelp'
 
