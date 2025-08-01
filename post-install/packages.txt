@@ -97,5 +97,6 @@ pnpm
 docker
 docker-compose
 beekeeper-studio-bin
+android-studio
 fish
 starship

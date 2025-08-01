@@ -1,5 +1,10 @@
+# Steam
 lib32-nvidia-utils
 lib32-systemd
 steam
+
+# PS2
 pcsx2
+
+# Minecraft
 prismlauncher

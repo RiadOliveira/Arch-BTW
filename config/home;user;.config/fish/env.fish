@@ -14,3 +14,6 @@ set -x FZF_CTRL_T_OPTS '--preview "if test -d {}; eza -1 --color=always {}; else
 
 set -x FZF_ALT_C_COMMAND 'fd -td -H'
 set -x FZF_ALT_C_OPTS '--preview "eza -1 --color=always {}"'
+
+# ANDROID
+set -x ANDROID_HOME ~/Android/Sdk 
