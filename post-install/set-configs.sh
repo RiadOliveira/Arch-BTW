@@ -81,3 +81,10 @@ chmod +x ~/.local/bin/*
 # ───────────────────────────────────────────────
 
 bat cache --build
+
+# ───────────────────────────────────────────────
+# ▶ DOWNLOAD TPM
+# ───────────────────────────────────────────────
+
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+

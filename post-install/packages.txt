@@ -61,6 +61,7 @@ zstd
 7zip
 unzip
 jmtpfs
+tmux
 
 # Screenshotting
 grim
