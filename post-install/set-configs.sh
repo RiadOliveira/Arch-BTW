@@ -5,6 +5,7 @@
 # ───────────────────────────────────────────────
 
 mkdir -p ~/Documents
+mkdir -p ~/Projects
 mkdir -p ~/Screenshots
 mkdir -p ~/Downloads/Bluetooth
 
