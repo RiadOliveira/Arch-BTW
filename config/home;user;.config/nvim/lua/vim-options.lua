@@ -49,6 +49,9 @@ vim.keymap.set({ "n" }, "<A-j>", "<C-w>j")
 vim.keymap.set({ "n" }, "<A-k>", "<C-w>k")
 vim.keymap.set({ "n" }, "<A-l>", "<C-w>l")
 
+vim.keymap.set("v", "<C-c>", '"+y', { noremap = true, silent = true })
+vim.keymap.set("n", "<C-c>", '"+yy', { noremap = true, silent = true })
+
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts = opts or {}
