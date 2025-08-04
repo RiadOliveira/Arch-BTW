@@ -17,3 +17,4 @@ set -x FZF_ALT_C_OPTS '--preview "eza -1 --color=always {}"'
 
 # ANDROID
 set -x ANDROID_HOME ~/Android/Sdk 
+set -x ANDROID_AVD_HOME ~/.config/.android/avd
