@@ -12,7 +12,7 @@
   foreground = "#cdd6f4"
   progress_bar_corner_radius = 4
   offset = (0, 40)
-  gap_size = 5
+  gap_size = 10
   format = "<b>%a</b>\n<i>%s</i>\n%b"
   alignment = center
   vertical_alignment = center
