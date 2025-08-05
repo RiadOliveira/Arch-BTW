@@ -1,0 +1,9 @@
+#!/bin/bash
+
+brightnessctl -n1 set 5%+
+
+current=$(brightnessctl get)
+max=$(brightnessctl max)
+brightness=$(( current * 100 / max ))
+
+notify-send -a "[Brightness]" -r 4 -t 1000 -h int:value:"$brightness" -h string:fgcolor:"#bdcbde" "$brightness% (+5%)"

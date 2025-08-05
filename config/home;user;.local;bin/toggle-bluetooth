@@ -1,7 +1,13 @@
 #!/bin/bash
 
 if systemctl is-active --quiet bluetooth; then
-  systemctl stop bluetooth obex
+  systemctl stop bluetooth
+  systemctl --user stop obex
+
+  notify-send -a "[Bluetooth]" -r 5 -t 2000 -h string:fgcolor:"#d6dae4" "Disabled"
 else
-  systemctl start bluetooth obex
+  systemctl start bluetooth
+  systemctl --user start obex
+
+  notify-send -a "[Bluetooth]" -r 5 -t 2000 -h string:fgcolor:"#3880f5" "Enabled"
 fi

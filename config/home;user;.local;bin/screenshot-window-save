@@ -1,0 +1,5 @@
+#!/bin/bash
+
+grim -g "$(hyprctl activewindow -j | jq -r '"\(.at[0] - 4),\(.at[1] - 4) \(.size[0] + 8)x\(.size[1] + 8)"')" ~/Screenshots/window_screenshot_$(date +%Y%m%d_%H%M%S).png
+
+notify-send -a "[Screenshot]" -r 8 -t 2000 -h string:fgcolor:"#50c7e3" "Window saved"

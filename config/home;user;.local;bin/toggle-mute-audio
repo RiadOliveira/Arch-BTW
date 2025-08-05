@@ -1,0 +1,11 @@
+#!/bin/bash
+
+wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+
+if echo "$volume" | grep -q "MUTED"; then
+  notify-send -a "[Audio]" -r 2 -t 2000 -h int:value:0 -h string:fgcolor:"#f8a83e" "Muted"
+else
+  vol_percent=$(echo "$volume" | awk '{print int($2 * 100)}')
+  notify-send -a "[Audio]" -r 2 -t 2000 -h int:value:"$vol_percent" -h string:fgcolor:"#f8a83e" "$vol_percent%"
+fi

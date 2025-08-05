@@ -2,6 +2,8 @@
 
 if systemctl is-active --quiet cups; then
   systemctl stop cups avahi-daemon
+  notify-send -a "[Printing]" -r 6 -t 2000 -h string:fgcolor:"#d6dae4" "Disabled"
 else
   systemctl start cups avahi-daemon
+  notify-send -a "[Printing]" -r 6 -t 2000 -h string:fgcolor:"#3880f5" "Enabled"
 fi

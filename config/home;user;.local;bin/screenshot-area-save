@@ -1,0 +1,4 @@
+#!/bin/bash
+
+grim -g "$(slurp)" ~/Screenshots/area_screenshot_$(date +%Y%m%d_%H%M%S).png
+notify-send -a "[Screenshot]" -r 8 -t 2000 -h string:fgcolor:"#50c7e3" "Area saved"

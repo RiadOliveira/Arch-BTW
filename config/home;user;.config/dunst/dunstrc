@@ -1,0 +1,32 @@
+[global]
+  font = "GohuFont uni14 Nerd Font Mono 14"
+  corner_radius = 6
+  origin = bottom-center
+  show_age_threshold = -1
+
+  frame_width = 1
+  frame_color = "#b4befe"
+  separator_color= frame
+  highlight = "#9c44fc"
+  background = "#050014CC"
+  foreground = "#cdd6f4"
+  progress_bar_corner_radius = 4
+  offset = (0, 40)
+  gap_size = 5
+  format = "<b>%a</b>\n<i>%s</i>\n%b"
+  alignment = center
+  vertical_alignment = center
+  word_wrap = no
+
+[urgency_low]
+  foreground = "#1c94fc"
+  frame_color = "#1c94fc"
+
+[urgency_normal]
+  foreground = "#9c44fc"
+  frame_color = "#9c44fc"
+
+[urgency_critical]
+  foreground = "#f71118"
+  frame_color = "#f71118"
+

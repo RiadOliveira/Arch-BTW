@@ -1,0 +1,4 @@
+#!/bin/bash
+
+grim -g "$(slurp)" - | wl-copy
+notify-send -a "[Screenshot]" -r 8 -t 2000 -h string:fgcolor:"#50c7e3" "Area copied"

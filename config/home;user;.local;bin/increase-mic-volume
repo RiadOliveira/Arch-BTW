@@ -1,0 +1,9 @@
+#!/bin/bash
+
+wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0
+wpctl set-volume -l 1 @DEFAULT_AUDIO_SOURCE@ 5%+
+
+volume=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@)
+vol_percent=$(echo "$volume" | awk '{print int($2 * 100)}')
+
+notify-send -a "[Microphone]" -r 3 -t 1000 -h int:value:"$vol_percent" -h string:fgcolor:"#f8823e" "$vol_percent% (+5%)"

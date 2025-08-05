@@ -1,0 +1,11 @@
+[Unit]
+Description=Battery Monitor
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/battery_monitor
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=default.target
