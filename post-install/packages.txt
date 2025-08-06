@@ -41,7 +41,7 @@ gnome-keyring
 libsecret
 gcr-4
 dunst
-hyprpolkitagent
+lxsession-gtk3
 
 # Utilities & Enhancements
 swayimg
