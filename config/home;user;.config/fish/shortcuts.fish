@@ -9,17 +9,17 @@ alias pac-check='paru -Q'
 alias pac-cache='paru -Scc --noconfirm'
 alias pac-clean='paru -Rns $(paru -Qdtq)'
 
-alias browser="$APP_CMD $FIREFOX"
-alias browser-bg="$APP_CMD nohup $FIREFOX $DISOWN_CMD"
+alias browser="$SANDBOX $FIREFOX"
+alias browser-bg="$APP_CMD nohup firejail $FIREFOX $DISOWN_CMD"
 
-alias firefox-developer-edition="$APP_CMD $FIREFOX"
-alias firefox-developer-edition-bg="$APP_CMD nohup $FIREFOX $DISOWN_CMD"
+alias firefox-developer-edition="$SANDBOX $FIREFOX"
+alias firefox-developer-edition-bg="$APP_CMD nohup firejail $FIREFOX $DISOWN_CMD"
 
-alias vscode="$APP_CMD code . --password-store='gnome-libsecret' $ELECTRON_ARGS"
-alias vscode-bg="$APP_CMD nohup code . --password-store='gnome-libsecret' $ELECTRON_ARGS $DISOWN_CMD"
+alias vscode="$SANDBOX code . --password-store='gnome-libsecret' $ELECTRON_ARGS"
+alias vscode-bg="$APP_CMD nohup firejail code . --password-store='gnome-libsecret' $ELECTRON_ARGS $DISOWN_CMD"
 
-alias discord="$APP_CMD discord $ELECTRON_ARGS"
-alias discord-bg="$APP_CMD nohup discord $ELECTRON_ARGS $DISOWN_CMD"
+alias discord="$SANDBOX discord $ELECTRON_ARGS"
+alias discord-bg="$APP_CMD nohup firejail discord $ELECTRON_ARGS $DISOWN_CMD"
 
 alias obsidian="$APP_CMD obsidian $ELECTRON_ARGS"
 alias obsidian-bg="$APP_CMD nohup obsidian $ELECTRON_ARGS $DISOWN_CMD"
@@ -30,18 +30,20 @@ alias beekeeper-studio-bg="$APP_CMD nohup beekeeper-studio $ELECTRON_ARGS $DISOW
 alias kitty="$APP_CMD kitty"
 alias kitty-bg="$APP_CMD nohup kitty $DISOWN_CMD"
 
+alias emulator="$APP_CMD $ANDROID_HOME/emulator/emulator"
+
 alias qimgv="$APP_CMD qimgv"
 alias qimgv-bg="$APP_CMD nohup qimgv $DISOWN_CMD"
 
 alias gallery="$APP_CMD nohup qimgv . $DISOWN_CMD"
 alias media='gallery'
 
-alias mpv="$APP_CMD mpv"
-alias video="$APP_CMD mpv"
+alias mpv="$SANDBOX mpv"
+alias video="$SANDBOX mpv"
 
-alias swayimg="$APP_CMD swayimg"
-alias image="$APP_CMD swayimg"
-alias img="$APP_CMD swayimg"
+alias swayimg="$SANDBOX swayimg"
+alias image="$SANDBOX swayimg"
+alias img="$SANDBOX swayimg"
 
 alias code='nvim'
 alias calc='wcalc'
