@@ -63,6 +63,7 @@ unzip
 jmtpfs
 tmux
 entr
+qimgv-git
 
 # Screenshotting
 grim

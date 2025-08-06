@@ -30,6 +30,12 @@ alias beekeeper-studio-bg="$APP_CMD nohup beekeeper-studio $ELECTRON_ARGS $DISOW
 alias kitty="$APP_CMD kitty"
 alias kitty-bg="$APP_CMD nohup kitty $DISOWN_CMD"
 
+alias qimgv="$APP_CMD qimgv"
+alias qimgv-bg="$APP_CMD nohup qimgv $DISOWN_CMD"
+
+alias gallery="$APP_CMD nohup qimgv . $DISOWN_CMD"
+alias media='gallery'
+
 alias mpv="$APP_CMD mpv"
 alias video="$APP_CMD mpv"
 
