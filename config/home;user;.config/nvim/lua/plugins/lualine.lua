@@ -35,7 +35,39 @@ return {
     }
 
     require("lualine").setup({
-      options = { theme = custom_theme },
+      options = {
+        theme = custom_theme,
+      },
+      sections = {
+        lualine_a = { "mode" },
+        lualine_b = {
+          "branch",
+          {
+            "diff",
+            colored = true,
+            diff_color = {
+              added = { fg = "#ffffff" },
+              modified = { fg = "#ffffff" },
+              removed = { fg = "#ffffff" },
+            },
+          },
+          {
+            "diagnostics",
+            sources = { "nvim_diagnostic", "nvim_lsp" },
+            sections = { "error", "warn", "info", "hint" },
+            diagnostics_color = {
+              error = { fg = "#ffffff" },
+              warn = { fg = "#ffffff" },
+              info = { fg = "#ffffff" },
+              hint = { fg = "#ffffff" },
+            },
+          },
+        },
+        lualine_c = { "filename" },
+        lualine_x = { "encoding", "fileformat", "filetype" },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
+      },
     })
   end,
 }

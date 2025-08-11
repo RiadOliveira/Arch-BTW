@@ -53,6 +53,13 @@ vim.keymap.set({ "n" }, "<C-l>", "<C-w>l")
 vim.keymap.set("v", "<C-c>", '"+y', { noremap = true, silent = true })
 vim.keymap.set("n", "<C-c>", '"+yy', { noremap = true, silent = true })
 
+vim.keymap.set("n", "<leader>d", '"_d', {})
+vim.keymap.set("v", "<leader>d", '"_d', {})
+vim.keymap.set("n", "<leader>dd", '"_dd', {})
+vim.keymap.set("n", "<leader>D", '"_D', {})
+vim.keymap.set("n", "<leader>x", '"_x', {})
+vim.keymap.set("v", "<leader>x", '"_x', {})
+
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts = opts or {}
