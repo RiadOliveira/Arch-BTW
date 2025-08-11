@@ -30,6 +30,9 @@ alias beekeeper-studio-bg="$APP_CMD nohup beekeeper-studio $ELECTRON_ARGS $DISOW
 alias kitty="$APP_CMD kitty"
 alias kitty-bg="$APP_CMD nohup kitty $DISOWN_CMD"
 
+alias anki="$APP_CMD anki"
+alias anki-bg="$APP_CMD nohup anki $DISOWN_CMD"
+
 alias emulator="$APP_CMD $ANDROID_HOME/emulator/emulator"
 
 alias qimgv="$APP_CMD qimgv"

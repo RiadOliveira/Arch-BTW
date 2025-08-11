@@ -86,6 +86,7 @@ eza
 fzf
 
 # Applications
+anki-bin
 obsidian
 discord
 mpv
