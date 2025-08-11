@@ -15,7 +15,7 @@ export GIT_USER_NAME GIT_USER_EMAIL
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
-ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 echo "▶️ Running: install-packages.sh"
 bash "$SCRIPT_DIR/install-packages.sh"
