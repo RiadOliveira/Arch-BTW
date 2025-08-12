@@ -27,7 +27,7 @@ sudo ufw enable
 # ▶ SDDM CONFIGURATION
 # ───────────────────────────────────────────────
 
-sudo mv /usr/share/sddm/themes/sugar-candy/Main.bak.qml /usr/share/sddm/themes/sugar-candy/Main.qml
+sudo mv /usr/share/sddm/themes/sugar-candy/Main.bak /usr/share/sddm/themes/sugar-candy/Main.qml
 
 # ───────────────────────────────────────────────
 # ▶ MPV CONFIGURATION
