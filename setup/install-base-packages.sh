@@ -7,5 +7,5 @@ echo "Installing the following base packages:"
 echo "$base_packages"
 echo
 
-pacman -S --noconfirm --needed $base_packages
+pacman -Sy --noconfirm --needed $base_packages
 pacman -Syu --noconfirm

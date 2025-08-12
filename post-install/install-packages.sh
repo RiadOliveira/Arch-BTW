@@ -15,5 +15,5 @@ echo "Installing the following packages:"
 echo "$packages"
 echo
 
-paru -S --noconfirm --needed $packages
+paru -Sy --noconfirm --needed $packages
 paru -Syu --noconfirm
