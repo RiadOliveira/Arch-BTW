@@ -45,6 +45,7 @@ lxsession-gtk3
 wl-clip-persist
 
 # Utilities & Enhancements
+fastfetch
 swayimg
 brightnessctl
 fail2ban
