@@ -15,7 +15,7 @@ alias browser-bg="$APP_CMD nohup firejail $FIREFOX $DISOWN_CMD"
 alias firefox-developer-edition="$SANDBOX $FIREFOX"
 alias firefox-developer-edition-bg="$APP_CMD nohup firejail $FIREFOX $DISOWN_CMD"
 
-alias vscode="$SANDBOX code . --password-store='gnome-libsecret' $ELECTRON_ARGS"
+alias vscode="$APP_CMD code . --password-store='gnome-libsecret' $ELECTRON_ARGS"
 alias vscode-bg="$APP_CMD nohup firejail code . --password-store='gnome-libsecret' $ELECTRON_ARGS $DISOWN_CMD"
 
 alias discord="$SANDBOX discord $ELECTRON_ARGS"
