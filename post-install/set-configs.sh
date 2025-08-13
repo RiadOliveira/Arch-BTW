@@ -58,6 +58,13 @@ git config --global core.editor nvim
 sudo setcap cap_ipc_lock=ep /usr/bin/gnome-keyring-daemon
 
 # ───────────────────────────────────────────────
+# ▶ TIMEZONE CONFIG
+# ───────────────────────────────────────────────
+
+sudo timedatectl set-ntp true
+sudo hwclock --systohc
+
+# ───────────────────────────────────────────────
 # ▶ SET FISH AS DEFAULT SHELL
 # ───────────────────────────────────────────────
 
