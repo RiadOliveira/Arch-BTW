@@ -27,11 +27,17 @@ alias obsidian-bg="$APP_CMD nohup obsidian $ELECTRON_ARGS $DISOWN_CMD"
 alias beekeeper-studio="$APP_CMD beekeeper-studio $ELECTRON_ARGS"
 alias beekeeper-studio-bg="$APP_CMD nohup beekeeper-studio $ELECTRON_ARGS $DISOWN_CMD"
 
+alias android-studio="$APP_CMD android-studio"
+alias android-studio-bg="$APP_CMD nohup android-studio $DISOWN_CMD"
+
 alias kitty="$APP_CMD kitty"
 alias kitty-bg="$APP_CMD nohup kitty $DISOWN_CMD"
 
 alias anki="$APP_CMD anki"
 alias anki-bg="$APP_CMD nohup anki $DISOWN_CMD"
+
+alias steam="$APP_CMD steam"
+alias steam-bg="$APP_CMD nohup steam $DISOWN_CMD"
 
 alias emulator="$APP_CMD $ANDROID_HOME/emulator/emulator"
 
@@ -42,21 +48,22 @@ alias gallery="$APP_CMD nohup qimgv . $DISOWN_CMD"
 alias media='gallery'
 
 alias mpv="$SANDBOX mpv"
-alias video="$SANDBOX mpv"
+alias video='mpv'
 
 alias swayimg="$SANDBOX swayimg"
-alias image="$SANDBOX swayimg"
-alias img="$SANDBOX swayimg"
+alias image='swayimg'
+alias img='swayimg'
 
 alias code='nvim'
 alias calc='wcalc'
 alias htop='monitor'
 
 alias rm='trash-put'
+alias rm-trash='trash-rm'
+alias purge='cmd rm -rf'
 alias rmdir='trash-put'
 alias clean='trash-empty -f'
 alias trash='trash-list'
-alias purge='trash-rm'
 alias restore='trash-restore'
 
 alias storage-check='du -sh .* * 2>/dev/null | sort -hr'
