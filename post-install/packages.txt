@@ -86,7 +86,7 @@ zoxide
 eza
 fzf
 
-# ISO Utils
+# USB/ISO Utils
 poweriso
 woeusb-ng
 f3
