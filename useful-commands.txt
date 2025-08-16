@@ -7,8 +7,8 @@ uwsm app -- (app-name)
 # Run Electron app
 (electron-app-name) --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj
 
-# Check home folder sizes
-du -sh ~/.*/ ~/*/ 2>/dev/null | sort -hr
-
 # Check current folder sizes
-du -sh * ./*/ 2>/dev/null | sort -hr
+du -sh * 2>/dev/null | sort -hr
+
+# Compress with 4Gb parts
+7z a -t7z -mx=9 -m0=lzma2 -md=256m -mfb=64 -mmt=6 -v4g HIMYM.7z HIMYM
