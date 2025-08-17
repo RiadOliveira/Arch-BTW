@@ -12,6 +12,7 @@ pipewire-pulse
 wireplumber
 rtkit
 alsa-utils
+pavucontrol
 
 # Display / Wayland / Compositing
 egl-wayland
