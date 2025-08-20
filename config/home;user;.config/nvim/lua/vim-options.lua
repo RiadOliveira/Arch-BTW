@@ -25,6 +25,8 @@ vim.keymap.set("n", "<leader><Tab>", "<C-w>w")
 vim.keymap.set("n", "<C-q>", ":q<CR>")
 
 vim.keymap.set("n", "<C-a>", vim.lsp.buf.hover)
+vim.keymap.set("n", "<C-e>", vim.lsp.buf.signature_help)
+vim.keymap.set("i", "<C-a>", vim.lsp.buf.signature_help)
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "gr", vim.lsp.buf.references)
 vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
