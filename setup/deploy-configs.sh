@@ -57,6 +57,9 @@ echo "$HOSTNAME" > /etc/hostname
 # Add user to sudoers
 sed -i "s/^user-name ALL=(ALL) ALL/$NEW_USER ALL=(ALL) ALL/" /etc/sudoers
 
+# Change Docker data-root to user home path
+sed -i "s|\"data-root\": \"/home/.*/\.docker-data\"|\"data-root\": \"/home/$NEW_USER/.docker-data\"|" /etc/docker/daemon.json
+
 # Set timezone and hardware clock
 timedatectl set-timezone America/Recife
 ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime

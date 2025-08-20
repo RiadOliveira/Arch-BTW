@@ -4,10 +4,7 @@
 # ▶ AUXILIARY FOLDERS
 # ───────────────────────────────────────────────
 
-mkdir -p ~/Documents
-mkdir -p ~/Projects
-mkdir -p ~/Screenshots
-mkdir -p ~/Downloads/Bluetooth
+mkdir -p ~/Documents ~/Projects ~/Screenshots ~/Downloads/Bluetooth
 
 # ───────────────────────────────────────────────
 # ▶ REFLECTOR BACKUP
@@ -65,15 +62,10 @@ sudo timedatectl set-ntp true
 sudo hwclock --systohc
 
 # ───────────────────────────────────────────────
-# ▶ SET FISH AS DEFAULT SHELL
+# ▶ FISH CONFIG
 # ───────────────────────────────────────────────
 
 chsh -s /bin/fish
-
-# ───────────────────────────────────────────────
-# ▶ SET FISH VARIABLES
-# ───────────────────────────────────────────────
-
 set -U fish_greeting
 set -U fish_color_command '#ecb90f'
 set -U fish_user_paths $HOME/.local/bin $fish_user_paths
