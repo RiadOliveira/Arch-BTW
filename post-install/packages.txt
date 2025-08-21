@@ -91,7 +91,7 @@ fzf
 poweriso
 woeusb-ng
 f3
-# ventoy
+# ventoy-bin
 
 # Applications
 anki-bin
