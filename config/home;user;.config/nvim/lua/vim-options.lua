@@ -24,14 +24,21 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.keymap.set("n", "<leader><Tab>", "<C-w>w")
 vim.keymap.set("n", "<C-q>", ":q<CR>")
 
+vim.keymap.set({ "n", "x", "o" }, "&", "$")
+vim.keymap.set({ "n", "x", "o" }, "$", "g_")
+vim.keymap.set({ "n", "x", "o" }, "0", "^")
+vim.keymap.set({ "n", "x", "o" }, "^", "0")
+
 vim.keymap.set("n", "<C-a>", vim.lsp.buf.hover)
 vim.keymap.set("n", "<C-e>", vim.lsp.buf.signature_help)
 vim.keymap.set("i", "<C-a>", vim.lsp.buf.signature_help)
+
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "gr", vim.lsp.buf.references)
 vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
 vim.keymap.set("n", "gf", vim.lsp.buf.format)
 vim.keymap.set("n", "ca", vim.lsp.buf.code_action)
+
 vim.keymap.set("n", "<C-s>", function()
   vim.lsp.buf.format()
   vim.cmd("write")
@@ -52,6 +59,7 @@ vim.keymap.set({ "n" }, "<C-j>", "<C-w>j")
 vim.keymap.set({ "n" }, "<C-k>", "<C-w>k")
 vim.keymap.set({ "n" }, "<C-l>", "<C-w>l")
 
+vim.keymap.set("x", "p", '"_dP')
 vim.keymap.set("v", "<C-c>", '"+y', { noremap = true, silent = true })
 vim.keymap.set("n", "<C-c>", '"+yy', { noremap = true, silent = true })
 
