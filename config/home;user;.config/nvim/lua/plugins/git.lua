@@ -5,8 +5,6 @@ return {
       "tpope/vim-fugitive",
     },
     config = function()
-      vim.keymap.set("n", "<leader>hd", ":Gvdiffsplit<CR>")
-
       require("gitsigns").setup({
         on_attach = function(bufnr)
           local gitsigns = require("gitsigns")
@@ -17,6 +15,9 @@ return {
             vim.keymap.set(mode, l, r, opts)
           end
 
+          map("n", "<leader>hd", function()
+            gitsigns.diffthis("HEAD")
+          end)
           map("n", "<leader>hp", gitsigns.preview_hunk)
           map("n", "<leader>hi", gitsigns.preview_hunk_inline)
           map("n", "<leader>tw", gitsigns.toggle_word_diff)
@@ -25,7 +26,7 @@ return {
             if vim.wo.diff then
               vim.cmd.normal({ "]c", bang = true })
             else
-              gitsigns.nav_hunk("next")
+              gitsigns.nav_hunk("next", { target = "all" })
             end
           end)
 
@@ -33,7 +34,7 @@ return {
             if vim.wo.diff then
               vim.cmd.normal({ "[c", bang = true })
             else
-              gitsigns.nav_hunk("prev")
+              gitsigns.nav_hunk("prev", { target = "all" })
             end
           end)
         end,

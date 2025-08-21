@@ -1,3 +1,3 @@
 function gitdiff
-  git diff --name-only --relative --diff-filter=d | xargs bat --diff
+  git diff --name-only --relative --diff-filter=d -z | xargs -0 bat --diff
 end
