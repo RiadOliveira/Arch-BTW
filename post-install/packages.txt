@@ -51,7 +51,7 @@ swayimg
 brightnessctl
 fail2ban
 haveged
-firejail
+apparmor
 udisks2
 htop
 wcalc

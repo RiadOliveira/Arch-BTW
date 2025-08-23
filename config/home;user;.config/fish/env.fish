@@ -1,11 +1,9 @@
 # APP COMMANDS
 set -U APP_CMD 'uwsm app --'
-set -U SANDBOX "$APP_CMD firejail"
+set -U DISOWN_CMD '> /dev/null 2>&1 & disown'
 
 set -U FIREFOX 'firefox-developer-edition'
-
-set -U ELECTRON_ARGS '--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj'
-set -U DISOWN_CMD '> /dev/null 2>&1 & disown'
+set -U ELECTRON_ARGS '--enable-features=UseOzonePlatform,WaylandLinuxDrmSyncobj --ozone-platform=wayland'
 
 # FZF DEFAULTS
 set -x FZF_DEFAULT_COMMAND 'fd'
