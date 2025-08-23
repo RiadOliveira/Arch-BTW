@@ -28,5 +28,13 @@ return {
     { "mason-org/mason.nvim", opts = {} },
     "neovim/nvim-lspconfig",
     "hrsh7th/cmp-nvim-lsp",
+    {
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
+      opts = {
+        ensure_installed = { "stylua" },
+        auto_update = true,
+        run_on_start = true,
+      },
+    },
   },
 }
