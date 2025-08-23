@@ -93,4 +93,5 @@ bat cache --build
 # ───────────────────────────────────────────────
 
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+bash ~/.config/tmux/plugins/tpm/bin/install_plugins
 
