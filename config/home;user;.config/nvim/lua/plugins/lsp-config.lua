@@ -22,8 +22,21 @@ return {
     },
   },
   dependencies = {
-    { "mason-org/mason.nvim", opts = {} },
-    "neovim/nvim-lspconfig",
+    {
+      "mason-org/mason.nvim",
+      opts = {},
+    },
+    {
+      "neovim/nvim-lspconfig",
+      config = function()
+        require("lspconfig").ts_ls.setup({
+          on_attach = function(client)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end,
+        })
+      end,
+    },
     "hrsh7th/cmp-nvim-lsp",
     {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -38,12 +51,4 @@ return {
       },
     },
   },
-  config = function()
-    require("lspconfig").ts_ls.setup({
-      on_attach = function(client)
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentRangeFormattingProvider = false
-      end,
-    })
-  end,
 }
