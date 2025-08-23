@@ -10,16 +10,16 @@ alias pac-cache='paru -Scc --noconfirm'
 alias pac-clean='paru -Rns $(paru -Qdtq)'
 
 alias browser="$APP_CMD $FIREFOX"
-alias browser-bg="$APP_CMD nohup firejail $FIREFOX $DISOWN_CMD"
+alias browser-bg="$APP_CMD nohup $FIREFOX $DISOWN_CMD"
 
 alias firefox-developer-edition="$APP_CMD $FIREFOX"
-alias firefox-developer-edition-bg="$APP_CMD nohup firejail $FIREFOX $DISOWN_CMD"
+alias firefox-developer-edition-bg="$APP_CMD nohup $FIREFOX $DISOWN_CMD"
 
 alias vscode="$APP_CMD code . --password-store='gnome-libsecret' $ELECTRON_ARGS"
-alias vscode-bg="$APP_CMD nohup firejail code . --password-store='gnome-libsecret' $ELECTRON_ARGS $DISOWN_CMD"
+alias vscode-bg="$APP_CMD nohup code . --password-store='gnome-libsecret' $ELECTRON_ARGS $DISOWN_CMD"
 
 alias discord="$APP_CMD discord $ELECTRON_ARGS"
-alias discord-bg="$APP_CMD nohup firejail discord $ELECTRON_ARGS $DISOWN_CMD"
+alias discord-bg="$APP_CMD nohup discord $ELECTRON_ARGS $DISOWN_CMD"
 
 alias obsidian="$APP_CMD obsidian $ELECTRON_ARGS"
 alias obsidian-bg="$APP_CMD nohup obsidian $ELECTRON_ARGS $DISOWN_CMD"
