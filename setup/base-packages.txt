@@ -9,11 +9,12 @@ git
 neovim
 
 # Filesystem & Boot
+apparmor
 dosfstools
 e2fsprogs
 lvm2
 
-# EFI / Secure Boot Tools
+# EFI
 efibootmgr
 
 # Networking
