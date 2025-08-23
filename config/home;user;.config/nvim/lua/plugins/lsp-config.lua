@@ -17,9 +17,6 @@ return {
       "nginx_language_server",
       "prismals",
       "pyright",
-      "sqlls",
-      "yamlls",
-      "eslint",
       "docker_compose_language_service",
       "tailwindcss",
     },
@@ -31,10 +28,22 @@ return {
     {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       opts = {
-        ensure_installed = { "stylua" },
+        ensure_installed = {
+          "stylua",
+          "eslint_d",
+          "prettierd",
+        },
         auto_update = true,
         run_on_start = true,
       },
     },
   },
+  config = function()
+    require("lspconfig").ts_ls.setup({
+      on_attach = function(client)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+      end,
+    })
+  end,
 }
