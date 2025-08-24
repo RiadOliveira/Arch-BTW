@@ -1,3 +1,6 @@
+# General
+proton-ge-custom-bin
+
 # Steam
 lib32-nvidia-utils
 lib32-systemd
