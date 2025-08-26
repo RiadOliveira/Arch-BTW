@@ -13,6 +13,7 @@ apparmor
 dosfstools
 e2fsprogs
 lvm2
+plymouth
 
 # EFI
 efibootmgr
