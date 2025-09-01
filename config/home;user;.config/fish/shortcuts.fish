@@ -39,6 +39,9 @@ alias anki-bg="$APP_CMD nohup anki $DISOWN_CMD"
 alias steam="$APP_CMD steam"
 alias steam-bg="$APP_CMD nohup steam $DISOWN_CMD"
 
+alias prismlauncher="$APP_CMD prismlauncher"
+alias prismlauncher-bg="$APP_CMD nohup prismlauncher $DISOWN_CMD"
+
 alias emulator="$APP_CMD $ANDROID_HOME/emulator/emulator"
 
 alias qimgv="$APP_CMD qimgv"
