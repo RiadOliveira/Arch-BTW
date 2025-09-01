@@ -23,6 +23,7 @@ vim.opt.fillchars:append({ eob = " " })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.keymap.set("n", "<leader><Tab>", "<C-w>w")
 vim.keymap.set("n", "<C-q>", ":q<CR>")
+vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
 
 vim.keymap.set({ "n", "x", "o" }, "&", "$")
 vim.keymap.set({ "n", "x", "o" }, "$", "g_")
