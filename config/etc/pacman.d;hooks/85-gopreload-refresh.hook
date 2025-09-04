@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = Refreshing gopreload file lists...
+When = PostTransaction
+Exec = /usr/bin/gopreload-batch-refresh.sh

@@ -45,6 +45,10 @@ dunst
 lxsession-gtk3
 wl-clip-persist
 
+# Preload
+preload
+gopreload-git
+
 # Utilities & Enhancements
 fastfetch
 swayimg
