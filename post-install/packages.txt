@@ -48,6 +48,7 @@ wl-clip-persist
 # Preload
 preload
 gopreload-git
+wmctrl
 
 # Utilities & Enhancements
 fastfetch
