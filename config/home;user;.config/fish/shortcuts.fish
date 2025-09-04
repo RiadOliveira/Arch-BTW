@@ -6,7 +6,7 @@ alias pac-add='paru -S'
 alias pac-info='paru -Qi'
 alias pac-purge='paru -Rns'
 alias pac-check='paru -Q'
-alias pac-cache='paru -Scc --noconfirm'
+alias pac-cache='yes | paru -Scc'
 alias pac-clean='paru -Rns $(paru -Qdtq)'
 
 alias browser="$APP_CMD $FIREFOX"
