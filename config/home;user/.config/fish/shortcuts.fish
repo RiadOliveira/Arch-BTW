@@ -69,7 +69,7 @@ alias clean='trash-empty -f'
 alias trash='trash-list'
 alias restore='trash-restore'
 
-alias storage-check='du -sh .* * 2>/dev/null | sort -hr'
+alias storage-check='fd -d 1 -H . | xargs -P 4 -I {} du -sh "{}" 2>/dev/null | sort -hr'
 alias disk-check='df -h -x tmpfs -x devtmpfs -x squashfs'
 alias service-check='systemctl --failed'
 
