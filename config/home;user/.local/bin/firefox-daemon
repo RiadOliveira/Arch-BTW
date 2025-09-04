@@ -1,3 +1,3 @@
 #!/bin/bash
 
-hyprctl dispatch exec "[workspace 1 silent; nofocus; noanim; float; opacity 0; size 1 1; move -2000 -2000]" "uwsm app -- firefox-developer-edition --new-instance --no-remote about:blank"
+hyprctl dispatch exec "[workspace special:firefox-daemon silent; nofocus; noanim; float; opacity 0; size 1 1; move -2000 -2000]" "uwsm app -- firefox-developer-edition --new-instance --no-remote about:blank"
