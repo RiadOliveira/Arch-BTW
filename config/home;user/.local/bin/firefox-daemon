@@ -1,0 +1,3 @@
+#!/bin/bash
+
+hyprctl dispatch exec "[nofocus; noanim; silent; float; hidden; opacity 0; move -2000 -2000; size 1 1]" uwsm app -- firefox-developer-edition
