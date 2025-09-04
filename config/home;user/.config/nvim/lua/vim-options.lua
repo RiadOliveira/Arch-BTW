@@ -60,6 +60,11 @@ vim.keymap.set({ "n" }, "<C-j>", "<C-w>j")
 vim.keymap.set({ "n" }, "<C-k>", "<C-w>k")
 vim.keymap.set({ "n" }, "<C-l>", "<C-w>l")
 
+vim.keymap.set("n", "<C-w><C-h>", "5<C-w><")
+vim.keymap.set("n", "<C-w><C-l>", "5<C-w>>")
+vim.keymap.set("n", "<C-w><C-j>", "5<C-w>-")
+vim.keymap.set("n", "<C-w><C-k>", "5<C-w>+")
+
 vim.keymap.set("x", "p", '"_dP')
 vim.keymap.set("v", "<C-c>", '"+y', { noremap = true, silent = true })
 vim.keymap.set("n", "<C-c>", '"+yy', { noremap = true, silent = true })
