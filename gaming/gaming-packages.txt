@@ -6,6 +6,9 @@ lib32-nvidia-utils
 lib32-systemd
 steam
 
+# Heroic
+heroic-games-launcher-bin
+
 # PS2
 pcsx2
 

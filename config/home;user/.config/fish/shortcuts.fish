@@ -42,6 +42,9 @@ alias torrent-bg="$APP_CMD nohup transmission-gtk $DISOWN_CMD"
 alias steam="$APP_CMD steam"
 alias steam-bg="$APP_CMD nohup steam $DISOWN_CMD"
 
+alias heroic="$APP_CMD heroic"
+alias heroic-bg="$APP_CMD nohup heroic $DISOWN_CMD"
+
 alias prismlauncher="$APP_CMD prismlauncher"
 alias prismlauncher-bg="$APP_CMD nohup prismlauncher $DISOWN_CMD"
 

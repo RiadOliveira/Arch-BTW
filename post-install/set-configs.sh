@@ -71,10 +71,19 @@ set -U fish_color_command '#ecb90f'
 set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 
 # ───────────────────────────────────────────────
-# ▶ GIVE DOCKER PERMISSION
+# ▶ DOCKER CONFIG
 # ───────────────────────────────────────────────
 
 sudo usermod -aG docker $USER
+
+# Change Docker data-root to user home path
+sudo sed -i "s|\"data-root\": \"/home/.*/\.docker-data\"|\"data-root\": \"/home/$USER/.docker-data\"|" /etc/docker/daemon.json
+
+# ───────────────────────────────────────────────
+# ▶ HEROIC CONFIG
+# ───────────────────────────────────────────────
+
+sed -i "s|/home/user-name|/home/$USER|g" ~/.config/heroic/config.json
 
 # ───────────────────────────────────────────────
 # ▶ ALLOW CUSTOM BINARIES
