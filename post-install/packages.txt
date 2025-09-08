@@ -64,6 +64,7 @@ less
 man
 trash-cli
 transmission-cli
+transmission-gtk
 zstd
 7zip
 unzip
