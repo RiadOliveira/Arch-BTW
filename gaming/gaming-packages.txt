@@ -1,5 +1,6 @@
 # General
 proton-ge-custom-bin
+ds4drv
 
 # Steam
 lib32-nvidia-utils
