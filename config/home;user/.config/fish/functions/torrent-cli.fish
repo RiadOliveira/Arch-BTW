@@ -1,4 +1,4 @@
-function torrent
+function torrent-cli
   set TEMP (mktemp)
   printf '#!/bin/bash\nkillall transmission-cli 2>/dev/null\nrm -- "$0"\n' > $TEMP
 
