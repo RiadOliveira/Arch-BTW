@@ -23,6 +23,7 @@ cups
 cups-pdf
 avahi
 nss-mdns
+sane
 
 # Bluetooth Support
 bluez
