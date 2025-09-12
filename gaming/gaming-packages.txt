@@ -1,5 +1,7 @@
 # General
 proton-ge-custom-bin
+lsfg-vk
+mangohud
 ds4drv
 
 # Steam
