@@ -39,6 +39,9 @@ alias anki-bg="$APP_CMD nohup anki $DISOWN_CMD"
 alias torrent="$APP_CMD transmission-gtk"
 alias torrent-bg="$APP_CMD nohup transmission-gtk $DISOWN_CMD"
 
+alias lossless-scaling="$APP_CMD lsfg-vk-ui"
+alias lossless-scaling-bg="$APP_CMD nohup lsfg-vk-ui $DISOWN_CMD"
+
 alias steam="$APP_CMD steam"
 alias steam-bg="$APP_CMD nohup steam $DISOWN_CMD"
 
