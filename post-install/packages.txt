@@ -109,6 +109,7 @@ firefox-developer-edition
 # Development
 visual-studio-code-bin
 nodejs-lts-jod
+gdb
 jdk-openjdk
 npm
 pnpm
