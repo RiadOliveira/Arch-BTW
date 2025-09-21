@@ -12,4 +12,7 @@ require("jdtls").start_or_attach({
       ),
     },
   },
+  on_attach = function(client)
+    client.server_capabilities.semanticTokensProvider = false
+  end,
 })

@@ -36,12 +36,6 @@ return {
             end,
           },
         })
-
-        vim.lsp.config("jdtls", {
-          on_attach = function(client)
-            client.server_capabilities.semanticTokensProvider = false
-          end,
-        })
       end,
     },
     {
