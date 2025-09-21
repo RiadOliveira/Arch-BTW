@@ -48,6 +48,7 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       opts = {
         ensure_installed = {
+          "java-debug-adapter",
           "stylua",
           "eslint_d",
           "prettierd",

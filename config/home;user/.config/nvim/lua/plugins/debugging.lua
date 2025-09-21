@@ -3,6 +3,10 @@ return {
   dependencies = {
     "rcarriga/nvim-dap-ui",
     "nvim-neotest/nvim-nio",
+    {
+      "mfussenegger/nvim-jdtls",
+      ft = { "java" },
+    },
   },
   config = function()
     local dap, dapui = require("dap"), require("dapui")
@@ -25,7 +29,7 @@ return {
     vim.keymap.set("n", "<F5>", function()
       dap.continue()
     end)
-    vim.keymap.set("n", "<F10>", function()
+    vim.keymap.set("n", "<F9>", function()
       dap.step_over()
     end)
     vim.keymap.set("n", "<F11>", function()
