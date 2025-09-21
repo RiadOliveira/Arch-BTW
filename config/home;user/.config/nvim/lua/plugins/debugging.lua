@@ -72,7 +72,6 @@ return {
       command = "gdb",
       args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
     }
-
     dap.configurations.c = {
       {
         name = "Launch",
@@ -109,7 +108,28 @@ return {
         cwd = "${workspaceFolder}",
       },
     }
-
     dap.configurations.cpp = dap.configurations.c
+
+    dap.adapters["pwa-node"] = {
+      type = "server",
+      host = "localhost",
+      port = "${port}",
+      executable = {
+        command = "node",
+        args = {
+          os.getenv("HOME") .. "/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+          "${port}",
+        },
+      },
+    }
+    dap.configurations.javascript = {
+      {
+        type = "pwa-node",
+        request = "launch",
+        name = "Launch file",
+        program = "${file}",
+        cwd = "${workspaceFolder}",
+      },
+    }
   end,
 }

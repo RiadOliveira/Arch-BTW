@@ -49,6 +49,7 @@ return {
       opts = {
         ensure_installed = {
           "java-debug-adapter",
+          "js-debug-adapter",
           "stylua",
           "eslint_d",
           "prettierd",
