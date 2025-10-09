@@ -115,7 +115,7 @@ npm
 pnpm
 docker
 docker-compose
-beekeeper-studio-bin
+beekeeper-studio
 android-studio
 fish
 starship
