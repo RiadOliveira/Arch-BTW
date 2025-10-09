@@ -1,0 +1,3 @@
+#!/bin/bash
+
+hyprctl dispatch exec "[workspace special:browser-daemon silent; nofocus; noanim; float; opacity 0; size 1 1; move -2000 -2000]" "uwsm app -- zen-browser --new-instance --no-remote about:blank"

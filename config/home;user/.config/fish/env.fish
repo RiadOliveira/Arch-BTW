@@ -2,7 +2,6 @@
 set -U APP_CMD 'uwsm app --'
 set -U DISOWN_CMD '> /dev/null 2>&1 & disown'
 
-set -U FIREFOX 'firefox-developer-edition'
 set -U ELECTRON_ARGS '--enable-features=UseOzonePlatform,WaylandLinuxDrmSyncobj --ozone-platform=wayland'
 
 # FZF DEFAULTS

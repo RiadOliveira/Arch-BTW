@@ -9,11 +9,11 @@ alias pac-check='paru -Q'
 alias pac-cache='yes | paru -Scc'
 alias pac-clean='paru -Rns $(paru -Qdtq)'
 
-alias browser="$APP_CMD $FIREFOX"
-alias browser-bg="$APP_CMD nohup $FIREFOX $DISOWN_CMD"
+alias browser="$APP_CMD zen-browser"
+alias browser-bg="$APP_CMD nohup zen-browser $DISOWN_CMD"
 
-alias firefox-developer-edition="$APP_CMD $FIREFOX"
-alias firefox-developer-edition-bg="$APP_CMD nohup $FIREFOX $DISOWN_CMD"
+alias zen-browser="$APP_CMD zen-browser"
+alias zen-browser-bg="$APP_CMD nohup zen-browser $DISOWN_CMD"
 
 alias vscode="$APP_CMD code . --password-store='gnome-libsecret' $ELECTRON_ARGS"
 alias vscode-bg="$APP_CMD nohup code . --password-store='gnome-libsecret' $ELECTRON_ARGS $DISOWN_CMD"

@@ -104,7 +104,7 @@ anki-bin
 obsidian
 discord
 mpv
-firefox-developer-edition
+zen-browser-bin
 
 # Development
 visual-studio-code-bin
