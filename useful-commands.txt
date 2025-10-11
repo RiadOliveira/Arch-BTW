@@ -12,3 +12,6 @@ du -sh * 2>/dev/null | sort -hr
 
 # Compress with 4Gb parts
 7z a -t7z -mx=9 -m0=lzma2 -md=256m -mfb=64 -mmt=6 -v4g HIMYM.7z HIMYM
+
+# Launch options for some Steam games
+DXVK_HUD=compiler PROTON_ENABLE_WAYLAND=1 __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1 STAGING_SHARED_MEMORY=1 __GL_SHADER_DISK_CACHE=1 __GL_SHADER_DISK_CACHE_SIZE=100000000000 XDG_CACHE_HOME="$PWD/shader_cache" uwsm app -- %command%

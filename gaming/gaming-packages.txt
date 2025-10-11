@@ -12,8 +12,9 @@ steam
 # Heroic
 heroic-games-launcher-bin
 
-# PS2
+# Emulators
 pcsx2
+rpcs3
 
 # Minecraft
 prismlauncher
