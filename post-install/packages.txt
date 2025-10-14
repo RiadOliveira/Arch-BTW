@@ -115,6 +115,7 @@ npm
 pnpm
 docker
 docker-compose
+docker-buildx
 beekeeper-studio
 android-studio
 fish
