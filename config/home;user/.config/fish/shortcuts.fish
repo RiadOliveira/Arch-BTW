@@ -51,6 +51,12 @@ alias steam-bg="$APP_CMD nohup steam $DISOWN_CMD"
 alias heroic="$APP_CMD heroic"
 alias heroic-bg="$APP_CMD nohup heroic $DISOWN_CMD"
 
+alias pcsx2="$APP_CMD pcsx2"
+alias pcsx2-bg="$APP_CMD nohup pcsx2 $DISOWN_CMD"
+
+alias rpcs3="$APP_CMD rpcs3"
+alias rpcs3-bg="$APP_CMD nohup rpcs3 $DISOWN_CMD"
+
 alias prismlauncher="$APP_CMD prismlauncher"
 alias prismlauncher-bg="$APP_CMD nohup prismlauncher $DISOWN_CMD"
 
