@@ -12,6 +12,7 @@ neovim
 apparmor
 dosfstools
 e2fsprogs
+exfatprogs
 lvm2
 
 # EFI
