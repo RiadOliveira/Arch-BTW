@@ -2,7 +2,6 @@
 proton-ge-custom-bin
 lsfg-vk
 mangohud
-ds4drv
 
 # Steam
 lib32-nvidia-utils
