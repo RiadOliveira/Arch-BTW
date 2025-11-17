@@ -17,6 +17,7 @@ lvm2
 
 # EFI
 efibootmgr
+fwupd
 
 # Networking
 iwd

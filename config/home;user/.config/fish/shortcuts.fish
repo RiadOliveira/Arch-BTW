@@ -2,6 +2,8 @@
 alias cmd='command'
 
 alias pac-up='paru -Syu'
+alias mirrors-up='systemctl start reflector'
+
 alias pac-add='paru -S'
 alias pac-info='paru -Qi'
 alias pac-purge='paru -Rns'

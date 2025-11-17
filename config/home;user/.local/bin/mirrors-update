@@ -1,4 +1,0 @@
-#!/bin/bash
-
-sudo systemctl start reflector
-sudo systemctl stop reflector
