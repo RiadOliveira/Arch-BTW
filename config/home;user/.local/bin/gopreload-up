@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DIR="/usr/share/gopreload/enabled"
+
+for file in "$DIR"/*; do
+  base="$(basename "$file")"
+  app="${base%%.*}"
+  gopreload-prepare "$app"
+done
