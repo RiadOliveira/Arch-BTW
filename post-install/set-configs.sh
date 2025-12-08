@@ -81,9 +81,10 @@ sudo usermod -aG docker $USER
 sudo sed -i "s|\"data-root\": \"/home/.*/\.docker-data\"|\"data-root\": \"/home/$USER/.docker-data\"|" /etc/docker/daemon.json
 
 # ───────────────────────────────────────────────
-# ▶ HEROIC CONFIG
+# ▶ GAMING CONFIGS
 # ───────────────────────────────────────────────
 
+sudo usermod -aG games $USER
 sed -i "s|/home/user-name|/home/$USER|g" ~/.config/heroic/config.json
 
 # ───────────────────────────────────────────────
