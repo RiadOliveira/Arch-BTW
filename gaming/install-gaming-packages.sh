@@ -7,5 +7,5 @@ echo "Installing the following gaming packages:"
 echo "$gaming_packages"
 echo
 
-paru -Sy --noconfirm --needed $gaming_packages
-paru -Syu --noconfirm
+yay -Sy --noconfirm --needed $gaming_packages
+yay -Syu --noconfirm

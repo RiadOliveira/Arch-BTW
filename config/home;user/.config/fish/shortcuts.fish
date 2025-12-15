@@ -1,15 +1,15 @@
 # Aliases
 alias cmd='command'
 
-alias pac-up='paru -Syu'
+alias pac-up='yay -Syu'
 alias mirrors-up='systemctl start reflector'
 
-alias pac-add='paru -S'
-alias pac-info='paru -Qi'
-alias pac-purge='paru -Rns'
-alias pac-check='paru -Q'
-alias pac-cache='yes | paru -Scc'
-alias pac-clean='paru -Rns $(paru -Qdtq)'
+alias pac-add='yay -S'
+alias pac-info='yay -Qi'
+alias pac-purge='yay -Rns'
+alias pac-check='yay -Q'
+alias pac-cache='yes | yay -Scc'
+alias pac-clean='yay -Rns $(yay -Qdtq)'
 
 alias browser="$APP_CMD zen-browser"
 alias browser-bg="$APP_CMD nohup zen-browser $DISOWN_CMD"
