@@ -106,9 +106,3 @@ bat cache --build
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 bash ~/.config/tmux/plugins/tpm/bin/install_plugins
 
-# ───────────────────────────────────────────────
-# ▶ PRELOAD PERMISSIONS
-# ───────────────────────────────────────────────
-
-sudo chown $USER:$USER /usr/share/gopreload/enabled /usr/share/gopreload/disabled
-

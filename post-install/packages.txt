@@ -46,11 +46,6 @@ dunst
 lxsession-gtk3
 wl-clip-persist
 
-# Preload
-preload
-gopreload-git
-wmctrl
-
 # Utilities & Enhancements
 fastfetch
 swayimg
@@ -73,6 +68,7 @@ jmtpfs
 tmux
 entr
 qimgv-git
+preload
 
 # Screenshotting
 grim
