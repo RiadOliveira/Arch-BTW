@@ -83,9 +83,10 @@
     "actions": {
       "on-click": "mode",
       "on-click-right": "shift_reset",
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+      "on-scroll-up": "shift_down",
+      "on-scroll-down": "shift_up"
+    },
+    "smooth-scrolling-threshold": 4.0
   },
   "hyprland/window": {
     "format": "{initialTitle}",
