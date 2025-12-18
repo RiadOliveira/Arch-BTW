@@ -44,6 +44,9 @@ alias torrent-bg="$APP_CMD nohup transmission-gtk $DISOWN_CMD"
 alias pavucontrol="$APP_CMD pavucontrol"
 alias pavucontrol-bg="$APP_CMD nohup pavucontrol $DISOWN_CMD"
 
+alias antimicrox="$APP_CMD antimicrox"
+alias antimicrox-bg="$APP_CMD nohup antimicrox $DISOWN_CMD"
+
 alias lossless-scaling="$APP_CMD lsfg-vk-ui"
 alias lossless-scaling-bg="$APP_CMD nohup lsfg-vk-ui $DISOWN_CMD"
 
