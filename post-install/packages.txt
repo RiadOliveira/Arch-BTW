@@ -65,6 +65,7 @@ zstd
 7zip
 unzip
 jmtpfs
+android-tools
 tmux
 entr
 qimgv-git
