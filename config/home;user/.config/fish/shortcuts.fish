@@ -5,9 +5,10 @@ alias pac-up='yay -Syu'
 alias mirrors-up='systemctl start reflector'
 
 alias pac-add='yay -S'
-alias pac-info='yay -Qi'
 alias pac-purge='yay -Rns'
 alias pac-check='yay -Q'
+alias pac-info='yay -Qi'
+alias pac-own='yay -Qo'
 alias pac-cache='yes | yay -Scc'
 alias pac-clean='yay -Rns $(yay -Qdtq)'
 
