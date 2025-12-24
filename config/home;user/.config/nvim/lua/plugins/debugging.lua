@@ -3,10 +3,6 @@ return {
   dependencies = {
     "rcarriga/nvim-dap-ui",
     "nvim-neotest/nvim-nio",
-    {
-      "mfussenegger/nvim-jdtls",
-      ft = { "java" },
-    },
   },
   config = function()
     local dap, dapui = require("dap"), require("dapui")
