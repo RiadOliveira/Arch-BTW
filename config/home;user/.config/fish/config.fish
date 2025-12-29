@@ -1,18 +1,15 @@
 if status is-interactive
-  # Commands to run in interactive sessions can go here
 end
 
-# Starship
-starship init fish | source
-
-# Zoxide
-zoxide init fish | source
-
-# FZF 
-fzf --fish | source
-
-# Environment Variables
+# Environment variables
 source ~/.config/fish/env.fish
 
-# Shortcuts
+# Prompt
+starship init fish | source
+
+# Tools
+zoxide init fish | source
+fzf --fish | source
+
+# Shortcuts / aliases / abbrs
 source ~/.config/fish/shortcuts.fish

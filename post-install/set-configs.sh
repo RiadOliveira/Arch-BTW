@@ -66,10 +66,6 @@ sudo hwclock --systohc
 # ───────────────────────────────────────────────
 
 chsh -s /bin/fish
-set -U fish_greeting
-set -U fish_color_command '#ecb90f'
-set -U fish_user_paths $HOME/.local/bin $fish_user_paths
-set -U fish_user_paths $HOME/.local/share/nvim/mason/bin $fish_user_paths
 
 # ───────────────────────────────────────────────
 # ▶ DOCKER CONFIG
