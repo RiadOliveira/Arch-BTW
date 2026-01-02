@@ -1,0 +1,7 @@
+#!/bin/bash
+
+GEOM=$(hyprctl activewindow -j | jq -r '"\(.at[0] - 4),\(.at[1] - 4) \(.size[0] + 8)x\(.size[1] + 8)"')
+FILE=~/Screenshots/window_video_$(date +%Y%m%d_%H%M%S).mp4
+
+wf-recorder -g "$GEOM" -f "$FILE" &
+notify-send -a "[Video]" -r 9 -t 2000 -h string:fgcolor:"#fb4935" "Window recording started"

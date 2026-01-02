@@ -73,6 +73,7 @@ preload
 
 # Screenshotting
 grim
+wf-recorder
 slurp
 wl-clipboard
 jq

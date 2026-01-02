@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pkill wf-recorder && \
+notify-send -a "[Video]" -r 9 -t 2000 -h string:fgcolor:"#fb4935" "Recording stopped"

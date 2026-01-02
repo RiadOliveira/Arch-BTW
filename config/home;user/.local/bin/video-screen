@@ -1,0 +1,6 @@
+#!/bin/bash
+
+FILE=~/Screenshots/entire_video_$(date +%Y%m%d_%H%M%S).mp4
+
+wf-recorder -f "$FILE" &
+notify-send -a "[Video]" -r 9 -t 2000 -h string:fgcolor:"#fb4935" "Screen recording started"

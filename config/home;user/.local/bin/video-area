@@ -1,0 +1,9 @@
+#!/bin/bash
+
+GEOM=$(slurp) || exit 1
+[[ -z "$GEOM" ]] && exit 0
+
+FILE=~/Screenshots/area_video_$(date +%Y%m%d_%H%M%S).mp4
+
+wf-recorder -g "$GEOM" -f "$FILE" &
+notify-send -a "[Video]" -r 9 -t 2000 -h string:fgcolor:"#fb4935" "Area recording started"
