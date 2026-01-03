@@ -3,25 +3,34 @@ return {
   tag = "0.1.8",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-    require('telescope').setup({
+    require("telescope").setup({
       defaults = {
         hidden = true,
         file_ignore_patterns = {
           "node_modules/.*",
           "%.git/.*",
+          "%.png",
+          "%.jpg",
+          "%.jpeg",
+          "%.gif",
+          "%.bmp",
+          "%.svg",
+          "%.ico",
+          "%.webp",
+          "%.tiff",
         },
       },
       pickers = {
         find_files = {
           hidden = true,
-          no_ignore = true
+          no_ignore = true,
         },
         live_grep = {
           additional_args = function()
             return { "--hidden" }
-          end
+          end,
         },
-      }
+      },
     })
 
     local builtin = require("telescope.builtin")
