@@ -108,6 +108,7 @@ zen-browser-bin
 visual-studio-code-bin
 nodejs-lts-jod
 gdb
+rustup
 jdk-openjdk
 npm
 pnpm
