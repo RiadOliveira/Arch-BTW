@@ -1,6 +1,10 @@
 return {
   "nvim-lualine/lualine.nvim",
   config = function()
+    local function wide_enough()
+      return vim.fn.winwidth(0) >= 120
+    end
+
     local custom_theme = {
       normal = {
         a = { fg = "#ffffff", bg = "#1c94fc", gui = "bold" },
@@ -43,15 +47,6 @@ return {
         lualine_b = {
           "branch",
           {
-            "diff",
-            colored = true,
-            diff_color = {
-              added = { fg = "#ffffff" },
-              modified = { fg = "#ffffff" },
-              removed = { fg = "#ffffff" },
-            },
-          },
-          {
             "diagnostics",
             sources = { "nvim_diagnostic", "nvim_lsp" },
             sections = { "error", "warn", "info", "hint" },
@@ -64,11 +59,19 @@ return {
           },
         },
         lualine_c = {
-          { "filename", path = 1 }
+          { "filename", path = 1 },
         },
-        lualine_x = { "encoding", "fileformat", "filetype" },
-        lualine_y = { "progress" },
-        lualine_z = { "location" },
+        lualine_x = {
+          { "encoding", cond = wide_enough },
+          { "fileformat", cond = wide_enough },
+          { "filetype", cond = wide_enough },
+        },
+        lualine_y = {
+          { "progress", cond = wide_enough },
+        },
+        lualine_z = {
+          { "location", cond = wide_enough },
+        },
       },
     })
   end,
