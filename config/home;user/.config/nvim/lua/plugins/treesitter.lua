@@ -19,6 +19,8 @@ return {
         "java",
         "javascript",
         "json",
+        "rust",
+        "toml",
         "lua",
         "make",
         "markdown",

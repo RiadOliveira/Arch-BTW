@@ -21,7 +21,7 @@ return {
       "tailwindcss",
     },
     automatic_enable = {
-      exclude = { "jdtls" },
+      exclude = { "jdtls", "rust_analyzer" },
     },
   },
   dependencies = {
@@ -52,6 +52,7 @@ return {
           "stylua",
           "eslint_d",
           "google-java-format",
+          "codelldb"
         },
         auto_update = true,
         run_on_start = true,
@@ -61,5 +62,10 @@ return {
       "mfussenegger/nvim-jdtls",
       ft = { "java" },
     },
+    {
+      "mrcjkb/rustaceanvim",
+      version = "^6",
+      lazy = false,
+    }
   },
 }
