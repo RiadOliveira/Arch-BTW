@@ -19,6 +19,7 @@ return {
             gitsigns.diffthis("HEAD")
           end)
           map("n", "<leader>hp", gitsigns.preview_hunk)
+          map("n", "<leader>hr", gitsigns.reset_hunk)
           map("n", "<leader>hi", gitsigns.preview_hunk_inline)
           map("n", "<leader>tw", gitsigns.toggle_word_diff)
 
