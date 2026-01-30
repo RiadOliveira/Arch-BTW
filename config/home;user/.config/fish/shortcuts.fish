@@ -12,11 +12,11 @@ alias pac-own='yay -Qo'
 alias pac-cache='yes | yay -Scc'
 alias pac-clean='yay -Rns $(yay -Qdtq)'
 
-alias browser="$APP_CMD zen-browser"
-alias browser-bg="$APP_CMD nohup zen-browser $DISOWN_CMD"
+alias browser="$APP_CMD $BROWSER_CMD"
+alias browser-bg="$APP_CMD nohup $BROWSER_CMD $DISOWN_CMD"
 
-alias zen-browser="$APP_CMD zen-browser"
-alias zen-browser-bg="$APP_CMD nohup zen-browser $DISOWN_CMD"
+alias zen-browser="$APP_CMD $BROWSER_CMD"
+alias zen-browser-bg="$APP_CMD nohup $BROWSER_CMD $DISOWN_CMD"
 
 alias vscode="$APP_CMD code . --password-store='gnome-libsecret' $ELECTRON_ARGS"
 alias vscode-bg="$APP_CMD nohup code . --password-store='gnome-libsecret' $ELECTRON_ARGS $DISOWN_CMD"

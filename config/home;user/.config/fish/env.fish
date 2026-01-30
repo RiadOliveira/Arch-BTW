@@ -1,6 +1,7 @@
 # APP COMMANDS
 set -gx APP_CMD 'uwsm app --'
 set -gx DISOWN_CMD '> /dev/null 2>&1 & disown'
+set -gx BROWSER_CMD 'zen-browser --new-window about:newtab'
 
 set -gx ELECTRON_ARGS '--enable-features=UseOzonePlatform,WaylandLinuxDrmSyncobj --ozone-platform=wayland'
 

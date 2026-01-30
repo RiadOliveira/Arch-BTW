@@ -1,3 +1,3 @@
 #!/bin/bash
 
-hyprctl dispatch exec "[workspace special:browser-daemon silent]" "zen-browser --new-instance about:blank"
+hyprctl dispatch exec "[workspace special:browser-daemon silent]" "zen-browser --new-window about:blank"
