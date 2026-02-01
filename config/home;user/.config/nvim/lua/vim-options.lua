@@ -51,6 +51,9 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 
+vim.keymap.set("n", "<C-[>", ":bp<CR>")
+vim.keymap.set("n", "<C-]>", ":bn<CR>")
+
 vim.keymap.set({ "t", "i" }, "<C-h>", "<C-\\><C-n><C-w>h")
 vim.keymap.set({ "t", "i" }, "<C-j>", "<C-\\><C-n><C-w>j")
 vim.keymap.set({ "t", "i" }, "<C-k>", "<C-\\><C-n><C-w>k")
