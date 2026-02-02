@@ -103,6 +103,7 @@ anki-bin
 obsidian
 discord
 mpv
+yt-dlp
 zen-browser-bin
 
 # Development
