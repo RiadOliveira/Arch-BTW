@@ -54,7 +54,7 @@ fail2ban
 haveged
 udisks2
 htop
-wcalc
+libqalculate
 wget
 less
 man
