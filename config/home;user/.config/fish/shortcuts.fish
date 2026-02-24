@@ -27,8 +27,8 @@ alias discord-bg="$APP_CMD nohup discord $ELECTRON_ARGS $DISOWN_CMD"
 alias obsidian="$APP_CMD obsidian $ELECTRON_ARGS"
 alias obsidian-bg="$APP_CMD nohup obsidian $ELECTRON_ARGS $DISOWN_CMD"
 
-alias beekeeper-studio="$APP_CMD beekeeper-studio $ELECTRON_ARGS"
-alias beekeeper-studio-bg="$APP_CMD nohup beekeeper-studio $ELECTRON_ARGS $DISOWN_CMD"
+alias beekeeper-studio="$APP_CMD beekeeper-studio --ozone-platform=x11"
+alias beekeeper-studio-bg="$APP_CMD nohup beekeeper-studio --ozone-platform=x11 $DISOWN_CMD"
 
 alias android-studio="$APP_CMD android-studio"
 alias android-studio-bg="$APP_CMD nohup android-studio $DISOWN_CMD"

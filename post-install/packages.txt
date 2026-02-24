@@ -99,7 +99,7 @@ f3
 # ventoy-bin
 
 # Applications
-anki-bin
+anki
 obsidian
 discord
 mpv
@@ -117,7 +117,7 @@ pnpm
 docker
 docker-compose
 docker-buildx
-beekeeper-studio
+beekeeper-studio-bin
 android-studio
 fish
 starship
