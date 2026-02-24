@@ -7,6 +7,12 @@ uwsm app -- (app-name)
 # Run Electron app
 (electron-app-name) --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj
 
+# Restart DNS
+sudo resolvectl flush-caches && sudo systemctl restart iwd && sudo systemctl restart systemd-resolved
+
+# Scan PDF
+scanimage --device "escl:http://X.X.X.X:443/" --format=pdf --output-file scanned.pdf --mode Color --resolution 1200 --progress
+
 # Check current folder sizes
 du -sh * 2>/dev/null | sort -hr
 
