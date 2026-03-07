@@ -69,6 +69,7 @@ vim.keymap.set("n", "<C-w><C-k>", "5<C-w>+")
 vim.keymap.set("x", "p", '"_dP')
 vim.keymap.set("v", "<C-c>", '"+y', { noremap = true, silent = true })
 vim.keymap.set("n", "<C-c>", '"+yy', { noremap = true, silent = true })
+vim.keymap.set("c", "<C-y>", "<C-r>0", { noremap = true })
 
 vim.keymap.set("n", "<leader>d", '"_d', {})
 vim.keymap.set("v", "<leader>d", '"_d', {})
