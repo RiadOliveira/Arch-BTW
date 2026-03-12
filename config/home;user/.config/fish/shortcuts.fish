@@ -90,7 +90,6 @@ alias htop='monitor'
 
 alias rm='trash-put'
 alias rm-trash='trash-rm'
-alias purge='cmd rm -rf'
 alias rmdir='trash-put'
 alias clean='trash-empty -f'
 alias trash='trash-list'
