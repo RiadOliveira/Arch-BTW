@@ -114,6 +114,7 @@ rustup
 jdk-openjdk
 npm
 pnpm
+bun
 docker
 docker-compose
 docker-buildx

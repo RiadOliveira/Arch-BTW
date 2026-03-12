@@ -101,7 +101,7 @@ alias disk-check='df -h -x tmpfs -x devtmpfs -x squashfs'
 alias service-check='systemctl --failed'
 
 alias docker-clean='docker system prune -a --volumes && docker volume prune -a'
-alias cache-clean='rm -rf ~/.cache && pac-cache && pnpm cache delete && pnpm store prune && npm cache clean --force && clean'
+alias cache-clean='rm -rf ~/.cache && pnpm cache delete && pnpm store prune && npm cache clean --force && clean'
 
 alias cat='bat'
 alias man='batman'
