@@ -24,6 +24,7 @@ cups-pdf
 avahi
 nss-mdns
 sane
+# epson-printer-utility
 
 # Bluetooth Support
 bluez
