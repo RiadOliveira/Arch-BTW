@@ -115,3 +115,9 @@ bash ~/.config/tmux/plugins/tpm/bin/install_plugins
 
 rustup default stable
 
+# ───────────────────────────────────────────────
+# ▶ KVM GROUP
+# ───────────────────────────────────────────────
+
+sudo usermod -aG kvm $USER
+
