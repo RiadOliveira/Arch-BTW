@@ -68,6 +68,13 @@ sudo hwclock --systohc
 chsh -s /bin/fish
 
 # ───────────────────────────────────────────────
+# ▶ SET BROWSER DEFAULTS
+# ───────────────────────────────────────────────
+
+xdg-settings set default-web-browser zen.desktop
+xdg-mime default zen.desktop application/pdf
+
+# ───────────────────────────────────────────────
 # ▶ DOCKER CONFIG
 # ───────────────────────────────────────────────
 
