@@ -20,3 +20,4 @@ set -gx FZF_ALT_C_OPTS '--preview "eza -1 --color=always {}"'
 # ANDROID
 set -gx ANDROID_HOME ~/Android/Sdk
 set -gx ANDROID_AVD_HOME ~/.config/.android/avd
+test -d $ANDROID_HOME/ndk; and set -gx NDK_HOME $ANDROID_HOME/ndk/(ls -1 $ANDROID_HOME/ndk | tail -1)

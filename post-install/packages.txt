@@ -125,3 +125,9 @@ fish
 starship
 httpie
 chromium
+
+# Tauri Additional Packages
+# webkit2gtk-4.1
+# appmenu-gtk-module
+# libappindicator-gtk3
+# xdotool
