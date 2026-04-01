@@ -7,9 +7,7 @@ return {
       defaults = {
         hidden = true,
         file_ignore_patterns = {
-          "node_modules/.*",
           "%.git/.*",
-          "%.next/.*",
           "%.png",
           "%.jpg",
           "%.jpeg",
@@ -24,7 +22,6 @@ return {
       pickers = {
         find_files = {
           hidden = true,
-          no_ignore = true,
         },
         live_grep = {
           additional_args = function()
