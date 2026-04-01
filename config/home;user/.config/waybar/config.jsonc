@@ -63,8 +63,9 @@
       ]
     },
     "persistent-only": true,
-    "on-scroll-up": "hyprctl dispatch workspace +1",
-    "on-scroll-down": "hyprctl dispatch workspace -1"
+    "on-scroll-up": "workspace-next",
+    "on-scroll-down": "workspace-prev",
+    "smooth-scrolling-threshold": 4.0
   },
   "clock": {
     "interval": 60,
