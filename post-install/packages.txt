@@ -25,6 +25,7 @@ avahi
 nss-mdns
 sane
 # epson-printer-utility
+# epson-inkjet-printer-escpr
 
 # Bluetooth Support
 bluez
