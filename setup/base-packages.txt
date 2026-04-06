@@ -7,6 +7,7 @@ sof-firmware
 base-devel
 git
 neovim
+tree-sitter-cli
 
 # Filesystem & Boot
 apparmor

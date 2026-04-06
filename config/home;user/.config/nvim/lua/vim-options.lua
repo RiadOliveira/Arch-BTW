@@ -17,6 +17,7 @@ vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.scrolloff = 10
+vim.o.foldlevel = 99
 
 vim.opt.fillchars:append({ eob = " " })
 
@@ -77,6 +78,16 @@ vim.keymap.set("n", "<leader>dd", '"_dd', {})
 vim.keymap.set("n", "<leader>D", '"_D', {})
 vim.keymap.set("n", "<leader>x", '"_x', {})
 vim.keymap.set("v", "<leader>x", '"_x', {})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "*" },
+  callback = function()
+    pcall(vim.treesitter.start)
+    vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    vim.wo[0][0].foldmethod = "expr"
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
+})
 
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
