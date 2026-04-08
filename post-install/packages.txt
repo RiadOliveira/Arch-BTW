@@ -47,6 +47,8 @@ gcr-4
 dunst
 lxsession-gtk3
 wl-clip-persist
+piper
+openrgb
 
 # Utilities & Enhancements
 fastfetch

@@ -1,0 +1,57 @@
+{
+    "Effects": [
+        {
+            "AllowOnlyFirst": false,
+            "AutoStart": true,
+            "Brightness": 100,
+            "ControllerZones": [
+                {
+                    "description": "Logitech Mouse Device",
+                    "is_segment": false,
+                    "location": "HID: /dev/hidraw1",
+                    "name": "Logitech G203 Lightsync",
+                    "reverse": false,
+                    "segment_idx": -1,
+                    "self_brightness": 100,
+                    "serial": "174DA2532568",
+                    "vendor": "Logitech",
+                    "version": "",
+                    "zone_idx": 0
+                }
+            ],
+            "CustomName": "Chroner Effect",
+            "CustomSettings": {
+                "colors": [
+                    16552988,
+                    16552988,
+                    16712571,
+                    16712571,
+                    16712571,
+                    16712571,
+                    15466751,
+                    15466751,
+                    15466751,
+                    15466751,
+                    16712571,
+                    16712571,
+                    16712571,
+                    16712571,
+                    16552988,
+                    16552988
+                ],
+                "direction": 0,
+                "height": 50,
+                "spread": 25,
+                "width": 100
+            },
+            "EffectClassName": "CustomGradientWave",
+            "FPS": 60,
+            "RandomColors": false,
+            "Slider2Val": 1,
+            "Speed": 10,
+            "Temperature": 0,
+            "Tint": 0
+        }
+    ],
+    "version": 2
+}
