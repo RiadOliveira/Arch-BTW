@@ -68,8 +68,8 @@ alias prismlauncher-bg="$APP_CMD nohup prismlauncher $DISOWN_CMD"
 
 alias emulator="$APP_CMD $ANDROID_HOME/emulator/emulator"
 
-alias chromium="$APP_CMD $CHROMIUM_CMD"
-alias chromium-bg="$APP_CMD nohup $CHROMIUM_CMD $DISOWN_CMD"
+alias chromium="$APP_CMD $CHROMIUM_CMD $ELECTRON_ARGS"
+alias chromium-bg="$APP_CMD nohup $CHROMIUM_CMD $ELECTRON_ARGS $DISOWN_CMD"
 
 alias qimgv="$APP_CMD qimgv"
 alias qimgv-bg="$APP_CMD nohup qimgv $DISOWN_CMD"
