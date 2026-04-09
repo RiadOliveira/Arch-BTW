@@ -21,8 +21,8 @@ alias zen-browser-bg="$APP_CMD nohup $BROWSER_CMD $DISOWN_CMD"
 alias vscode="$APP_CMD code . --password-store='gnome-libsecret' $ELECTRON_ARGS"
 alias vscode-bg="$APP_CMD nohup code . --password-store='gnome-libsecret' $ELECTRON_ARGS $DISOWN_CMD"
 
-alias discord="$APP_CMD discord $ELECTRON_ARGS"
-alias discord-bg="$APP_CMD nohup discord $ELECTRON_ARGS $DISOWN_CMD"
+alias discord="$APP_CMD discord --ozone-platform=x11"
+alias discord-bg="$APP_CMD nohup discord --ozone-platform=x11 $DISOWN_CMD"
 
 alias obsidian="$APP_CMD obsidian $ELECTRON_ARGS"
 alias obsidian-bg="$APP_CMD nohup obsidian $ELECTRON_ARGS $DISOWN_CMD"
