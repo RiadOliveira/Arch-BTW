@@ -1,7 +1,9 @@
-#!/bin/bash
+#!/bin/fish
 
-GEOM=$(slurp) || exit 1
-[[ -z "$GEOM" ]] && exit 0
+set GEOM (slurp); or exit 1
+if test -z "$GEOM"
+  exit 0
+end
 
-grim -g "$GEOM" - | wl-copy && \
-notify-send -a "[Screenshot]" -r 8 -t 2000 -h string:fgcolor:"#50c7e3" "Area copied"
+grim -g "$GEOM" - | wl-copy
+and notify-send -a "[Screenshot]" -r 8 -t 2000 -h string:fgcolor:"#50c7e3" "Area copied"

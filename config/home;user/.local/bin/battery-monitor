@@ -1,17 +1,17 @@
-#!/bin/bash
+#!/bin/fish
 
-battery_level=$(cat /sys/class/power_supply/BAT*/capacity 2>/dev/null | head -n1)
+set battery_level (cat /sys/class/power_supply/BAT*/capacity 2>/dev/null | head -n1)
 
-if [ -z "$battery_level" ]; then
+if test -z "$battery_level"
   exit 1
-fi
+end
 
-battery_status=$(cat /sys/class/power_supply/BAT*/status 2>/dev/null | head -n1)
+set battery_status (cat /sys/class/power_supply/BAT*/status 2>/dev/null | head -n1)
 
-if [ "$battery_status" = "Discharging" ]; then
-  if [ "$battery_level" -le 15 ]; then
-    notify-send -a "[Battery Critical]" -u critical -r 7 -t 0 -h string:fgcolor:"#f00" "Battery level: ${battery_level}%"
-  elif [ "$battery_level" -le 30 ]; then
-    notify-send -a "[Battery Warning]" -u normal -r 7 -t 5000 -h string:fgcolor:"#ffa500" "Battery level: ${battery_level}%"
-  fi
-fi
+if test "$battery_status" = "Discharging"
+  if test "$battery_level" -le 15
+    notify-send -a "[Battery Critical]" -u critical -r 7 -t 0 -h string:fgcolor:"#f00" "Battery level: $battery_level%"
+  else if test "$battery_level" -le 30
+    notify-send -a "[Battery Warning]" -u normal -r 7 -t 5000 -h string:fgcolor:"#ffa500" "Battery level: $battery_level%"
+  end
+end

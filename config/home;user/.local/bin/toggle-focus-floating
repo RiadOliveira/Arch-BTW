@@ -1,10 +1,9 @@
-#!/bin/bash
+#!/bin/fish
 
-is_floating=$(hyprctl activewindow -j | jq -r '.floating')
+set is_floating (hyprctl activewindow -j | jq -r '.floating')
 
-if [ "$is_floating" = "true" ]; then
+if test "$is_floating" = "true"
   hyprctl dispatch focuswindow tiled
 else
   hyprctl dispatch focuswindow floating
-fi
-
+end

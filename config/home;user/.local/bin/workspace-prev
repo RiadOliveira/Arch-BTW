@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/fish
 
-current=$(hyprctl activeworkspace -j | jq '.id')
+set current (hyprctl activeworkspace -j | jq '.id')
 
-if [ "$current" -le 1 ]; then
+if test "$current" -le 1
   hyprctl dispatch workspace 10
 else
-  hyprctl dispatch workspace $((current - 1))
-fi
+  hyprctl dispatch workspace (math "$current - 1")
+end

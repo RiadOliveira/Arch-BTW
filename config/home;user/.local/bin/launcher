@@ -1,8 +1,8 @@
-#!/bin/bash 
+#!/bin/fish
 
 cd ~/.applications
-SELECTED_APP=$(fzf --reverse)
+set SELECTED_APP (fzf --reverse)
 
-if [ -n "$SELECTED_APP" ]; then
-  setsid bash "$SELECTED_APP"
-fi
+if test -n "$SELECTED_APP"
+  setsid fish "$SELECTED_APP"
+end

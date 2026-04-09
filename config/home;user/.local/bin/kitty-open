@@ -1,11 +1,12 @@
-#!/bin/bash
+#!/usr/bin/fish
 
-NAME=$1
-LARGE_FONT=$2
+set NAME $argv[1]
+set LARGE_FONT $argv[2]
 
-FONT_OPTION=""
-if [ "$LARGE_FONT" = "true" ]; then
-  FONT_OPTION="-o font_size=17"
-fi
+set FONT_OPTION
+if test "$LARGE_FONT" = "true"
+  set FONT_OPTION -o font_size=17
+end
 
-uwsm app -- nohup kitty --class=$NAME $FONT_OPTION $NAME > /dev/null 2>&1 & disown
+uwsm app -- nohup kitty --class=$NAME $FONT_OPTION $NAME > /dev/null 2>&1 &
+disown

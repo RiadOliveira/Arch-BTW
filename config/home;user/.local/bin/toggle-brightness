@@ -1,15 +1,15 @@
-#!/bin/bash
+#!/bin/fish
 
-current=$(brightnessctl get)
-max=$(brightnessctl max)
-percent=$(( current * 100 / max ))
-low=0
-high=100
+set current (brightnessctl get)
+set max (brightnessctl max)
+set percent (math "$current * 100 / $max")
+set low 0
+set high 100
 
-if [ "$percent" -lt 50 ]; then
-  brightnessctl -n1 set ${high}%
-  notify-send -a "[Brightness]" -r 4 -t 2000 -h int:value:"$high" -h string:fgcolor:"#bdcbde" "${high}% (Max)"
+if test "$percent" -lt 50
+  brightnessctl -n1 set {$high}%
+  notify-send -a "[Brightness]" -r 4 -t 2000 -h int:value:"$high" -h string:fgcolor:"#bdcbde" "$high% (Max)"
 else
-  brightnessctl -n1 set ${low}%
-  notify-send -a "[Brightness]" -r 4 -t 2000 -h int:value:"$low" -h string:fgcolor:"#bdcbde" "${low}% (Min)"
-fi
+  brightnessctl -n1 set {$low}%
+  notify-send -a "[Brightness]" -r 4 -t 2000 -h int:value:"$low" -h string:fgcolor:"#bdcbde" "$low% (Min)"
+end
