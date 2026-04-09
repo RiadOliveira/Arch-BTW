@@ -13,12 +13,19 @@ window#waybar {
   border-radius: 8px;
 }
 
-tooltip {
+tooltip,
+#tray menu {
   background: alpha(#050014, 0.8);
+  border: 1px solid alpha(#9c44fc, 0.8);
   font-weight: 700;
 }
 
-tooltip * {
+#tray menu>*:hover {
+  background: alpha(#9c44fc, 0.6);
+}
+
+tooltip,
+#tray menu {
   animation-name: tooltip-fade;
   animation-duration: 0.2s;
   animation-fill-mode: forwards;
@@ -30,6 +37,7 @@ tooltip * {
 #workspaces,
 #clock,
 #window,
+#tray,
 .modules-right {
   font-weight: 700;
   background: alpha(#050014, 0.6);
@@ -102,9 +110,16 @@ tooltip * {
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 
-#workspaces,
+#workspaces {
+  min-width: 258px;
+}
+
 #window {
-  min-width: 254px;
+  min-width: 200px;
+}
+
+#tray {
+  min-width: 58px;
 }
 
 #network {

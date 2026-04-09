@@ -15,7 +15,8 @@
   "modules-center": [
     "hyprland/workspaces",
     "clock",
-    "hyprland/window"
+    "hyprland/window",
+    "tray"
   ],
   "modules-right": [
     "network",
@@ -94,8 +95,13 @@
     "format": "{initialTitle}",
     "tooltip-format": "{title}",
     "icon": true,
-    "icon-size": 20,
+    "icon-size": 21,
     "max-length": 26
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 16,
+    "smooth-scrolling-threshold": 4.0
   },
   "network": {
     "interval": 60,
