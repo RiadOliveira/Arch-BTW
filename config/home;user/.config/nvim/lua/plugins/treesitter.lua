@@ -5,6 +5,7 @@ return {
   config = function()
     require("nvim-treesitter").install({
       "bash",
+      "fish",
       "c",
       "cmake",
       "cpp",

@@ -2,8 +2,8 @@ return {
   "mason-org/mason-lspconfig.nvim",
   opts = {
     ensure_installed = {
-      "lua_ls",
       "bashls",
+      "lua_ls",
       "clangd",
       "cssls",
       "dockerls",
@@ -50,7 +50,7 @@ return {
           "stylua",
           "eslint_d",
           "google-java-format",
-          "codelldb"
+          "codelldb",
         },
         auto_update = true,
         run_on_start = true,
@@ -64,6 +64,6 @@ return {
       "mrcjkb/rustaceanvim",
       version = "^6",
       lazy = false,
-    }
+    },
   },
 }
