@@ -57,7 +57,7 @@ brightnessctl
 fail2ban
 haveged
 udisks2
-htop
+btop
 libqalculate
 wget
 less

@@ -1,5 +1,2 @@
 #!/bin/fish
-
-cmd kitty @ set-colors -a ~/.config/kitty/monitor-theme.conf
-cmd htop
-cmd kitty @ set-colors -a ~/.config/kitty/theme.conf
+btop

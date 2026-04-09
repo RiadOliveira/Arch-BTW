@@ -86,7 +86,6 @@ alias img='swayimg'
 
 alias code='nvim'
 alias calc='qalc'
-alias htop='monitor'
 
 alias rm='trash-put'
 alias rm-trash='trash-rm'
