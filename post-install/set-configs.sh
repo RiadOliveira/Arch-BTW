@@ -68,11 +68,15 @@ sudo hwclock --systohc
 chsh -s /bin/fish
 
 # ───────────────────────────────────────────────
-# ▶ SET BROWSER DEFAULTS
+# ▶ SET FILES AND APPS DEFAULTS
 # ───────────────────────────────────────────────
 
 xdg-settings set default-web-browser zen.desktop
 xdg-mime default zen.desktop application/pdf
+
+for mime in image/png image/jpeg image/gif image/webp image/svg+xml image/bmp image/tiff image/avif image/heic image/jxl; do
+  xdg-mime default swayimg.desktop "$mime"
+done
 
 # ───────────────────────────────────────────────
 # ▶ DOCKER CONFIG
