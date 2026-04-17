@@ -75,7 +75,6 @@ tmux
 entr
 qimgv-git
 preload
-speedtest-cli
 
 # Screenshotting
 grim
