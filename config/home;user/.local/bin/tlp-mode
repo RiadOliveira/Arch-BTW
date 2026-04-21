@@ -6,7 +6,8 @@ set TARGET_FILE /etc/tlp.conf
 set SOURCE_FILE "$CONFIG_DIR/$MODE.conf"
 
 if not test -f "$SOURCE_FILE"
-  echo "Error: mode '$MODE' does not exist." >&2
+  echo "Error: invalid mode '$MODE'" >&2
+  echo "Available modes: powersave performance ultraperformance" >&2
   exit 1
 end
 

@@ -1,0 +1,24 @@
+#!/bin/fish
+
+set monitors (hyprctl monitors all)
+set INTERNAL (string match -r 'eDP-[^ ]+' $monitors | head -n1)
+set EXTERNAL (string match -r 'HDMI-[A-Z]-[^ ]+' $monitors | head -n1)
+
+if test -z "$INTERNAL" -o -z "$EXTERNAL"
+  echo "Error: both monitors must be active to move workspace." >&2
+  exit 1
+end
+
+set current_ws (hyprctl activeworkspace -j | jq -r '.id')
+set current_monitor (hyprctl activeworkspace -j | jq -r '.monitor')
+
+if test "$current_monitor" = "$INTERNAL"
+  set target_monitor $EXTERNAL
+else if test "$current_monitor" = "$EXTERNAL"
+  set target_monitor $INTERNAL
+else
+  echo "Error: could not determine current monitor." >&2
+  exit 1
+end
+
+hyprctl dispatch moveworkspacetomonitor $current_ws $target_monitor

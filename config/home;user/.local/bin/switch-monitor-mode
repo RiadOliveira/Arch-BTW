@@ -1,0 +1,116 @@
+#!/bin/fish
+
+set monitors_json (hyprctl monitors all -j)
+set INTERNAL (echo $monitors_json | jq -r '.[].name' | string match -r 'eDP-\S+' | head -n1)
+set EXTERNAL (echo $monitors_json | jq -r '.[].name' | string match -r 'HDMI-[A-Z]-\S+' | head -n1)
+
+if test -z "$INTERNAL" -a -z "$EXTERNAL"
+  echo "Error: no monitors detected." >&2
+  exit 1
+end
+
+function get_current_mode
+  set internal_on (echo $monitors_json | jq -r \
+    ".[] | select(.name == \"$INTERNAL\") | select(.disabled == false) | .name")
+  set external_on (echo $monitors_json | jq -r \
+    ".[] | select(.name == \"$EXTERNAL\") | select(.disabled == false) | .name")
+  set is_mirror (echo $monitors_json | jq -r \
+    ".[] | select(.name == \"$EXTERNAL\") | .mirrorOf // \"none\"")
+
+  set both_on (test -n "$internal_on" -a -n "$external_on"; echo $status)
+
+  if test "$both_on" = 0 -a "$is_mirror" != "none"
+    echo "mirror"
+  else if test "$both_on" = 0 -a "$is_mirror" = "none"
+    echo "extended"
+  else if test -z "$internal_on" -a -n "$external_on"
+    echo "external"
+  else
+    echo "internal"
+  end
+end
+
+function get_next_mode
+  set current $argv[1]
+
+  if test -n "$INTERNAL" -a -n "$EXTERNAL"
+    switch $current
+      case internal;  echo "external"
+      case external;  echo "extended"
+      case extended;  echo "mirror"
+      case mirror;    echo "internal"
+      case '*';       echo "internal"
+    end
+  else if test -n "$INTERNAL"
+    echo "internal"
+  else
+    echo "external"
+  end
+end
+
+function move_workspaces
+  set FROM $argv[1]
+  set TO   $argv[2]
+
+  for ws in (hyprctl workspaces -j | jq -r ".[] | select(.monitor == \"$FROM\") | .id")
+    hyprctl dispatch moveworkspacetomonitor $ws $TO
+  end
+end
+
+if test -z "$argv[1]"
+  set current_mode (get_current_mode)
+  set MODE (get_next_mode $current_mode)
+else
+  set MODE $argv[1]
+end
+
+switch $MODE
+  case internal
+    if test -z "$INTERNAL"
+      echo "Error: internal monitor not found." >&2; exit 1
+    end
+
+    hyprctl keyword monitor "$INTERNAL,preferred,0x0,1.0"
+    if test -n "$EXTERNAL"
+      sleep 0.3
+      move_workspaces $EXTERNAL $INTERNAL
+      sleep 0.3
+      hyprctl keyword monitor "$EXTERNAL,disable"
+    end
+
+  case external
+    if test -z "$EXTERNAL"
+      echo "Error: external monitor not found." >&2; exit 1
+    end
+
+    hyprctl keyword monitor "$EXTERNAL,preferred,1920x0,1.0"
+    if test -n "$INTERNAL"
+      sleep 0.3
+      move_workspaces $INTERNAL $EXTERNAL
+      sleep 0.3
+      hyprctl keyword monitor "$INTERNAL,disable"
+    end
+
+  case extended
+    if test -n "$INTERNAL"
+      hyprctl keyword monitor "$INTERNAL,preferred,0x0,1.0"
+    end
+    if test -n "$EXTERNAL"
+      sleep 0.3
+      hyprctl keyword monitor "$EXTERNAL,preferred,1920x0,1.0"
+    end
+
+  case mirror
+    if test -z "$INTERNAL" -o -z "$EXTERNAL"
+      echo "Error: both monitors required for mirror mode." >&2; exit 1
+    end
+
+    hyprctl keyword monitor "$INTERNAL,preferred,0x0,1.0"
+    sleep 0.3
+    hyprctl keyword monitor "$EXTERNAL,preferred,0x0,1.0,mirror,$INTERNAL"
+
+  case '*'
+    echo "Error: invalid mode '$MODE'" >&2
+    echo "Available modes: internal external extended mirror" >&2
+    exit 1
+end
