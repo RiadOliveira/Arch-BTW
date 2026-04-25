@@ -79,6 +79,12 @@ for mime in image/png image/jpeg image/gif image/webp image/svg+xml image/bmp im
 done
 
 # ───────────────────────────────────────────────
+# ▶ SET GTK COLOR SCHEME (DARK)
+# ───────────────────────────────────────────────
+
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+
+# ───────────────────────────────────────────────
 # ▶ DOCKER CONFIG
 # ───────────────────────────────────────────────
 
