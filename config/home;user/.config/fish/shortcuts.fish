@@ -12,77 +12,14 @@ alias pac-own='yay -Qo'
 alias pac-cache='yes | yay -Scc'
 alias pac-clean='yay -Rns $(yay -Qdtq)'
 
-alias browser="$APP_CMD $BROWSER_CMD"
-alias browser-bg="$APP_CMD nohup $BROWSER_CMD $DISOWN_CMD"
+alias zen-browser='zen-browser --new-window about:newtab'
+alias discord='discord --ozone-platform=x11'
+alias beekeeper-studio='beekeeper-studio --ozone-platform=x11'
 
-alias zen-browser="$APP_CMD $BROWSER_CMD"
-alias zen-browser-bg="$APP_CMD nohup $BROWSER_CMD $DISOWN_CMD"
+alias obsidian="obsidian $ELECTRON_ARGS"
+alias chromium="chromium --user-data-dir=/tmp/chromium-temp-profile $ELECTRON_ARGS"
 
-alias vscode="$APP_CMD code . --password-store='gnome-libsecret' $ELECTRON_ARGS"
-alias vscode-bg="$APP_CMD nohup code . --password-store='gnome-libsecret' $ELECTRON_ARGS $DISOWN_CMD"
-
-alias discord="$APP_CMD discord --ozone-platform=x11"
-alias discord-bg="$APP_CMD nohup discord --ozone-platform=x11 $DISOWN_CMD"
-
-alias obsidian="$APP_CMD obsidian $ELECTRON_ARGS"
-alias obsidian-bg="$APP_CMD nohup obsidian $ELECTRON_ARGS $DISOWN_CMD"
-
-alias beekeeper-studio="$APP_CMD beekeeper-studio --ozone-platform=x11"
-alias beekeeper-studio-bg="$APP_CMD nohup beekeeper-studio --ozone-platform=x11 $DISOWN_CMD"
-
-alias android-studio="$APP_CMD android-studio"
-alias android-studio-bg="$APP_CMD nohup android-studio $DISOWN_CMD"
-
-alias kitty="$APP_CMD kitty"
-alias kitty-bg="$APP_CMD nohup kitty $DISOWN_CMD"
-
-alias anki="$APP_CMD anki"
-alias anki-bg="$APP_CMD nohup anki $DISOWN_CMD"
-
-alias torrent="$APP_CMD transmission-gtk"
-alias torrent-bg="$APP_CMD nohup transmission-gtk $DISOWN_CMD"
-
-alias pavucontrol="$APP_CMD pavucontrol"
-alias pavucontrol-bg="$APP_CMD nohup pavucontrol $DISOWN_CMD"
-
-alias antimicrox="$APP_CMD antimicrox"
-alias antimicrox-bg="$APP_CMD nohup antimicrox $DISOWN_CMD"
-
-alias lossless-scaling="$APP_CMD lsfg-vk-ui"
-alias lossless-scaling-bg="$APP_CMD nohup lsfg-vk-ui $DISOWN_CMD"
-
-alias steam="$APP_CMD steam"
-alias steam-bg="$APP_CMD nohup steam $DISOWN_CMD"
-
-alias heroic="$APP_CMD heroic"
-alias heroic-bg="$APP_CMD nohup heroic $DISOWN_CMD"
-
-alias pcsx2="$APP_CMD pcsx2"
-alias pcsx2-bg="$APP_CMD nohup pcsx2 $DISOWN_CMD"
-
-alias rpcs3="$APP_CMD rpcs3"
-alias rpcs3-bg="$APP_CMD nohup rpcs3 $DISOWN_CMD"
-
-alias prismlauncher="$APP_CMD prismlauncher"
-alias prismlauncher-bg="$APP_CMD nohup prismlauncher $DISOWN_CMD"
-
-alias emulator="$APP_CMD $ANDROID_HOME/emulator/emulator"
-
-alias chromium="$APP_CMD $CHROMIUM_CMD $ELECTRON_ARGS"
-alias chromium-bg="$APP_CMD nohup $CHROMIUM_CMD $ELECTRON_ARGS $DISOWN_CMD"
-
-alias qimgv="$APP_CMD qimgv"
-alias qimgv-bg="$APP_CMD nohup qimgv $DISOWN_CMD"
-
-alias gallery="$APP_CMD nohup qimgv . $DISOWN_CMD"
-alias media='gallery'
-
-alias mpv="$APP_CMD mpv"
-alias video='mpv'
-
-alias swayimg="$APP_CMD swayimg"
-alias image='swayimg'
-alias img='swayimg'
+alias emulator="uwsm app -- $ANDROID_HOME/emulator/emulator"
 
 alias code='nvim'
 alias calc='qalc'

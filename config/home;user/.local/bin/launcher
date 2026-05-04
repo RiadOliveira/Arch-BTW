@@ -1,8 +1,73 @@
 #!/bin/fish
 
-cd ~/.applications
-set SELECTED_APP (fzf --reverse)
+set -l APPS_FILE ~/.applications.txt
+set -l DESKTOP_DIRS /usr/share/applications
 
-if test -n "$SELECTED_APP"
-  setsid fish "$SELECTED_APP"
+function _get_app_display_name
+  cmd grep -m1 '^Name=' $argv[1] | sed 's/^Name=//'
 end
+
+function _capitalize
+  set -l name $argv[1]
+  echo (string upper (string sub -s 1 -l 1 -- $name))(string sub -s 2 -- $name)
+end
+
+function _launch_app
+  switch $argv[1]
+    case piper
+      piper
+    case '*'
+      app $argv[1]
+  end
+end
+
+set -l entries
+
+for app_id in (cat $APPS_FILE)
+  for dir in $DESKTOP_DIRS
+    test -d $dir; or continue
+
+    for file in (cmd find $dir -name "*$app_id*.desktop" 2>/dev/null)
+      if test "$app_id" = kitty
+        string match -qi '*open*' $file; and continue
+      end
+
+      set -l raw_name (_get_app_display_name $file)
+      test -n "$raw_name"; or continue
+
+      set -l display_name (_capitalize $raw_name)
+
+      if test "$app_id" = zen
+        set entries $entries "$display_name\tzen-browser"
+      else
+        set entries $entries "$display_name\t"(string lower $app_id)
+      end
+    end
+  end
+end
+
+set -l entries (printf "%s\n" $entries | sort -u)
+
+set -l max_len 0
+for entry in $entries
+  set -l name (string split '\t' $entry)[1]
+  set -l len (string length $name)
+  test $len -gt $max_len; and set max_len $len
+end
+
+set -l fmt "%-"$max_len"s | %s"
+set -l padded
+
+for entry in $entries
+  set -l parts (string split '\t' $entry)
+  set padded $padded (printf $fmt $parts[1] $parts[2])
+end
+
+set -l chosen (printf "%s\n" $padded | fzf --reverse)
+test -n "$chosen"; or exit 0
+
+set -l app_id (string split ' | ' (string trim $chosen))[2]
+test -n "$app_id"; or exit 0
+
+_launch_app $app_id
+kitten @ close-window
