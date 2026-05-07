@@ -10,6 +10,7 @@ if pgrep -x wf-recorder > /dev/null
 end
 
 set TIMESTAMP (date +%Y%m%d_%H%M%S)
+set AUDIO_DEVICE (pactl get-default-sink).monitor
 
 switch "$MODE"
   case area
@@ -19,19 +20,19 @@ switch "$MODE"
     end
     set FILE ~/Screenshots/area_video_$TIMESTAMP.mp4
 
-    wf-recorder -g "$GEOM" -f "$FILE" &
+    wf-recorder --audio="$AUDIO_DEVICE" -g "$GEOM" -f "$FILE" &
     notify-send -a "[Video]" -r 9 -t 2000 -h string:fgcolor:"#fb4935" "Area recording started"
 
   case window
     set GEOM (hyprctl activewindow -j | jq -r '"\(.at[0] - 4),\(.at[1] - 4) \(.size[0] + 8)x\(.size[1] + 8)"')
     set FILE ~/Screenshots/window_video_$TIMESTAMP.mp4
 
-    wf-recorder -g "$GEOM" -f "$FILE" &
+    wf-recorder --audio="$AUDIO_DEVICE" -g "$GEOM" -f "$FILE" &
     notify-send -a "[Video]" -r 9 -t 2000 -h string:fgcolor:"#fb4935" "Window recording started"
 
   case '*'
     set FILE ~/Screenshots/entire_video_$TIMESTAMP.mp4
 
-    wf-recorder -f "$FILE" &
+    wf-recorder --audio="$AUDIO_DEVICE" -f "$FILE" &
     notify-send -a "[Video]" -r 9 -t 2000 -h string:fgcolor:"#fb4935" "Screen recording started"
 end
