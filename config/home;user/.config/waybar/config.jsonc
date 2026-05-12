@@ -99,7 +99,7 @@
     "max-length": 18
   },
   "tray": {
-    "icon-size": 21,
+    "icon-size": 22,
     "spacing": 16,
     "smooth-scrolling-threshold": 4.0
   },
