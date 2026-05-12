@@ -95,7 +95,7 @@
     "format": "{initialTitle}",
     "tooltip-format": "{title}",
     "icon": true,
-    "icon-size": 21,
+    "icon-size": 22,
     "max-length": 18
   },
   "tray": {
