@@ -10,11 +10,12 @@ neovim
 tree-sitter-cli
 
 # Filesystem & Boot
-apparmor
-dosfstools
-e2fsprogs
-exfatprogs
 lvm2
+apparmor
+ntfs-3g
+e2fsprogs
+dosfstools
+exfatprogs
 
 # EFI
 efibootmgr
