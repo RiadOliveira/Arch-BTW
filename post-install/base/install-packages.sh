@@ -11,9 +11,5 @@ makepkg -sirc --noconfirm
 cd ..
 rm -rf yay
 
-echo "Installing the following packages:"
-echo "$packages"
-echo
-
 yay -Sy --noconfirm --needed $packages
 yay -Syu --noconfirm

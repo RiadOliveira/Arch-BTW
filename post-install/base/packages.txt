@@ -1,0 +1,125 @@
+# System Configuration
+ufw
+tlp
+ethtool
+haveged
+preload
+udisks2
+fail2ban
+reflector
+
+# Hyprland Environment
+sddm-sugar-candy-git
+hyprland
+egl-wayland
+xdg-desktop-portal-hyprland
+uwsm
+libnewt
+kitty
+waybar
+brightnessctl
+swaybg
+dunst
+
+# Fonts
+noto-fonts
+ttf-gohu-nerd
+ttf-firacode-nerd
+
+# Keyring
+gcr-4
+libsecret
+gnome-keyring
+
+# Audio
+pipewire
+pipewire-audio
+pipewire-alsa
+pipewire-pulse
+wireplumber
+rtkit
+alsa-utils
+pavucontrol
+
+# Multimedia
+mpv
+swayimg
+qimgv-git
+
+# Clipboard & Capture
+grim
+slurp
+wf-recorder
+wl-clipboard
+wl-clip-persist
+
+# Mouse
+piper
+openrgb
+
+# Printing & Networking
+sane
+cups
+avahi
+cups-pdf
+nss-mdns
+
+# Bluetooth Support
+bluez
+bluez-utils
+bluez-obex
+
+# CLI Tools
+jq
+fd
+bat
+eza
+fzf
+man
+btop
+wget
+less
+tmux
+entr
+zstd
+7zip
+unzip
+zoxide
+httpie
+trash-cli
+fastfetch
+bat-extras
+libqalculate
+transmission-cli
+
+# Applications
+anki
+discord
+obsidian
+antimicrox
+zen-browser-bin
+transmission-gtk
+
+# Shell
+fish
+starship
+
+# Development
+nodejs-lts-krypton
+npm
+pnpm
+bun
+gdb
+rustup
+jdk25-openjdk
+docker
+docker-compose
+docker-buildx
+chromium
+android-studio
+beekeeper-studio-bin
+
+# Android
+scrcpy
+jmtpfs
+android-tools

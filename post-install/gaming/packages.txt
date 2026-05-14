@@ -1,14 +1,13 @@
 # General
-proton-ge-custom-bin
+ds4drv
 lsfg-vk
 mangohud
-ds4drv
-antimicrox
+proton-ge-custom-bin
 
 # Steam
-lib32-nvidia-utils
-lib32-systemd
 steam
+lib32-systemd
+lib32-nvidia-utils
 
 # Heroic
 heroic-games-launcher-bin

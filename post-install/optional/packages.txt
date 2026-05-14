@@ -1,0 +1,15 @@
+# USB/ISO Utils
+f3
+poweriso
+woeusb-ng
+ventoy-bin
+
+# Epson Printer Utils
+epson-printer-utility
+epson-inkjet-printer-escpr
+
+# Tauri
+webkit2gtk-4.1
+appmenu-gtk-module
+libappindicator-gtk3
+xdotool
