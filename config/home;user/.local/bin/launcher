@@ -1,6 +1,6 @@
 #!/bin/fish
 
-set -l APPS_FILE ~/.applications.txt
+set -l APPS_FILE ~/.applications
 set -l DESKTOP_DIRS /usr/share/applications
 
 function _get_app_display_name
