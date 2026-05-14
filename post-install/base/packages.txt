@@ -44,7 +44,6 @@ pavucontrol
 # Multimedia
 mpv
 swayimg
-qimgv-git
 
 # Clipboard & Capture
 grim
