@@ -28,8 +28,8 @@ for app_id in (cat $APPS_FILE)
     test -d $dir; or continue
 
     for file in (cmd find $dir -name "*$app_id*.desktop" 2>/dev/null)
-      if test "$app_id" = kitty
-        string match -qi '*open*' $file; and continue
+      if test "$app_id" = kitty; or test "$app_id" = thunar
+        string match -qi '*-*' $file; and continue
       end
 
       set -l raw_name (_get_app_display_name $file)

@@ -94,6 +94,7 @@ transmission-cli
 
 # Applications
 anki
+thunar
 discord
 obsidian
 antimicrox
