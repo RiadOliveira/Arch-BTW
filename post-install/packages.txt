@@ -45,7 +45,6 @@ gnome-keyring
 libsecret
 gcr-4
 dunst
-lxsession-gtk3
 wl-clip-persist
 piper
 openrgb
