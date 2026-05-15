@@ -43,7 +43,9 @@ pavucontrol
 
 # Multimedia
 mpv
+tumbler
 swayimg
+ffmpegthumbnailer
 
 # Clipboard & Capture
 grim
