@@ -28,4 +28,5 @@ openssh
 # NVIDIA Graphics
 nvidia-dkms
 nvidia-utils
+nvidia-settings
 libva-nvidia-driver
