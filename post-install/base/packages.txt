@@ -101,6 +101,7 @@ thunar
 discord
 obsidian
 antimicrox
+localsend-bin
 zen-browser-bin
 transmission-gtk
 
