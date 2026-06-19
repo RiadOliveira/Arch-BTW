@@ -5,7 +5,7 @@ sudo resolvectl flush-caches && sudo systemctl restart iwd && sudo systemctl res
 scanimage --device "escl:http://X.X.X.X:443/" --format=pdf --output-file scanned.pdf --mode Color --resolution 1200 --progress
 
 # Marvel Rivals launch options
-SteamDeck=1 XDG_CACHE_HOME="$PWD/shader_cache" uwsm app -- %command% -PSOCompileMode=1
+DXVK_HUD=compiler SteamDeck=1 XDG_CACHE_HOME="$PWD/shader_cache" uwsm app -- %command% -PSOCompileMode=1
 
 # Overwatch launch options
 DXVK_HUD=compiler STAGING_SHARED_MEMORY=1 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __GL_SHADER_DISK_CACHE=1 __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1 __GL_SHADER_DISK_CACHE_SIZE=10737418240 XDG_CACHE_HOME="$PWD/shader_cache" DXVK_CONFIG="dxvk.trackPipelineLifetime = True" uwsm app -- %command%
