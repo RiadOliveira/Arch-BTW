@@ -8,6 +8,10 @@ ventoy-bin
 epson-printer-utility
 epson-inkjet-printer-escpr
 
+# webOS Streaming
+sunshine-bin
+webos-dev-manager-bin
+
 # Tauri
 webkit2gtk-4.1
 appmenu-gtk-module
