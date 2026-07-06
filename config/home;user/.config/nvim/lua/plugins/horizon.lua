@@ -10,6 +10,8 @@ return {
     vim.cmd.colorscheme("horizon")
 
     vim.cmd([[
+      hi @tag.attribute gui=NONE
+
       hi Normal guibg=NONE ctermbg=NONE
       hi NormalNC guibg=NONE ctermbg=NONE
       hi NormalFloat guibg=NONE ctermbg=NONE
@@ -41,7 +43,7 @@ return {
       hi TelescopePromptPrefix guifg=#fc5ef0 guibg=NONE
       hi TelescopePromptCounter guifg=#fc5ef0 guibg=NONE
       hi TelescopeSelectionCaret guifg=#9c44fc guibg=#9c44fc
-      hi TelescopeMatching guifg=#9c44fc
+      hi TelescopeMatching guifg=#9c44fc gui=NONE
       hi TelescopeSelection guifg=NONE guibg=#221b40
 
       hi NeoTreeNormal guibg=NONE ctermbg=NONE
