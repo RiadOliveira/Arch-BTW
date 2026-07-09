@@ -28,6 +28,7 @@ return {
       hi CursorLine guibg=#221b40
       hi CursorLineNr guifg=#ffffff guibg=#221b40
       hi LineNr guifg=#635c8a guibg=NONE
+      hi DiagnosticUnnecessary gui=NONE
 
       hi TelescopeNormal guibg=NONE
       hi TelescopePromptNormal guibg=NONE
@@ -65,7 +66,7 @@ return {
       hi NeoTreeFloatTitle guifg=#fc5ef0 guibg=NONE
       hi NeoTreeTitleBar guifg=#fc5ef0 guibg=NONE
       hi NeoTreeCursorLine guibg=#221b40
-      hi NeoTreeDotfile guifg=#635c8a
+      hi NeoTreeDotfile guifg=#635c8a gui=NONE
       hi NeoTreeMessage guifg=#fc5ef0
       hi NeoTreeModified guifg=#9c44fc
       hi NeoTreeGitAdded guifg=#21c7a8
@@ -73,7 +74,7 @@ return {
       hi NeoTreeGitModified guifg=#fab795
       hi NeoTreeGitConflict guifg=#fc5ef0
       hi NeoTreeGitUntracked guifg=#635c8a
-      hi NeoTreeGitIgnored guifg=#635c8a
+      hi NeoTreeGitIgnored guifg=#635c8a gui=NONE
       hi NeoTreeGitStaged guifg=#21c7a8
     ]])
   end,
