@@ -10,8 +10,6 @@ return {
     vim.cmd.colorscheme("horizon")
 
     vim.cmd([[
-      hi @tag.attribute gui=NONE
-
       hi Normal guibg=NONE ctermbg=NONE
       hi NormalNC guibg=NONE ctermbg=NONE
       hi NormalFloat guibg=NONE ctermbg=NONE
@@ -28,7 +26,6 @@ return {
       hi CursorLine guibg=#221b40
       hi CursorLineNr guifg=#ffffff guibg=#221b40
       hi LineNr guifg=#635c8a guibg=NONE
-      hi DiagnosticUnnecessary gui=NONE
 
       hi TelescopeNormal guibg=NONE
       hi TelescopePromptNormal guibg=NONE
@@ -44,7 +41,7 @@ return {
       hi TelescopePromptPrefix guifg=#fc5ef0 guibg=NONE
       hi TelescopePromptCounter guifg=#fc5ef0 guibg=NONE
       hi TelescopeSelectionCaret guifg=#9c44fc guibg=#9c44fc
-      hi TelescopeMatching guifg=#9c44fc gui=NONE
+      hi TelescopeMatching guifg=#9c44fc
       hi TelescopeSelection guifg=NONE guibg=#221b40
 
       hi NeoTreeNormal guibg=NONE ctermbg=NONE
@@ -66,7 +63,7 @@ return {
       hi NeoTreeFloatTitle guifg=#fc5ef0 guibg=NONE
       hi NeoTreeTitleBar guifg=#fc5ef0 guibg=NONE
       hi NeoTreeCursorLine guibg=#221b40
-      hi NeoTreeDotfile guifg=#635c8a gui=NONE
+      hi NeoTreeDotfile guifg=#635c8a
       hi NeoTreeMessage guifg=#fc5ef0
       hi NeoTreeModified guifg=#9c44fc
       hi NeoTreeGitAdded guifg=#21c7a8
@@ -74,8 +71,24 @@ return {
       hi NeoTreeGitModified guifg=#fab795
       hi NeoTreeGitConflict guifg=#fc5ef0
       hi NeoTreeGitUntracked guifg=#635c8a
-      hi NeoTreeGitIgnored guifg=#635c8a gui=NONE
+      hi NeoTreeGitIgnored guifg=#635c8a
       hi NeoTreeGitStaged guifg=#21c7a8
     ]])
+
+    local function strip_italic()
+      local highlights = vim.api.nvim_get_hl(0, {})
+
+      for name in pairs(highlights) do
+        local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
+
+        if hl.italic then
+          hl.italic = false
+          vim.api.nvim_set_hl(0, name, hl)
+        end
+      end
+    end
+    strip_italic()
+
+    vim.api.nvim_create_autocmd("ColorScheme", { callback = strip_italic })
   end,
 }
