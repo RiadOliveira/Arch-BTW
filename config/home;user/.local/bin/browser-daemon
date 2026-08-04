@@ -1,3 +1,3 @@
 #!/bin/fish
 
-hyprctl dispatch exec "[workspace special:browser-daemon silent]" "uwsm app -- zen-browser --new-instance about:newtab"
+hyprctl dispatch 'hl.dsp.exec_cmd("uwsm app -- zen-browser --new-instance about:newtab", { workspace = "special:browser-daemon silent" })'

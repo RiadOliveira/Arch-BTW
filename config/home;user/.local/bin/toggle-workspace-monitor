@@ -21,4 +21,4 @@ else
   exit 1
 end
 
-hyprctl dispatch moveworkspacetomonitor $current_ws $target_monitor
+hyprctl dispatch "hl.dsp.workspace.move({ workspace = $current_ws, monitor = \"$target_monitor\" })"

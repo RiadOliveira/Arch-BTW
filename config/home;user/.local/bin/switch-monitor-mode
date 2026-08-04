@@ -53,7 +53,7 @@ function move_workspaces
   set TO   $argv[2]
 
   for ws in (hyprctl workspaces -j | jq -r ".[] | select(.monitor == \"$FROM\") | .id")
-    hyprctl dispatch moveworkspacetomonitor $ws $TO
+    hyprctl dispatch "hl.dsp.workspace.move({ workspace = $ws, monitor = \"$TO\" })"
   end
 end
 
@@ -70,12 +70,12 @@ switch $MODE
       echo "Error: internal monitor not found." >&2; exit 1
     end
 
-    hyprctl keyword monitor "$INTERNAL,preferred,0x0,1.0"
+    hyprctl eval "hl.monitor({ output = \"$INTERNAL\", mode = \"preferred\", position = \"0x0\", scale = 1.0 })"
     if test -n "$EXTERNAL"
       sleep 0.3
       move_workspaces $EXTERNAL $INTERNAL
       sleep 0.3
-      hyprctl keyword monitor "$EXTERNAL,disable"
+      hyprctl eval "hl.monitor({ output = \"$EXTERNAL\", disabled = true })"
     end
 
   case external
@@ -83,21 +83,22 @@ switch $MODE
       echo "Error: external monitor not found." >&2; exit 1
     end
 
-    hyprctl keyword monitor "$EXTERNAL,preferred,1920x0,1.0"
+    hyprctl eval "hl.monitor({ output = \"$EXTERNAL\", mode = \"preferred\", position = \"1920x0\", scale = 1.0 })"
     if test -n "$INTERNAL"
       sleep 0.3
       move_workspaces $INTERNAL $EXTERNAL
       sleep 0.3
-      hyprctl keyword monitor "$INTERNAL,disable"
+      hyprctl eval "hl.monitor({ output = \"$INTERNAL\", disabled = true })"
     end
 
   case extended
     if test -n "$INTERNAL"
-      hyprctl keyword monitor "$INTERNAL,preferred,0x0,1.0"
+      hyprctl eval "hl.monitor({ output = \"$INTERNAL\", mode = \"preferred\", position = \"0x0\", scale = 1.0 })"
     end
+
     if test -n "$EXTERNAL"
       sleep 0.3
-      hyprctl keyword monitor "$EXTERNAL,preferred,1920x0,1.0"
+      hyprctl eval "hl.monitor({ output = \"$EXTERNAL\", mode = \"preferred\", position = \"1920x0\", scale = 1.0 })"
     end
 
   case mirror
@@ -105,9 +106,9 @@ switch $MODE
       echo "Error: both monitors required for mirror mode." >&2; exit 1
     end
 
-    hyprctl keyword monitor "$INTERNAL,preferred,0x0,1.0"
+    hyprctl eval "hl.monitor({ output = \"$INTERNAL\", mode = \"preferred\", position = \"0x0\", scale = 1.0 })"
     sleep 0.3
-    hyprctl keyword monitor "$EXTERNAL,preferred,0x0,1.0,mirror,$INTERNAL"
+    hyprctl eval "hl.monitor({ output = \"$EXTERNAL\", mode = \"preferred\", position = \"0x0\", scale = 1.0, mirror = \"$INTERNAL\" })"
 
   case '*'
     echo "Error: invalid mode '$MODE'" >&2

@@ -3,7 +3,7 @@
 set is_floating (hyprctl activewindow -j | jq -r '.floating')
 
 if test "$is_floating" = "true"
-  hyprctl dispatch focuswindow tiled
+  hyprctl dispatch 'hl.dsp.focus({ window = "tiled" })'
 else
-  hyprctl dispatch focuswindow floating
+  hyprctl dispatch 'hl.dsp.focus({ window = "floating" })'
 end
