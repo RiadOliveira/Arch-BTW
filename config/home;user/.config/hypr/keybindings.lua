@@ -33,15 +33,20 @@ hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
 
+hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.move({ direction = "down" }))
+
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.resize({ x = -20, y = 0, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.resize({ x = 20, y = 0, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.resize({ x = 0, y = 20, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.resize({ x = 0, y = -20, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.resize({ x = 0, y = -20, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.resize({ x = 0, y = 20, relative = true }), { repeating = true })
 
 hl.bind(mainMod .. " + ALT + H", hl.dsp.window.move({ x = -20, y = 0, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + ALT + L", hl.dsp.window.move({ x = 20, y = 0, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + K", hl.dsp.window.move({ x = 0, y = 20, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + J", hl.dsp.window.move({ x = 0, y = -20, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + ALT + K", hl.dsp.window.move({ x = 0, y = -20, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + ALT + J", hl.dsp.window.move({ x = 0, y = 20, relative = true }), { repeating = true })
 
 for i = 1, 10 do
   local key = i % 10
