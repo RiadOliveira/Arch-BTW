@@ -1,0 +1,14 @@
+hl.config({
+  input = {
+    kb_layout = "us,br",
+    kb_options = "grp:alt_shift_toggle",
+
+    sensitivity = 0,
+    follow_mouse = 1,
+    accel_profile = "flat",
+
+    touchpad = {
+      natural_scroll = true,
+    },
+  },
+})

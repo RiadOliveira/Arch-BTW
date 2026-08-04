@@ -1,0 +1,10 @@
+hl.on("hyprland.start", function()
+  hl.exec_cmd("dunst")
+  hl.exec_cmd("browser-daemon")
+  hl.exec_cmd("wl-clip-persist --clipboard regular")
+  hl.exec_cmd("/usr/lib/mate-polkit/polkit-mate-authentication-agent-1")
+
+  hl.exec_cmd("gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg")
+  hl.exec_cmd("swaybg -i ~/.background/background.jpg -m fill")
+  hl.exec_cmd("openrgb --startminimized")
+end)
