@@ -1,4 +1,7 @@
 #!/bin/fish
 
-grim ~/Screenshots/entire_screenshot_(date +%Y%m%d_%H%M%S).png
-notify-send -a "[Screenshot]" -r 8 -t 2000 -h string:fgcolor:"#50c7e3" "Screen saved"
+set FILE ~/Screenshots/entire_screenshot_(date +%Y%m%d_%H%M%S).png
+
+grim "$FILE"
+and wl-copy < "$FILE"
+and notify-send -a "[Screenshot]" -r 8 -t 2000 -h string:fgcolor:"#50c7e3" "Screen saved"

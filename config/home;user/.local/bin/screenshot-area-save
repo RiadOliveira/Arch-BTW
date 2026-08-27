@@ -5,5 +5,8 @@ if test -z "$GEOM"
   exit 0
 end
 
-grim -g "$GEOM" ~/Screenshots/area_screenshot_(date +%Y%m%d_%H%M%S).png
+set FILE ~/Screenshots/area_screenshot_(date +%Y%m%d_%H%M%S).png
+
+grim -g "$GEOM" "$FILE"
+and wl-copy < "$FILE"
 and notify-send -a "[Screenshot]" -r 8 -t 2000 -h string:fgcolor:"#50c7e3" "Area saved"

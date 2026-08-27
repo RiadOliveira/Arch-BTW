@@ -1,6 +1,8 @@
 #!/bin/fish
 
 set GEOM (hyprctl activewindow -j | jq -r '"\(.at[0] - 4),\(.at[1] - 4) \(.size[0] + 8)x\(.size[1] + 8)"')
+set FILE ~/Screenshots/window_screenshot_(date +%Y%m%d_%H%M%S).png
 
-grim -g "$GEOM" ~/Screenshots/window_screenshot_(date +%Y%m%d_%H%M%S).png
-notify-send -a "[Screenshot]" -r 8 -t 2000 -h string:fgcolor:"#50c7e3" "Window saved"
+grim -g "$GEOM" "$FILE"
+and wl-copy < "$FILE"
+and notify-send -a "[Screenshot]" -r 8 -t 2000 -h string:fgcolor:"#50c7e3" "Window saved"
