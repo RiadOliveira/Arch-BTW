@@ -32,15 +32,15 @@
   },
   "memory": {
     "interval": 10,
-    "format": " {used:0.2f}G/{total:0.2f}G ({percentage:02d}%)",
-    "tooltip-format": "{used:0.2f}GB/{total:0.2f}GB ({percentage:02d}% in use)"
+    "format": " {used:0.2f}/{total:0.2f}GB ({percentage:02d}%)",
+    "tooltip-format": "{used:0.2f}/{total:0.2f}GB ({percentage:02d}% in use)"
   },
   "disk": {
     "interval": 60,
-    "format": "󰋊 {specific_used:0.2f}G/{specific_total:0.2f}G",
+    "format": "󰋊 {specific_used:0.2f}/{specific_total:0.2f}GB",
     "unit": "GB",
     "path": "/home",
-    "tooltip-format": "{specific_used:0.2f}GB/{specific_total:0.2f}GB used on {path} ({percentage_used}%)"
+    "tooltip-format": "{specific_used:0.2f}/{specific_total:0.2f}GB used on {path} ({percentage_used}%)"
   },
   "hyprland/workspaces": {
     "format": "{icon}",
