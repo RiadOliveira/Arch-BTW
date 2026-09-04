@@ -112,7 +112,6 @@ starship
 # Development
 nodejs-lts-krypton
 npm
-pnpm
 bun
 gdb
 rustup
