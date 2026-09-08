@@ -11,6 +11,7 @@ local zen_browser = "fish -c 'app zen-browser'"
 local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+hl.bind(mainMod .. " + G", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + S", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("toggle-focus-floating"))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
