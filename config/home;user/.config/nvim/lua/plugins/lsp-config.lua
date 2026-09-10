@@ -31,13 +31,18 @@ return {
     {
       "neovim/nvim-lspconfig",
       config = function()
+        local ts_ls_config = vim.lsp.config.ts_ls or {}
+        local default_on_attach = ts_ls_config.on_attach
+
         vim.lsp.config("ts_ls", {
-          setup = {
-            on_attach = function(client)
-              client.server_capabilities.documentFormattingProvider = false
-              client.server_capabilities.documentRangeFormattingProvider = false
-            end,
-          },
+          on_attach = function(client, bufnr)
+            if default_on_attach then
+              default_on_attach(client, bufnr)
+            end
+
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end,
         })
       end,
     },
