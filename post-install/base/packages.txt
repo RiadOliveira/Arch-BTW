@@ -104,6 +104,7 @@ antimicrox
 localsend-bin
 zen-browser-bin
 transmission-gtk
+libayatana-indicator
 
 # Shell
 fish
