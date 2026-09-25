@@ -6,6 +6,7 @@ haveged
 preload
 udisks2
 fail2ban
+downgrade
 reflector
 
 # Hyprland Environment
