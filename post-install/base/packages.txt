@@ -69,7 +69,7 @@ cups-pdf
 nss-mdns
 
 # Bluetooth Support
-bluez-ps3
+bluez
 bluez-utils
 bluez-obex
 
