@@ -2,8 +2,9 @@ return {
   "mason-org/mason-lspconfig.nvim",
   opts = {
     ensure_installed = {
-      "bashls",
+      "stylua",
       "lua_ls",
+      "bashls",
       "clangd",
       "cssls",
       "dockerls",
@@ -11,6 +12,7 @@ return {
       "jdtls",
       "ts_ls",
       "jsonls",
+      "oxlint",
       "rust_analyzer",
       "marksman",
       "prismals",
@@ -50,12 +52,12 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       opts = {
         ensure_installed = {
-          "java-debug-adapter",
-          "js-debug-adapter",
-          "stylua",
+          "oxfmt",
           "eslint_d",
-          "google-java-format",
           "codelldb",
+          "google-java-format",
+          "js-debug-adapter",
+          "java-debug-adapter",
         },
         auto_update = true,
         run_on_start = true,
