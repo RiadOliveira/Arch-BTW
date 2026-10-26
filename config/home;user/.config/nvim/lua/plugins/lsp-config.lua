@@ -46,6 +46,26 @@ return {
             client.server_capabilities.documentRangeFormattingProvider = false
           end,
         })
+
+        vim.lsp.config("oxlint", {
+          workspace_required = true,
+          root_markers = {
+            ".oxlintrc.json",
+            ".oxlintrc.jsonc",
+            "oxlint.config.ts",
+            "oxlint.config.mts",
+          },
+        })
+
+        vim.lsp.config("oxfmt", {
+          workspace_required = true,
+          root_markers = {
+            ".oxfmtrc.json",
+            ".oxfmtrc.jsonc",
+            "oxfmt.config.ts",
+            "oxfmt.config.mts",
+          },
+        })
       end,
     },
     {
