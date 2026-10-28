@@ -87,6 +87,7 @@ tmux
 entr
 zstd
 7zip
+timew
 unzip
 zoxide
 httpie
