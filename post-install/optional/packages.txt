@@ -15,5 +15,4 @@ webos-dev-manager-bin
 # Tauri
 webkit2gtk-4.1
 appmenu-gtk-module
-libappindicator-gtk3
 xdotool
